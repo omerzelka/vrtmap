@@ -120,6 +120,33 @@ class CookieSecurity(Module):
 # --------------------------------------------------------------------------- #
 # Active injection checks
 # --------------------------------------------------------------------------- #
+class DescriptiveStackTrace(Module):
+    VRT_IDS = ["sensitive_data_exposure.visible_detailed_error_page.descriptive_stack_trace"]
+    SIGNATURES = {
+        "Python traceback": r"Traceback \(most recent call last\)",
+        "Java stack frame": r"\n\s+at \w[\w.$]*(\.\w+)+\([\w.]+\.java:\d+\)",
+        "PHP fatal/warning": r"(Fatal error|Warning|Notice):.*?on line \d+",
+        "PHP stack trace": r"Stack trace:\s*#0\s",
+        ".NET exception": r"System\.\w+(\.\w+)*Exception:",
+        ".NET stack frame": r"\n\s+at [\w.]+\(.*\) in .+:line \d+",
+        "Node/JS stack frame": r"\n\s+at .+\(.+:\d+:\d+\)",
+        "Ruby stack frame": r"\.rb:\d+:in [`']",
+    }
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.text:
+                continue
+            for name, pattern in self.SIGNATURES.items():
+                m = re.search(pattern, page.text, re.I)
+                if m:
+                    snippet = m.group(0).strip().replace("\n", " ")[:120]
+                    out.append(self.f(self.VRT_IDS[0], page.url,
+                               evidence=f"{name} leaked in response: {snippet!r}"))
+                    break      
+        return out
+    
 class ReflectedXSS(Module):
     VRT_IDS = ["cross_site_scripting_xss.reflected.non_self"]
     MARKER = "vrtx9z7q"
@@ -269,6 +296,201 @@ class SensitiveFiles(Module):
         return out
 
 
+class DirectoryListing(Module):
+    BASE = "server_security_misconfiguration.directory_listing_enabled"
+    VRT_IDS = [f"{BASE}.non_sensitive_data_exposure",
+               f"{BASE}.sensitive_data_exposure"]
+    # auto-index (directory listing) signatures from common servers
+    LISTING = re.compile(
+        r"<title>\s*Index of /|<h1>\s*Index of /|"
+        r"Directory listing for /|<title>\s*Directory listing for ",
+        re.I)
+    # file names that make an exposed listing high-severity
+    SENSITIVE = re.compile(
+        r"\.(sql|bak|old|swp|env|key|pem|pfx|p12|config|ini|log|zip|tar|gz|7z)\b"
+        r"|backup|\.git/|\.svn/|id_rsa|\.htpasswd|credential",
+        re.I)
+
+    async def run(self, engine, pages):
+        from urllib.parse import urlparse
+        out = []
+        seen = set()
+        for page in pages:
+            p = urlparse(page.url)
+            base = f"{p.scheme}://{p.netloc}"
+            segments = [s for s in p.path.split("/") if s]
+            count = len(segments) if p.path.endswith("/") else len(segments) - 1
+            if count < 0:
+                count = 0
+            # every ancestor directory: "/", "/a/", "/a/b/" ... (not the file)
+            for i in range(count + 1):
+                dir_url = base + "/" + "".join(s + "/" for s in segments[:i])
+                if dir_url in seen:
+                    continue
+                seen.add(dir_url)
+                r = await _safe_get(engine, dir_url)
+                if r is None or r.status_code != 200 or not self.LISTING.search(r.text):
+                    continue
+                sensitive = bool(self.SENSITIVE.search(r.text))
+                leaf = self.VRT_IDS[1] if sensitive else self.VRT_IDS[0]
+                out.append(self.f(leaf, dir_url,
+                           evidence="server returned an auto-generated directory index"
+                                    + (" exposing sensitive files" if sensitive else ""),
+                           detail="disable autoindex (Apache: Options -Indexes; "
+                                  "nginx: autoindex off)"))
+        return out
+
+
+class SoftwareVersionDisclosure(Module):
+    VRT_IDS = ["server_security_misconfiguration.fingerprinting_banner_disclosure"
+               ".software_version_in_response_headers"]
+    HEADERS = ["server", "x-powered-by", "x-aspnet-version",
+               "x-aspnetmvc-version", "x-generator"]
+    VERSION = re.compile(r"\d+\.\d+")
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        h = {k.lower(): v for k, v in pages[0].headers.items()}
+        out = []
+        for name in self.HEADERS:
+            val = h.get(name, "")
+            if val and self.VERSION.search(val):
+                out.append(self.f(self.VRT_IDS[0], pages[0].url,
+                           evidence=f"header '{name}: {val}' discloses a software version",
+                           param=name))
+        return out
+
+
+class UnsafeHTTPMethods(Module):
+    BASE = "server_security_misconfiguration.potentially_unsafe_http_method_enabled"
+    VRT_IDS = [f"{BASE}.options", f"{BASE}.trace"]
+
+    async def _try(self, engine, method, url):
+        try:
+            return await engine.request(method, url)
+        except (OutOfScope, httpx.HTTPError):
+            return None
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        url = pages[0].url
+        out = []
+        # OPTIONS: does the server advertise its allowed methods?
+        r = await self._try(engine, "OPTIONS", url)
+        if r is not None:
+            allow = r.headers.get("allow", "")
+            if allow:
+                out.append(self.f(self.VRT_IDS[0], url,
+                           evidence=f"OPTIONS enabled; Allow: {allow}"))
+        # TRACE: Cross-Site Tracing — the server echoes the request back?
+        r = await self._try(engine, "TRACE", url)
+        if r is not None and r.status_code == 200 and "TRACE " in r.text:
+            out.append(self.f(self.VRT_IDS[1], url,
+                       evidence="TRACE method enabled and echoes the request (XST risk)"))
+        return out
+
+
+class MixedContent(Module):
+    VRT_IDS = ["sensitive_data_exposure.mixed_content"]
+    REF = re.compile(r"""(?:src|href)\s*=\s*['"](http://[^'"]+)['"]""", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.url.startswith("https://") or not page.text:
+                continue
+            m = self.REF.search(page.text)
+            if m:
+                out.append(self.f(self.VRT_IDS[0], page.url,
+                           evidence=f"HTTPS page loads insecure resource over HTTP: "
+                                    f"{m.group(1)[:120]}"))
+        return out
+
+
+class InsecureFormTransport(Module):
+    VRT_IDS = ["insecure_data_transport.cleartext_transmission_of_sensitive_data"]
+    SENS = re.compile(r"pass|pwd|card|cvv|cvc|ssn|secret|token|otp", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            for form in page.forms:
+                over_http = page.url.startswith("http://") \
+                    or form.action.startswith("http://")
+                if not over_http:
+                    continue
+                sens = [n for n in form.inputs if n and self.SENS.search(n)]
+                if sens:
+                    out.append(self.f(self.VRT_IDS[0], page.url,
+                               evidence=f"form posts sensitive field(s) {sens} "
+                                        f"over cleartext HTTP",
+                               param=form.action))
+        return out
+
+
+class RobotsDisclosure(Module):
+    VRT_IDS = ["sensitive_data_exposure.disclosure_of_secrets.publicly_accessible_robots"]
+    INTERESTING = re.compile(
+        r"admin|backup|config|secret|private|internal|\.git|\bdb\b|sql|"
+        r"password|api[_-]?key|token|staging|\btest\b",
+        re.I)
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        from urllib.parse import urlparse
+        p = urlparse(pages[0].url)
+        url = f"{p.scheme}://{p.netloc}/robots.txt"
+        r = await _safe_get(engine, url)
+        if r is None or r.status_code != 200:
+            return []
+        hits = [line.strip() for line in r.text.splitlines()
+                if line.lower().startswith("disallow") and self.INTERESTING.search(line)]
+        if hits:
+            return [self.f(self.VRT_IDS[0], url,
+                    evidence=f"robots.txt exposes sensitive paths: {hits[:5]}")]
+        return []
+
+
+class PasswordAutocomplete(Module):
+    VRT_IDS = ["external_behavior.browser_feature.autocomplete_enabled"]
+    PW_INPUT = re.compile(r"<input\b[^>]*type\s*=\s*['\"]password['\"][^>]*>", re.I)
+    AUTOCOMPLETE_OFF = re.compile(r"autocomplete\s*=\s*['\"]off['\"]", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.text:
+                continue
+            for tag in self.PW_INPUT.findall(page.text):
+                if not self.AUTOCOMPLETE_OFF.search(tag):
+                    out.append(self.f(self.VRT_IDS[0], page.url,
+                               evidence="password field without autocomplete=off"))
+                    break
+        return out
+
+
+class SensitivePageCaching(Module):
+    VRT_IDS = ["server_security_misconfiguration.lack_of_security_headers"
+               ".cache_control_for_a_sensitive_page"]
+    PW = re.compile(r"type\s*=\s*['\"]password['\"]", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.text or not self.PW.search(page.text):
+                continue
+            h = {k.lower(): v for k, v in page.headers.items()}
+            cc = h.get("cache-control", "").lower()
+            if "no-store" not in cc and "private" not in cc:
+                out.append(self.f(self.VRT_IDS[0], page.url,
+                           evidence=f"sensitive page (password field) with weak "
+                                    f"Cache-Control: '{cc or 'absent'}'"))
+        return out
+
+
 # --------------------------------------------------------------------------- #
 # MANUAL classes — real VRT leaves that need app context + human verification.
 # Counted as "manual" coverage, never auto-run.
@@ -288,14 +510,26 @@ class IDORManual(Module):
 
 
 ALL_MODULES: list[Module] = [
+    # passive config / header checks
     SecurityHeaders(),
     Clickjacking(),
     CookieSecurity(),
+    SoftwareVersionDisclosure(),
+    MixedContent(),
+    InsecureFormTransport(),
+    PasswordAutocomplete(),
+    SensitivePageCaching(),
+    DescriptiveStackTrace(),
+    # active probes
     ReflectedXSS(),
     SQLInjection(),
     OpenRedirect(),
     PathTraversal(),
     CORSMisconfig(),
     SensitiveFiles(),
-    IDORManual(),   # manual-only
+    DirectoryListing(),
+    UnsafeHTTPMethods(),
+    RobotsDisclosure(),
+    # manual-only
+    IDORManual(),
 ]
