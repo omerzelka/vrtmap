@@ -15,34 +15,50 @@ from .core import (
 )
 from .modules import ALL_MODULES
 
-VRT_PATH = Path(__file__).with_name("vrt.json")
+CATALOG_DIR = Path(__file__).resolve().parent.parent / "vrt_catalog"
+
+
+def _enrich(catalog: VRTCatalog, finding):
+    """Fill a finding's title and priority from its specific VRT leaf."""
+    info = catalog.info(finding.vrt_id)
+    if info:
+        finding.title = info["name"]
+        finding.priority = info["priority"]
+    elif not finding.title:
+        finding.title = finding.vrt_id
+    return finding
 
 
 async def orchestrate(engine: HttpEngine, catalog: VRTCatalog,
                       start_url: str, max_pages: int):
     print(f"[*] Crawling {start_url} (max {max_pages} pages)...")
     pages = await Crawler(engine, max_pages=max_pages).crawl(start_url)
+    active = [m for m in ALL_MODULES if not m.MANUAL]
     print(f"[*] Discovered {len(pages)} page(s). Running "
-          f"{len(ALL_MODULES)} VRT modules...")
+          f"{len(active)} active VRT modules...")
     findings = []
-    for mod in ALL_MODULES:
-        info = catalog.info(mod.VRT_ID)
-        if info:                      # sync module metadata with VRT catalog
-            mod.NAME = mod.NAME if "MANUAL" in mod.NAME else info["name"]
-            mod.DEFAULT_PRIORITY = info["priority"]
+    for mod in active:
+        name = type(mod).__name__
+        # per-leaf config from the catalog: enabled + custom payloads
+        cfgs = [(vid, catalog.leaf_config(vid)) for vid in mod.VRT_IDS
+                if catalog.info(vid)]
+        if cfgs and not any(c["enabled"] for _, c in cfgs):
+            print(f"    - {name}: all leaves disabled in catalog, skipped")
+            continue
+        mod.extra_payloads = [p for _, c in cfgs for p in c["payloads"]]
         try:
             fs = await mod.run(engine, pages)
         except OutOfScope as e:
-            print(f"    ! {mod.VRT_ID}: skipped out-of-scope target {e}")
+            print(f"    ! {name}: skipped out-of-scope target {e}")
             continue
         except Exception as e:        # one bad module must not kill the scan
-            print(f"    ! {mod.VRT_ID}: module error: {e}")
+            print(f"    ! {name}: module error: {e}")
             continue
-        for f in fs:
-            if info:
-                f.priority = info["priority"]
+        # drop findings whose specific leaf is disabled in the catalog
+        fs = [f for f in fs if catalog.leaf_config(f.vrt_id)["enabled"]]
+        fs = [_enrich(catalog, f) for f in fs]
         if fs:
-            print(f"    + {mod.VRT_ID}: {len(fs)} finding(s)")
+            print(f"    + {name}: {len(fs)} finding(s)")
         findings.extend(fs)
     return pages, findings
 
@@ -76,7 +92,7 @@ async def _amain(args) -> int:
         print("Invalid target URL.", file=sys.stderr)
         return 2
     scope = Scope(args.scope if args.scope else [host])
-    catalog = VRTCatalog.load(VRT_PATH)
+    catalog = VRTCatalog.load_dir(CATALOG_DIR)
     engine = HttpEngine(scope, rate=args.rate, concurrency=args.concurrency,
                         timeout=args.timeout, verify_tls=not args.insecure)
     try:

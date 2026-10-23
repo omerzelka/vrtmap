@@ -207,11 +207,19 @@ class Crawler:
 # VRT catalog
 # --------------------------------------------------------------------------- #
 class VRTCatalog:
-    """Loads the Bugcrowd VRT JSON (official shape: {content: [{id, name,
-    priority, children:[...]}]}) and flattens leaf ids -> (name, priority)."""
+    """The VRT taxonomy. Two sources are supported:
 
-    def __init__(self, flat: dict[str, dict]):
+    * load_dir() — the exploded per-leaf catalog under vrt_catalog/ (via its
+      index.json). This is the source of truth; it also exposes each leaf's
+      editable config (enabled / payloads / notes) through leaf_config().
+    * load() — a single official-shape VRT JSON ({content:[{id,name,priority,
+      children}]}), kept for compatibility.
+    """
+
+    def __init__(self, flat: dict[str, dict], directory: Path | None = None):
         self.flat = flat
+        self.dir = directory
+        self._cfg_cache: dict[str, dict] = {}
 
     @classmethod
     def load(cls, path: str | Path) -> "VRTCatalog":
@@ -230,8 +238,36 @@ class VRTCatalog:
         walk(data.get("content", []), "", None)
         return cls(flat)
 
+    @classmethod
+    def load_dir(cls, directory: str | Path) -> "VRTCatalog":
+        directory = Path(directory)
+        index = json.loads((directory / "index.json").read_text())
+        flat = {e["vrt_id"]: {"name": e["name"],
+                              "priority": e.get("priority") or 3,
+                              "file": e["file"]}
+                for e in index}
+        return cls(flat, directory=directory)
+
     def info(self, vrt_id: str) -> dict | None:
         return self.flat.get(vrt_id)
+
+    def leaf_config(self, vrt_id: str) -> dict:
+        """Per-leaf editable config from the exploded file: enabled / payloads
+        / notes. Defaults to enabled when the file or field is missing."""
+        if vrt_id in self._cfg_cache:
+            return self._cfg_cache[vrt_id]
+        cfg = {"enabled": True, "payloads": [], "notes": ""}
+        meta = self.flat.get(vrt_id)
+        if self.dir and meta and meta.get("file"):
+            try:
+                doc = json.loads((self.dir / meta["file"]).read_text())
+                cfg["enabled"] = bool(doc.get("enabled", True))
+                cfg["payloads"] = list(doc.get("payloads") or [])
+                cfg["notes"] = doc.get("notes", "")
+            except (OSError, json.JSONDecodeError):
+                pass
+        self._cfg_cache[vrt_id] = cfg
+        return cfg
 
 
 # --------------------------------------------------------------------------- #
