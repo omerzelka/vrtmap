@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.kerberos_abuse.no_pre_authentication",
+  "name": "User Does Not Require Pre-authentication (ASREPRoasting)",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Active Directory (AD)",
+    "Kerberos Abuse",
+    "User Does Not Require Pre-authentication (ASREPRoasting)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

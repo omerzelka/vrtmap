@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.software_package_takeover",
+  "name": "Software Package Takeover",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Software Package Takeover"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

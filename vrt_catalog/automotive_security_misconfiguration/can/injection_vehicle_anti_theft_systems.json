@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.can.injection_vehicle_anti_theft_systems",
+  "name": "Injection (Vehicle Anti-theft Systems)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "CAN",
+    "Injection (Vehicle Anti-theft Systems)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

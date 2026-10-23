@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.weak_login_function.not_operational",
+  "name": "Not Operational or Intended Public Access",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Weak Login Function",
+    "Not Operational or Intended Public Access"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

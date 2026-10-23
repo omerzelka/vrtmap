@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.vector_and_embedding_weaknesses.embedding_exfiltration_model_extraction",
+  "name": "Embedding Exfiltration / Model Extraction",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "AI Application Security",
+    "Vector and Embedding Weaknesses",
+    "Embedding Exfiltration / Model Extraction"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

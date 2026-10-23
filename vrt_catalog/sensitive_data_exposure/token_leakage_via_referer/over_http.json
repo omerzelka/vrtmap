@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.token_leakage_via_referer.over_http",
+  "name": "Over HTTP",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Token Leakage via Referer",
+    "Over HTTP"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

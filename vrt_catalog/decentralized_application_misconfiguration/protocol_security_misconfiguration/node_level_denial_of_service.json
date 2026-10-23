@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.protocol_security_misconfiguration.node_level_denial_of_service",
+  "name": "Node-level Denial of Service",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Protocol Security Misconfiguration",
+    "Node-level Denial of Service"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

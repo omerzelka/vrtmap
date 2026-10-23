@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.network_configuration_issues.open_management_ports_to_the_internet",
+  "name": "Open Management Ports to the Internet",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Cloud Security",
+    "Network Configuration Issues",
+    "Open Management Ports to the Internet"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

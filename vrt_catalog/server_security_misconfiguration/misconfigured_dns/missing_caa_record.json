@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.misconfigured_dns.missing_caa_record",
+  "name": "Missing Certification Authority Authorization (CAA) Record",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Misconfigured DNS",
+    "Missing Certification Authority Authorization (CAA) Record"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

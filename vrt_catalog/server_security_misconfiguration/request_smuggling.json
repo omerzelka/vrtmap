@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.request_smuggling",
+  "name": "HTTP Request Smuggling",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "HTTP Request Smuggling"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

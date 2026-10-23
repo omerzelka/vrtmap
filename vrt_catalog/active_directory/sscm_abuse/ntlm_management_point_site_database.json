@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.ntlm_management_point_site_database",
+  "name": "NTLM Relay From Management Point to Site Database",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "NTLM Relay From Management Point to Site Database"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_access_control.idor.modify_sensitive_information_iterable_object_identifiers",
+  "name": "Modify Sensitive Information(Iterable Object Identifiers)",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Insecure Direct Object References (IDOR)",
+    "Modify Sensitive Information(Iterable Object Identifiers)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

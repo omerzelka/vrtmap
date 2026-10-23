@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.mail_server_misconfiguration.no_spoofing_protection_on_email_domain",
+  "name": "No Spoofing Protection on Email Domain",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Mail Server Misconfiguration",
+    "No Spoofing Protection on Email Domain"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

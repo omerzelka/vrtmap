@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_data_transport.cleartext_transmission_of_sensitive_data",
+  "name": "Cleartext Transmission of Sensitive Data",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure Data Transport",
+    "Cleartext Transmission of Sensitive Data"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

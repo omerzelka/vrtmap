@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.data_traffic_spam",
+  "name": "Data/Traffic Spam",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "Data/Traffic Spam"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

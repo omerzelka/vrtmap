@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.weak_hash.lack_of_salt",
+  "name": "Lack of Salt",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Weak Hash",
+    "Lack of Salt"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

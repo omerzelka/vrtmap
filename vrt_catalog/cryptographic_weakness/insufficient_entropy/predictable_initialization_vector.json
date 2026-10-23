@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.predictable_initialization_vector",
+  "name": "Predictable Initialization Vector (IV)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Predictable Initialization Vector (IV)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

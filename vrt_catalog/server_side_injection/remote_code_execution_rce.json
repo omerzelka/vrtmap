@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_side_injection.remote_code_execution_rce",
+  "name": "Remote Code Execution (RCE)",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Server-Side Injection",
+    "Remote Code Execution (RCE)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

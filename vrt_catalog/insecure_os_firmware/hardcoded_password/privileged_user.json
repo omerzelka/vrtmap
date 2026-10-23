@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_os_firmware.hardcoded_password.privileged_user",
+  "name": "Privileged User",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Hardcoded Password",
+    "Privileged User"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

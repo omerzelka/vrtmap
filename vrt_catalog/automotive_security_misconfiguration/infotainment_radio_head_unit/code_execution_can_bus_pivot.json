@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.infotainment_radio_head_unit.code_execution_can_bus_pivot",
+  "name": "Code Execution (CAN Bus Pivot)",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Infotainment, Radio Head Unit",
+    "Code Execution (CAN Bus Pivot)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

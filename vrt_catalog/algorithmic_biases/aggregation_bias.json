@@ -1,0 +1,14 @@
+{
+  "vrt_id": "algorithmic_biases.aggregation_bias",
+  "name": "Aggregation Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Algorithmic Biases",
+    "Aggregation Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

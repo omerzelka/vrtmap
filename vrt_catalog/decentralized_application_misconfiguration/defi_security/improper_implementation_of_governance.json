@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.defi_security.improper_implementation_of_governance",
+  "name": "Improper Implementation of Governance",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "DeFi Security",
+    "Improper Implementation of Governance"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

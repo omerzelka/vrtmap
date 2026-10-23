@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.exif_geolocation_data_not_stripped_from_uploaded_images.manual_user_enumeration",
+  "name": "Manual User Enumeration",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "EXIF Geolocation Data Not Stripped From Uploaded Images",
+    "Manual User Enumeration"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "lack_of_binary_hardening.runtime_instrumentation_based",
+  "name": "Runtime Instrumentation-Based",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Lack of Binary Hardening",
+    "Runtime Instrumentation-Based"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

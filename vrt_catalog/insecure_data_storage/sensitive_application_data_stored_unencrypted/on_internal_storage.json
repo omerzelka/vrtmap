@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_data_storage.sensitive_application_data_stored_unencrypted.on_internal_storage",
+  "name": "On Internal Storage",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insecure Data Storage",
+    "Sensitive Application Data Stored Unencrypted",
+    "On Internal Storage"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.improper_input_handling.ansi_escape_codes",
+  "name": "ANSI Escape Codes",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "AI Application Security",
+    "Improper Input Handling",
+    "ANSI Escape Codes"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

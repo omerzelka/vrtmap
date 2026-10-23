@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.lack_of_security_headers.x_webkit_csp",
+  "name": "X-Webkit-CSP",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Lack of Security Headers",
+    "X-Webkit-CSP"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

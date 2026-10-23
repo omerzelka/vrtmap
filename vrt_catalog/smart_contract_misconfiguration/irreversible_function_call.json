@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.irreversible_function_call",
+  "name": "Irreversible Function Call",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Irreversible Function Call"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

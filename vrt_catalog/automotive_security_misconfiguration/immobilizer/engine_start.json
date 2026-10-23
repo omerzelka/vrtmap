@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.immobilizer.engine_start",
+  "name": "Engine Start",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Immobilizer",
+    "Engine Start"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

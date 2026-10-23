@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.kerberos_abuse.domain_compromise_unconstrained_delegated",
+  "name": "Domain Compromise via Unconstrained Delegated",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Active Directory (AD)",
+    "Kerberos Abuse",
+    "Domain Compromise via Unconstrained Delegated"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

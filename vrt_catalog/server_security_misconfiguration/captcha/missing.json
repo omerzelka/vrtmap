@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.captcha.missing",
+  "name": "Missing",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "CAPTCHA",
+    "Missing"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

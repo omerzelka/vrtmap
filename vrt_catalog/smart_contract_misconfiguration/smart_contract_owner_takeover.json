@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.smart_contract_owner_takeover",
+  "name": "Smart Contract Owner Takeover",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Smart Contract Owner Takeover"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

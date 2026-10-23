@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.weak_hash.predictable_hash_collision",
+  "name": "Predictable Hash Collision",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Weak Hash",
+    "Predictable Hash Collision"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

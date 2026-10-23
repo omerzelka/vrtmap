@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.side_channel_attack.differential_fault_analysis",
+  "name": "Differential Fault Analysis",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Side-Channel Attack",
+    "Differential Fault Analysis"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sensitive_data_exposure.ldap_anonymous_bind_enabled",
+  "name": "LDAP Anonymous Bind Enabled",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "Sensitive Data Exposure",
+    "LDAP Anonymous Bind Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

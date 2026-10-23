@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.for_publicly_accessible_asset",
+  "name": "For Publicly Accessible Asset",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "For Publicly Accessible Asset"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

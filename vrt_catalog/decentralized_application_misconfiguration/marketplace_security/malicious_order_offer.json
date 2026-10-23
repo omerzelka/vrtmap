@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.marketplace_security.malicious_order_offer",
+  "name": "Malicious Order Offer",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Marketplace Security",
+    "Malicious Order Offer"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

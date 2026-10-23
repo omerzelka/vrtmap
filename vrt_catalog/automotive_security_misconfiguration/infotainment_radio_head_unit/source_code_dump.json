@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.infotainment_radio_head_unit.source_code_dump",
+  "name": "Source Code Dump",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Infotainment, Radio Head Unit",
+    "Source Code Dump"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

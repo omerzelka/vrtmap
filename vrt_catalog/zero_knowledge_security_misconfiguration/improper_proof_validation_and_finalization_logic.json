@@ -1,0 +1,14 @@
+{
+  "vrt_id": "zero_knowledge_security_misconfiguration.improper_proof_validation_and_finalization_logic",
+  "name": "Improper Proof Validation and Finalization Logic",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Zero Knowledge Security Misconfiguration",
+    "Improper Proof Validation and Finalization Logic"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.defi_security.function_level_accounting_error",
+  "name": "Function-Level Accounting Error",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "DeFi Security",
+    "Function-Level Accounting Error"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

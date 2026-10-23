@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.xssi",
+  "name": "Cross Site Script Inclusion (XSSI)",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Cross Site Script Inclusion (XSSI)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.misconfigured_services_and_apis.exposed_debug_or_admin_interfaces",
+  "name": "Exposed Debug or Admin Interfaces",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cloud Security",
+    "Misconfigured Services and APIs",
+    "Exposed Debug or Admin Interfaces"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

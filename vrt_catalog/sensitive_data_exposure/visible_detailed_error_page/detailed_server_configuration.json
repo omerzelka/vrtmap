@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.visible_detailed_error_page.detailed_server_configuration",
+  "name": "Detailed Server Configuration",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Visible Detailed Error/Debug Page",
+    "Detailed Server Configuration"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

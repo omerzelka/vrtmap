@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rf_hub.can_injection_interaction",
+  "name": "CAN Injection / Interaction",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "RF Hub",
+    "CAN Injection / Interaction"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

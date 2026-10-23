@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.adversarial_example_injection.ai_misclassification_attacks",
+  "name": "AI Misclassification Attacks",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "AI Application Security",
+    "Adversarial Example Injection",
+    "AI Misclassification Attacks"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

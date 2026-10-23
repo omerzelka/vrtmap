@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.homograph_idn_based",
+  "name": "Homograph/IDN-Based",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "Homograph/IDN-Based"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

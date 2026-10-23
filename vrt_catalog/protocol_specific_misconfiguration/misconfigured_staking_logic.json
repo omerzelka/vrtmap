@@ -1,0 +1,14 @@
+{
+  "vrt_id": "protocol_specific_misconfiguration.misconfigured_staking_logic",
+  "name": "Misconfigured Staking Logic",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Protocol Specific Misconfiguration",
+    "Misconfigured Staking Logic"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.improper_authorization.insufficient_signature_validation",
+  "name": "Insufficient Signature Validation",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Improper Authorization",
+    "Insufficient Signature Validation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

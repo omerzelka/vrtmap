@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_access_control.username_enumeration.non_brute_force",
+  "name": "Non-Brute Force",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Username/Email Enumeration",
+    "Non-Brute Force"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

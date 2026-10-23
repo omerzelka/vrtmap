@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.misconfigured_file_share.anonymous_ftp_enabled",
+  "name": "Anonymous FTP Enabled",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Misconfigured File Share",
+    "Anonymous FTP Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

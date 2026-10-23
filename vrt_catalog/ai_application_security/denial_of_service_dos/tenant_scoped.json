@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.denial_of_service_dos.tenant_scoped",
+  "name": "Tenant-Scoped",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "AI Application Security",
+    "Denial-of-Service (DoS)",
+    "Tenant-Scoped"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

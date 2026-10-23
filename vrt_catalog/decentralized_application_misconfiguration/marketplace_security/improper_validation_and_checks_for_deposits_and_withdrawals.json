@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.marketplace_security.improper_validation_and_checks_for_deposits_and_withdrawals",
+  "name": "Improper Validation and Checks For Deposits and Withdrawals",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Marketplace Security",
+    "Improper Validation and Checks For Deposits and Withdrawals"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

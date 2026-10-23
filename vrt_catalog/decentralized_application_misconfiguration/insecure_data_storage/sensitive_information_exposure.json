@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.insecure_data_storage.sensitive_information_exposure",
+  "name": "Sensitive Information Exposure",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Insecure Data Storage",
+    "Sensitive Information Exposure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

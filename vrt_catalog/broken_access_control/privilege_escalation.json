@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_access_control.privilege_escalation",
+  "name": "Privilege Escalation",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Privilege Escalation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

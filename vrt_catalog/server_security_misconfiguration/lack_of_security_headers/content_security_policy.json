@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.lack_of_security_headers.content_security_policy",
+  "name": "Content-Security-Policy",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Lack of Security Headers",
+    "Content-Security-Policy"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

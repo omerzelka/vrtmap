@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.unsafe_cross_origin_resource_sharing",
+  "name": "Unsafe Cross-Origin Resource Sharing",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Unsafe Cross-Origin Resource Sharing"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "blockchain_infrastructure_misconfiguration.improper_bridge_validation_and_verification_logic",
+  "name": "Improper Bridge Validation and Verification Logic",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Blockchain Infrastructure Misconfiguration",
+    "Improper Bridge Validation and Verification Logic"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

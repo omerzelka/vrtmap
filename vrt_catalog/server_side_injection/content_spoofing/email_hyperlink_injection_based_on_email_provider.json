@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.email_hyperlink_injection_based_on_email_provider",
+  "name": "Email Hyperlink Injection Based on Email Provider",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "Email Hyperlink Injection Based on Email Provider"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

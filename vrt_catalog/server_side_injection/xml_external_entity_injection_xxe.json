@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_side_injection.xml_external_entity_injection_xxe",
+  "name": "XML External Entity Injection (XXE)",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Server-Side Injection",
+    "XML External Entity Injection (XXE)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.server_side_request_forgery_ssrf.external_dns_query_only",
+  "name": "External - DNS Query Only",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Server-Side Request Forgery (SSRF)",
+    "External - DNS Query Only"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

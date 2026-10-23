@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.remote_code_execution.sandboxed_container_code_execution",
+  "name": "Sandboxed Container Code Execution",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "AI Application Security",
+    "Remote Code Execution",
+    "Sandboxed Container Code Execution"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

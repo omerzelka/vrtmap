@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_access_control.idor.view_non_sensitive_information",
+  "name": "View Non-Sensitive Information",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Insecure Direct Object References (IDOR)",
+    "View Non-Sensitive Information"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

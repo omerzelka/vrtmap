@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.ssti.basic",
+  "name": "Basic",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server-Side Injection",
+    "Server-Side Template Injection (SSTI)",
+    "Basic"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

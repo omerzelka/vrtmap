@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.ntlm_automatic_push_installation",
+  "name": "NTLM Relay Via Automatic Client Push Installation",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "NTLM Relay Via Automatic Client Push Installation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

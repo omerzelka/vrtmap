@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.cookie_scoped_to_parent_domain",
+  "name": "Cookie Scoped to Parent Domain",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Cookie Scoped to Parent Domain"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

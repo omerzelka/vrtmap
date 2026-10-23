@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.two_fa_bypass",
+  "name": "Second Factor Authentication (2FA) Bypass",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Second Factor Authentication (2FA) Bypass"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

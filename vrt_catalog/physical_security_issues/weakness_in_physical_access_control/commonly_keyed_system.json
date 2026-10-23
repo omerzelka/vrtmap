@@ -1,0 +1,15 @@
+{
+  "vrt_id": "physical_security_issues.weakness_in_physical_access_control.commonly_keyed_system",
+  "name": "Commonly Keyed System",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Physical Security Issues",
+    "Weakness in physical access control",
+    "Commonly Keyed System"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

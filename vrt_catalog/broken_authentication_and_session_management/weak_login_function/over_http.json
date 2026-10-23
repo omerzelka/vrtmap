@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.weak_login_function.over_http",
+  "name": "Over HTTP",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Weak Login Function",
+    "Over HTTP"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

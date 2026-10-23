@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.intentionally_public_sample_or_invalid",
+  "name": "Intentionally Public, Sample or Invalid",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "Intentionally Public, Sample or Invalid"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

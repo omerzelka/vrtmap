@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_access_control.exposed_sensitive_android_intent",
+  "name": "Exposed Sensitive Android Intent",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Exposed Sensitive Android Intent"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

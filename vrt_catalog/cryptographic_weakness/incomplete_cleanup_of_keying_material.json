@@ -1,0 +1,14 @@
+{
+  "vrt_id": "cryptographic_weakness.incomplete_cleanup_of_keying_material",
+  "name": "Incomplete Cleanup of Keying Material",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Incomplete Cleanup of Keying Material"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

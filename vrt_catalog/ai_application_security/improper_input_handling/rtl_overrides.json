@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.improper_input_handling.rtl_overrides",
+  "name": "RTL Overrides",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "AI Application Security",
+    "Improper Input Handling",
+    "RTL Overrides"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

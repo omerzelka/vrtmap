@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.mail_server_misconfiguration.email_spoofing_to_spam_folder",
+  "name": "Email Spoofing to Spam Folder",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Mail Server Misconfiguration",
+    "Email Spoofing to Spam Folder"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

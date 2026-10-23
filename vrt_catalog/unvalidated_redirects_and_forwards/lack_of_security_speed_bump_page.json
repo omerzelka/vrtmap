@@ -1,0 +1,14 @@
+{
+  "vrt_id": "unvalidated_redirects_and_forwards.lack_of_security_speed_bump_page",
+  "name": "Lack of Security Speed Bump Page",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Unvalidated Redirects and Forwards",
+    "Lack of Security Speed Bump Page"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

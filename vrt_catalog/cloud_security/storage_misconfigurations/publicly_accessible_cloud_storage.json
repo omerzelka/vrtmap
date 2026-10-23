@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.storage_misconfigurations.publicly_accessible_cloud_storage",
+  "name": "Publicly Accessible Cloud Storage",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cloud Security",
+    "Storage Misconfigurations",
+    "Publicly Accessible Cloud Storage"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

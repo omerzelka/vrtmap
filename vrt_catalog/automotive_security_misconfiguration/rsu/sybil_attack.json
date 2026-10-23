@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rsu.sybil_attack",
+  "name": "Sybil Attack",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Roadside Unit (RSU)",
+    "Sybil Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

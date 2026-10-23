@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.marketplace_security.unauthorized_asset_transfer",
+  "name": "Unauthorized Asset Transfer",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Marketplace Security",
+    "Unauthorized Asset Transfer"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

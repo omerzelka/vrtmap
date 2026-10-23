@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.key_reuse.lack_of_perfect_forward_secrecy",
+  "name": "Lack of Perfect Forward Secrecy",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Key Reuse",
+    "Lack of Perfect Forward Secrecy"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

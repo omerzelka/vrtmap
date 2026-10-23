@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.small_seed_space_in_prng",
+  "name": "Small Seed Space in Pseudo-Random Number Generator (PRNG)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Small Seed Space in Pseudo-Random Number Generator (PRNG)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

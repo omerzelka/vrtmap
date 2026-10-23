@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.lack_of_security_headers.cache_control_for_a_non_sensitive_page",
+  "name": "Cache-Control for a Non-Sensitive Page",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Lack of Security Headers",
+    "Cache-Control for a Non-Sensitive Page"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

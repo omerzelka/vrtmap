@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.unauthorized_smart_contract_approval",
+  "name": "Unauthorized Smart Contract Approval",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Unauthorized Smart Contract Approval"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

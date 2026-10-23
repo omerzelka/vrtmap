@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.infotainment_radio_head_unit.ota_firmware_manipulation",
+  "name": "OTA Firmware Manipulation",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Infotainment, Radio Head Unit",
+    "OTA Firmware Manipulation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

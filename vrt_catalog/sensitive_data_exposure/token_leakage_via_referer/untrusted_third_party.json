@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.token_leakage_via_referer.untrusted_third_party",
+  "name": "Untrusted 3rd Party",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Token Leakage via Referer",
+    "Untrusted 3rd Party"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

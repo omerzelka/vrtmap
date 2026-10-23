@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.storage_misconfigurations.unencrypted_sensitive_data_at_rest",
+  "name": "Unencrypted Sensitive Data at Rest",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Cloud Security",
+    "Storage Misconfigurations",
+    "Unencrypted Sensitive Data at Rest"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

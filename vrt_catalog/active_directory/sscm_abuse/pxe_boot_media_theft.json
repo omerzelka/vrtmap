@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.pxe_boot_media_theft",
+  "name": "PXE Boot Media Theft",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "PXE Boot Media Theft"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

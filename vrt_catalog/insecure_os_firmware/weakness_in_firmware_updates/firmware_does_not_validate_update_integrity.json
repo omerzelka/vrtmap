@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_os_firmware.weakness_in_firmware_updates.firmware_does_not_validate_update_integrity",
+  "name": "Firmware does not validate update integrity",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Weakness in Firmware Updates",
+    "Firmware does not validate update integrity"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

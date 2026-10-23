@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_key_generation.key_exchange_without_entity_authentication",
+  "name": "Key Exchage Without Entity Authentication",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Key Generation",
+    "Key Exchage Without Entity Authentication"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_os_firmware.data_not_encrypted_at_rest.sensitive",
+  "name": "Sensitive",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Data not encrypted at rest",
+    "Sensitive"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

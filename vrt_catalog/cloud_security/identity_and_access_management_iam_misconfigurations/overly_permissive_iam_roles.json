@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.identity_and_access_management_iam_misconfigurations.overly_permissive_iam_roles",
+  "name": "Overly Permissive IAM Roles",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Cloud Security",
+    "Identity and Access Management (IAM) Misconfigurations",
+    "Overly Permissive IAM Roles"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

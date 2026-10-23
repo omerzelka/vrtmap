@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.model_extraction.api_query_based_model_reconstruction",
+  "name": "API Query-Based Model Reconstruction",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "AI Application Security",
+    "Model Extraction",
+    "API Query-Based Model Reconstruction"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

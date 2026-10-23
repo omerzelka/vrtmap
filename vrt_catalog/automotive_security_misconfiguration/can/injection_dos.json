@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.can.injection_dos",
+  "name": "Injection (DoS)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "CAN",
+    "Injection (DoS)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

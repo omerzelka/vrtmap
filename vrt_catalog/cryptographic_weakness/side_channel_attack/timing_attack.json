@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.side_channel_attack.timing_attack",
+  "name": "Timing Attack",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Side-Channel Attack",
+    "Timing Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.oauth_misconfiguration.missing_state_parameter",
+  "name": "Missing/Broken State Parameter",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "OAuth Misconfiguration",
+    "Missing/Broken State Parameter"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

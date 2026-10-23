@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sensitive_data_exposure.sensitive_data_in_open_file_shares",
+  "name": "Sensitive Data in Open File Shares",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "Sensitive Data Exposure",
+    "Sensitive Data in Open File Shares"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

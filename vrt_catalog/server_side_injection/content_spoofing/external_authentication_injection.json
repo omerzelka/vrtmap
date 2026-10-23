@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.external_authentication_injection",
+  "name": "External Authentication Injection",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "External Authentication Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

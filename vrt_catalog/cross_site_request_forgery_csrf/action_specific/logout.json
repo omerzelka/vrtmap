@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cross_site_request_forgery_csrf.action_specific.logout",
+  "name": "Logout",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cross-Site Request Forgery (CSRF)",
+    "Action-Specific",
+    "Logout"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

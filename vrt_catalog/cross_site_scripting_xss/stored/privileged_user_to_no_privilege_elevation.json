@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cross_site_scripting_xss.stored.privileged_user_to_no_privilege_elevation",
+  "name": "Privileged User to No Privilege Elevation",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cross-Site Scripting (XSS)",
+    "Stored",
+    "Privileged User to No Privilege Elevation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

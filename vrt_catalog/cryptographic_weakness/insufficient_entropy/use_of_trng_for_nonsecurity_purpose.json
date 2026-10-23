@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.use_of_trng_for_nonsecurity_purpose",
+  "name": "Use of True Random Number Generator (TRNG) for Non-Security Purpose",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Use of True Random Number Generator (TRNG) for Non-Security Purpose"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

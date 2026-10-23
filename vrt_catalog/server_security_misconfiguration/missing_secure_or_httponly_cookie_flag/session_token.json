@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.missing_secure_or_httponly_cookie_flag.session_token",
+  "name": "Session Token",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Missing Secure or HTTPOnly Cookie Flag",
+    "Session Token"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

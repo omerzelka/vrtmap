@@ -1,0 +1,15 @@
+{
+  "vrt_id": "unvalidated_redirects_and_forwards.open_redirect.get_based",
+  "name": "GET-Based",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Unvalidated Redirects and Forwards",
+    "Open Redirect",
+    "GET-Based"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

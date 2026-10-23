@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.impersonation_via_broken_link_hijacking",
+  "name": "Impersonation via Broken Link Hijacking",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "Impersonation via Broken Link Hijacking"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

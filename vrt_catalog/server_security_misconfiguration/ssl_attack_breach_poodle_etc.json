@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.ssl_attack_breach_poodle_etc",
+  "name": "SSL Attack (BREACH, POODLE etc.)",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "SSL Attack (BREACH, POODLE etc.)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.authentication_bypass",
+  "name": "Authentication Bypass",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Authentication Bypass"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

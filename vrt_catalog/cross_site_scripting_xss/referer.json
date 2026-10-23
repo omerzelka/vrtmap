@@ -1,0 +1,14 @@
+{
+  "vrt_id": "cross_site_scripting_xss.referer",
+  "name": "Referer",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cross-Site Scripting (XSS)",
+    "Referer"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.waf_bypass.direct_server_access",
+  "name": "Direct Server Access",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Web Application Firewall (WAF) Bypass",
+    "Direct Server Access"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

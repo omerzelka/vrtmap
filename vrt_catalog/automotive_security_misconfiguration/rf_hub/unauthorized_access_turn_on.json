@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rf_hub.unauthorized_access_turn_on",
+  "name": "Unauthorized Access / Turn On",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "RF Hub",
+    "Unauthorized Access / Turn On"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,13 @@
+{
+  "vrt_id": "indicators_of_compromise",
+  "name": "Indicators of Compromise",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Indicators of Compromise"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_verification_of_data_authenticity.cryptographic_signature",
+  "name": "Cryptographic Signature",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Verification of Data Authenticity",
+    "Cryptographic Signature"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

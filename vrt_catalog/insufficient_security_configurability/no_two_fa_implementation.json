@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insufficient_security_configurability.no_two_fa_implementation",
+  "name": "No 2FA Implementation",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "No 2FA Implementation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

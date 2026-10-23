@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.marketplace_security.ofac_bypass",
+  "name": "OFAC Bypass",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Marketplace Security",
+    "OFAC Bypass"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

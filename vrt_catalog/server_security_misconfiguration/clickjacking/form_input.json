@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.clickjacking.form_input",
+  "name": "Form Input",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Clickjacking",
+    "Form Input"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

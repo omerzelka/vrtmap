@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_known_public_information",
+  "name": "Disclosure of Known Public Information",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Known Public Information"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

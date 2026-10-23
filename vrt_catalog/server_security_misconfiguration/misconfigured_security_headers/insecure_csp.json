@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.misconfigured_security_headers.insecure_csp",
+  "name": "Insecure Content-Security-Policy",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Misconfigured Security Headers ",
+    "Insecure Content-Security-Policy"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

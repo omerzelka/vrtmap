@@ -1,0 +1,15 @@
+{
+  "vrt_id": "external_behavior.browser_feature.aggressive_offline_caching",
+  "name": "Aggressive Offline Caching",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "External Behavior",
+    "Browser Feature",
+    "Aggressive Offline Caching"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

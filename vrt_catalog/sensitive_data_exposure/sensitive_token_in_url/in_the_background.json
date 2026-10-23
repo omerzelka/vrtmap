@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.sensitive_token_in_url.in_the_background",
+  "name": "In the Background",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Sensitive Token in URL",
+    "In the Background"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

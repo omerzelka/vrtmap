@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.pii_leakage_exposure",
+  "name": "PII Leakage/Exposure",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "PII Leakage/Exposure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

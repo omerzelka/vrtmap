@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_data_storage.server_side_credentials_storage.plaintext",
+  "name": "Plaintext",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Insecure Data Storage",
+    "Server-Side Credentials Storage",
+    "Plaintext"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

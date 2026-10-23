@@ -1,0 +1,15 @@
+{
+  "vrt_id": "unvalidated_redirects_and_forwards.open_redirect.post_based",
+  "name": "POST-Based",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Unvalidated Redirects and Forwards",
+    "Open Redirect",
+    "POST-Based"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "application_level_denial_of_service_dos.app_crash.malformed_ios_url_schemes",
+  "name": "Malformed iOS URL Schemes",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Application-Level Denial-of-Service (DoS)",
+    "App Crash",
+    "Malformed iOS URL Schemes"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

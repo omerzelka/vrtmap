@@ -1,0 +1,14 @@
+{
+  "vrt_id": "misinterpretation_biases.context_ignorance",
+  "name": "Context Ignorance",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Misinterpretation Biases",
+    "Context Ignorance"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

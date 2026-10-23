@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_key_generation.insufficient_key_stretching",
+  "name": "Insufficient Key Stretching",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Key Generation",
+    "Insufficient Key Stretching"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

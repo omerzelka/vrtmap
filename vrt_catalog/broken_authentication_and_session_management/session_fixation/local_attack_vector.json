@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.session_fixation.local_attack_vector",
+  "name": "Local Attack Vector",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Session Fixation",
+    "Local Attack Vector"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

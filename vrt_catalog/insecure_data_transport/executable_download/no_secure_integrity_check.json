@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_data_transport.executable_download.no_secure_integrity_check",
+  "name": "No Secure Integrity Check",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Insecure Data Transport",
+    "Executable Download",
+    "No Secure Integrity Check"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

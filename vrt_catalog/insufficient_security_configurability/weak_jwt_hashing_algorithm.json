@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insufficient_security_configurability.weak_jwt_hashing_algorithm",
+  "name": "Weak JSON Web Token (JWT) Hashing Algorithm",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "Weak JSON Web Token (JWT) Hashing Algorithm"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

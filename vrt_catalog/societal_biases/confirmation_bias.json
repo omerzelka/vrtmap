@@ -1,0 +1,14 @@
+{
+  "vrt_id": "societal_biases.confirmation_bias",
+  "name": "Confirmation Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Societal Biases",
+    "Confirmation Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

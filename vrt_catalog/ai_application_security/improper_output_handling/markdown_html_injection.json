@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.improper_output_handling.markdown_html_injection",
+  "name": "Markdown/HTML Injection",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "AI Application Security",
+    "Improper Output Handling",
+    "Markdown/HTML Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

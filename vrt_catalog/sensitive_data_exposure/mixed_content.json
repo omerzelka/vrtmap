@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.mixed_content",
+  "name": "Mixed Content (HTTPS Sourcing HTTP)",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Mixed Content (HTTPS Sourcing HTTP)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

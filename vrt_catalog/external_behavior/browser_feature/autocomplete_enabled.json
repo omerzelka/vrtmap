@@ -1,0 +1,15 @@
+{
+  "vrt_id": "external_behavior.browser_feature.autocomplete_enabled",
+  "name": "Autocomplete Enabled",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "External Behavior",
+    "Browser Feature",
+    "Autocomplete Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

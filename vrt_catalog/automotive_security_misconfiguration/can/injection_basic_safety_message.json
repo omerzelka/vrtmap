@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.can.injection_basic_safety_message",
+  "name": "Injection (Basic Safety Message)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "CAN",
+    "Injection (Basic Safety Message)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

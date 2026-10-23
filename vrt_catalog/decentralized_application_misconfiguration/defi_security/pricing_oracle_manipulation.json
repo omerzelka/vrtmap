@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.defi_security.pricing_oracle_manipulation",
+  "name": "Pricing Oracle Manipulation",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "DeFi Security",
+    "Pricing Oracle Manipulation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

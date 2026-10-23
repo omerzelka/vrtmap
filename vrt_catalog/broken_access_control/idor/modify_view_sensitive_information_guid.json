@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_access_control.idor.modify_view_sensitive_information_guid",
+  "name": "Modify/View Sensitive Information(Complex Object Identifiers GUID/UUID)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Insecure Direct Object References (IDOR)",
+    "Modify/View Sensitive Information(Complex Object Identifiers GUID/UUID)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

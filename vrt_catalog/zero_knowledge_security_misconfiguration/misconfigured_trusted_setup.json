@@ -1,0 +1,14 @@
+{
+  "vrt_id": "zero_knowledge_security_misconfiguration.misconfigured_trusted_setup",
+  "name": "Misconfigured Trusted Setup",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Zero Knowledge Security Misconfiguration",
+    "Misconfigured Trusted Setup"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

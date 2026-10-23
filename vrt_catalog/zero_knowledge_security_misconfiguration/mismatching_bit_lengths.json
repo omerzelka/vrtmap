@@ -1,0 +1,14 @@
+{
+  "vrt_id": "zero_knowledge_security_misconfiguration.mismatching_bit_lengths",
+  "name": "Mismatching Bit Lengths",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Zero Knowledge Security Misconfiguration",
+    "Mismatching Bit Lengths"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

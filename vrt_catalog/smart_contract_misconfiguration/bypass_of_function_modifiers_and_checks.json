@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.bypass_of_function_modifiers_and_checks",
+  "name": "Bypass of Function Modifiers and Checks",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Bypass of Function Modifiers and Checks"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

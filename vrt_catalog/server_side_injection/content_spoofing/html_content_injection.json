@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.html_content_injection",
+  "name": "HTML Content Injection",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "HTML Content Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

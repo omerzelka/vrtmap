@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.distribution_point_anonymous_access",
+  "name": "Distribution Point Permits Anonymous Access",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "Distribution Point Permits Anonymous Access"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

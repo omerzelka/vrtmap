@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.publicly_accessible_robots",
+  "name": "Publicly accessible Robots.txt",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "Publicly accessible Robots.txt"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

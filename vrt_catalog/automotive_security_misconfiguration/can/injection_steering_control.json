@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.can.injection_steering_control",
+  "name": "Injection (Steering Control)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "CAN",
+    "Injection (Steering Control)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

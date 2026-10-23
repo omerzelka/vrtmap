@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_implementation.improper_following_of_specification",
+  "name": "Improper Following of Specification (Other)",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Implementation",
+    "Improper Following of Specification (Other)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

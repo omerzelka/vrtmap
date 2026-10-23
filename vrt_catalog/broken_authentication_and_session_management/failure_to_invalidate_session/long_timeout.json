@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.failure_to_invalidate_session.long_timeout",
+  "name": "Long Timeout",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Failure to Invalidate Session",
+    "Long Timeout"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

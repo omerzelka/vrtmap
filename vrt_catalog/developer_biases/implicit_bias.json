@@ -1,0 +1,14 @@
+{
+  "vrt_id": "developer_biases.implicit_bias",
+  "name": "Implicit Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Developer Biases",
+    "Implicit Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.unauthorized_transfer_of_funds",
+  "name": "Unauthorized Transfer of Funds",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Unauthorized Transfer of Funds"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

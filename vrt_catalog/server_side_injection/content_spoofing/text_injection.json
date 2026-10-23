@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.text_injection",
+  "name": "Text Injection",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "Text Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

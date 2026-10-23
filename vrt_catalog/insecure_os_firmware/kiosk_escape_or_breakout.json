@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.kiosk_escape_or_breakout",
+  "name": "Kiosk Escape or Breakout",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Kiosk Escape or Breakout"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

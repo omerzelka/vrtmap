@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "note": "Minimal VRT catalog in Bugcrowd's official shape. Replace this file with the full official vrt.json from https://github.com/bugcrowd/vulnerability-rating-taxonomy to get the complete taxonomy — the loader is compatible and modules will pick up real names/priorities by matching their VRT_ID.",
+    "release_date": "2026-10-21"
+  },
+  "content": [
+    {
+      "id": "server_side_injection",
+      "name": "Server-Side Injection",
+      "children": [
+        { "id": "sql_injection", "name": "SQL Injection", "priority": 1 },
+        {
+          "id": "file_inclusion",
+          "name": "File Inclusion",
+          "children": [
+            { "id": "local", "name": "Local File Inclusion / Path Traversal", "priority": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cross_site_scripting_xss",
+      "name": "Cross-Site Scripting (XSS)",
+      "children": [
+        { "id": "reflected", "name": "Reflected XSS", "priority": 3 },
+        { "id": "stored", "name": "Stored XSS", "priority": 2 }
+      ]
+    },
+    {
+      "id": "broken_access_control",
+      "name": "Broken Access Control (BAC)",
+      "children": [
+        { "id": "idor", "name": "Insecure Direct Object Reference (IDOR)", "priority": 2 },
+        { "id": "business_logic", "name": "Business Logic Errors", "priority": 3 }
+      ]
+    },
+    {
+      "id": "unvalidated_redirects_and_forwards",
+      "name": "Unvalidated Redirects and Forwards",
+      "children": [
+        { "id": "open_redirect", "name": "Open Redirect", "priority": 4 }
+      ]
+    },
+    {
+      "id": "server_security_misconfiguration",
+      "name": "Server Security Misconfiguration",
+      "children": [
+        { "id": "missing_security_headers", "name": "Missing Security Header", "priority": 5 },
+        { "id": "clickjacking", "name": "Clickjacking", "priority": 4 },
+        { "id": "missing_secure_or_httponly_cookie_flag", "name": "Missing Secure/HttpOnly Cookie Flag", "priority": 4 },
+        { "id": "misconfigured_cors", "name": "Misconfigured CORS", "priority": 3 },
+        { "id": "exposed_sensitive_files", "name": "Exposed Sensitive File / Directory", "priority": 2 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.integer_overflow_underflow",
+  "name": "Integer Overflow / Underflow",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Integer Overflow / Underflow"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

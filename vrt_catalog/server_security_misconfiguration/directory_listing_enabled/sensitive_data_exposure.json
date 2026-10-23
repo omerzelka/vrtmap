@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.directory_listing_enabled.sensitive_data_exposure",
+  "name": "Sensitive Data Exposure",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Directory Listing Enabled",
+    "Sensitive Data Exposure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

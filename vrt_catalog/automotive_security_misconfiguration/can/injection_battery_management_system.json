@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.can.injection_battery_management_system",
+  "name": "Injection (Battery Management System)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "CAN",
+    "Injection (Battery Management System)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.initialization_vector_reuse",
+  "name": "Initialization Vector (IV) Reuse",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Initialization Vector (IV) Reuse"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

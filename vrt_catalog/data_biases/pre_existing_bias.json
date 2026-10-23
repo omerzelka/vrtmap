@@ -1,0 +1,14 @@
+{
+  "vrt_id": "data_biases.pre_existing_bias",
+  "name": "Pre-existing Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Data Biases",
+    "Pre-existing Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

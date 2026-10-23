@@ -1,0 +1,15 @@
+{
+  "vrt_id": "mobile_security_misconfiguration.ssl_certificate_pinning.absent",
+  "name": "Absent",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Mobile Security Misconfiguration",
+    "SSL Certificate Pinning",
+    "Absent"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

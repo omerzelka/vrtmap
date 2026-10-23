@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.misconfigured_file_share.non_sensitive_data_exposure_ftp_smb",
+  "name": "Non-Sensitive Data Exposure via Anonymous FTP/SMB Enabled",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Misconfigured File Share",
+    "Non-Sensitive Data Exposure via Anonymous FTP/SMB Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

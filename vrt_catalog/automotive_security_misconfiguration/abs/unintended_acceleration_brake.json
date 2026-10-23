@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.abs.unintended_acceleration_brake",
+  "name": "Unintended Acceleration / Brake",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Automatic Braking System (ABS)",
+    "Unintended Acceleration / Brake"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

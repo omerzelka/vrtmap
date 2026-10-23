@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.prompt_injection.system_prompt_leakage",
+  "name": "System Prompt Leakage",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "AI Application Security",
+    "Prompt Injection",
+    "System Prompt Leakage"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.cleartext_transmission_of_session_token",
+  "name": "Cleartext Transmission of Session Token",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Cleartext Transmission of Session Token"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

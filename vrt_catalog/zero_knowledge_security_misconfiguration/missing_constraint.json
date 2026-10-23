@@ -1,0 +1,14 @@
+{
+  "vrt_id": "zero_knowledge_security_misconfiguration.missing_constraint",
+  "name": "Missing Constraint",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Zero Knowledge Security Misconfiguration",
+    "Missing Constraint"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

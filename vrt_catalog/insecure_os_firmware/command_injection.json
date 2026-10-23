@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.command_injection",
+  "name": "Command Injection",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Command Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

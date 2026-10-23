@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.dbms_misconfiguration.excessively_privileged_user_dba",
+  "name": "Excessively Privileged User / DBA",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Database Management System (DBMS) Misconfiguration",
+    "Excessively Privileged User / DBA"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

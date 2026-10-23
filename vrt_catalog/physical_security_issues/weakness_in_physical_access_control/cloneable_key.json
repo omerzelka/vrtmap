@@ -1,0 +1,15 @@
+{
+  "vrt_id": "physical_security_issues.weakness_in_physical_access_control.cloneable_key",
+  "name": "Cloneable Key",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Physical Security Issues",
+    "Weakness in physical access control",
+    "Cloneable Key"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

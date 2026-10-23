@@ -1,0 +1,14 @@
+{
+  "vrt_id": "network_security_misconfiguration.telnet_enabled",
+  "name": "Telnet Enabled",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Network Security Misconfiguration",
+    "Telnet Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

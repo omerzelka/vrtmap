@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.failure_to_invalidate_session.all_sessions",
+  "name": "Concurrent Sessions On Logout",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Failure to Invalidate Session",
+    "Concurrent Sessions On Logout"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

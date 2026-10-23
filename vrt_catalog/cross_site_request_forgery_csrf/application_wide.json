@@ -1,0 +1,14 @@
+{
+  "vrt_id": "cross_site_request_forgery_csrf.application_wide",
+  "name": "Application-Wide",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Cross-Site Request Forgery (CSRF)",
+    "Application-Wide"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

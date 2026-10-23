@@ -1,0 +1,15 @@
+{
+  "vrt_id": "mobile_security_misconfiguration.ssl_certificate_pinning.defeatable",
+  "name": "Defeatable",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Mobile Security Misconfiguration",
+    "SSL Certificate Pinning",
+    "Defeatable"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

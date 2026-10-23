@@ -1,0 +1,14 @@
+{
+  "vrt_id": "protocol_specific_misconfiguration.sandwich_enabled_attack",
+  "name": "Sandwich-Enabled Attack",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Protocol Specific Misconfiguration",
+    "Sandwich-Enabled Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

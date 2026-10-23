@@ -1,0 +1,14 @@
+{
+  "vrt_id": "cryptographic_weakness.use_of_expired_cryptographic_key_or_cert",
+  "name": "Use of Expired Cryptographic Key (or Certificate)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Use of Expired Cryptographic Key (or Certificate)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

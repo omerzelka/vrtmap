@@ -1,0 +1,15 @@
+{
+  "vrt_id": "external_behavior.browser_feature.autocorrect_enabled",
+  "name": "Autocorrect Enabled",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "External Behavior",
+    "Browser Feature",
+    "Autocorrect Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.via_localstorage_sessionstorage.sensitive_token",
+  "name": "Sensitive Token",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Via localStorage/sessionStorage",
+    "Sensitive Token"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

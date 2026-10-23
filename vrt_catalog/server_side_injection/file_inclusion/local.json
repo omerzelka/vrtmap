@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.file_inclusion.local",
+  "name": "Local",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Server-Side Injection",
+    "File Inclusion",
+    "Local"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

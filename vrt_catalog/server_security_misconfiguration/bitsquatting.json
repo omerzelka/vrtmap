@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.bitsquatting",
+  "name": "Bitsquatting",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Bitsquatting"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.poorly_configured_disk_encryption",
+  "name": "Poorly Configured Disk Encryption",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Poorly Configured Disk Encryption"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

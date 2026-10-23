@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.cache_deception",
+  "name": "Cache Deception",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Cache Deception"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

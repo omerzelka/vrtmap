@@ -1,0 +1,14 @@
+{
+  "vrt_id": "algorithmic_biases.processing_bias",
+  "name": "Processing Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Algorithmic Biases",
+    "Processing Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

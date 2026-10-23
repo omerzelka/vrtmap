@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_key_generation.insufficient_key_space",
+  "name": "Insufficient Key Space",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Key Generation",
+    "Insufficient Key Space"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

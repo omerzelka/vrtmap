@@ -1,0 +1,15 @@
+{
+  "vrt_id": "application_level_denial_of_service_dos.excessive_resource_consumption.injection_prompt",
+  "name": "Injection (Prompt)",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Application-Level Denial-of-Service (DoS)",
+    "Excessive Resource Consumption",
+    "Injection (Prompt)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

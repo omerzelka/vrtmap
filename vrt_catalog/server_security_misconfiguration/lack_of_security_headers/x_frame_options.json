@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.lack_of_security_headers.x_frame_options",
+  "name": "X-Frame-Options",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Lack of Security Headers",
+    "X-Frame-Options"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

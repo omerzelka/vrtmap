@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.broken_cryptography.use_of_broken_cryptographic_primitive",
+  "name": "Use of Broken Cryptographic Primitive",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Broken Cryptography",
+    "Use of Broken Cryptographic Primitive"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

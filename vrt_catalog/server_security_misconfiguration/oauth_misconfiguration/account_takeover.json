@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.oauth_misconfiguration.account_takeover",
+  "name": "Account Takeover",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "OAuth Misconfiguration",
+    "Account Takeover"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

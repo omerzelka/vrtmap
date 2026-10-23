@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.no_rate_limiting_on_form.email_triggering",
+  "name": "Email-Triggering",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "No Rate Limiting on Form",
+    "Email-Triggering"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

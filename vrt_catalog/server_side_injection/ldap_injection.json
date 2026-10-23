@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_side_injection.ldap_injection",
+  "name": "LDAP Injection",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server-Side Injection",
+    "LDAP Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

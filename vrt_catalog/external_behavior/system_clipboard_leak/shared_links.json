@@ -1,0 +1,15 @@
+{
+  "vrt_id": "external_behavior.system_clipboard_leak.shared_links",
+  "name": "Shared Links",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "External Behavior",
+    "System Clipboard Leak",
+    "Shared Links"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

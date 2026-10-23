@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.defi_security.flash_loan_attack",
+  "name": "Flash Loan Attack",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "DeFi Security",
+    "Flash Loan Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

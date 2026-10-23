@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insufficient_security_configurability.no_account_lockout",
+  "name": "No Account Lockout",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "No Account Lockout"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

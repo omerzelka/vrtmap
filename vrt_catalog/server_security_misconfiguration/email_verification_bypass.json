@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.email_verification_bypass",
+  "name": "Email Verification Bypass",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Email Verification Bypass"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

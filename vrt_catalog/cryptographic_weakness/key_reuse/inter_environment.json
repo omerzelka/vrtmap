@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.key_reuse.inter_environment",
+  "name": "Inter-Environment",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Key Reuse",
+    "Inter-Environment"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

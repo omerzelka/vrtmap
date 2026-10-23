@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.disclosure_of_secrets.sensitive_information_disclosed_jwt",
+  "name": "Sensitive Information Disclosed in JSON Web Token (JWT)",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Disclosure of Secrets",
+    "Sensitive Information Disclosed in JSON Web Token (JWT)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

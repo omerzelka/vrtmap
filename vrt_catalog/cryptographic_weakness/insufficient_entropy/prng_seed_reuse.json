@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.prng_seed_reuse",
+  "name": "Pseudo-Random Number Generator (PRNG) Seed Reuse",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Pseudo-Random Number Generator (PRNG) Seed Reuse"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

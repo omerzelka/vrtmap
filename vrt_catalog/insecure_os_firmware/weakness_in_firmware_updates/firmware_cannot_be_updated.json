@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_os_firmware.weakness_in_firmware_updates.firmware_cannot_be_updated",
+  "name": "Firmware cannot be updated",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Weakness in Firmware Updates",
+    "Firmware cannot be updated"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

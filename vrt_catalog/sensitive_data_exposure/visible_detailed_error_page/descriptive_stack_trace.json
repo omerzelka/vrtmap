@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.visible_detailed_error_page.descriptive_stack_trace",
+  "name": "Descriptive Stack Trace",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Visible Detailed Error/Debug Page",
+    "Descriptive Stack Trace"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

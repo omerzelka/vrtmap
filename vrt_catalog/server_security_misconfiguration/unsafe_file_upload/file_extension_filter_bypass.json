@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.unsafe_file_upload.file_extension_filter_bypass",
+  "name": "File Extension Filter Bypass",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Unsafe File Upload",
+    "File Extension Filter Bypass"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

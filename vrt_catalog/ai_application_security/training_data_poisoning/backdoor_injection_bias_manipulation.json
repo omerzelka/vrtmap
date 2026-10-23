@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.training_data_poisoning.backdoor_injection_bias_manipulation",
+  "name": "Backdoor Injection / Bias Manipulation",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "AI Application Security",
+    "Training Data Poisoning",
+    "Backdoor Injection / Bias Manipulation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

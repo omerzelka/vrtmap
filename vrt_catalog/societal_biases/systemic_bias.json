@@ -1,0 +1,14 @@
+{
+  "vrt_id": "societal_biases.systemic_bias",
+  "name": "Systemic Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Societal Biases",
+    "Systemic Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

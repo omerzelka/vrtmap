@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.infotainment_radio_head_unit.unauthorized_access_to_services",
+  "name": "Unauthorized Access to Services (API / Endpoints)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Infotainment, Radio Head Unit",
+    "Unauthorized Access to Services (API / Endpoints)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

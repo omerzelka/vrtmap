@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.battery_management_system.fraudulent_interface",
+  "name": "Fraudulent Interface",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Battery Management System",
+    "Fraudulent Interface"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

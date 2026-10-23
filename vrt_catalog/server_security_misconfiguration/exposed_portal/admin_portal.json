@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.exposed_portal.admin_portal",
+  "name": "Admin Portal",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Exposed Portal",
+    "Admin Portal"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

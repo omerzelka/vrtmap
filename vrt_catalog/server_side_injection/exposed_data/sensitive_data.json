@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.exposed_data.sensitive_data",
+  "name": "Sensitive Data",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server-Side Injection",
+    "Exposed Data",
+    "Sensitive Data"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

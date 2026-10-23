@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.poorly_configured_operating_system_security",
+  "name": "Poorly Configured Operating System Security",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Poorly Configured Operating System Security"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

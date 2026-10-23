@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cross_site_scripting_xss.stored.non_admin_to_anyone",
+  "name": "Non-Privileged User to Anyone",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Cross-Site Scripting (XSS)",
+    "Stored",
+    "Non-Privileged User to Anyone"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.insecure_ssl.lack_of_forward_secrecy",
+  "name": "Lack of Forward Secrecy",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Insecure SSL",
+    "Lack of Forward Secrecy"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

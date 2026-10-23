@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.potentially_unsafe_http_method_enabled.options",
+  "name": "OPTIONS",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Potentially Unsafe HTTP Method Enabled",
+    "OPTIONS"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

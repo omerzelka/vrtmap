@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.failure_to_invalidate_session.permission_change",
+  "name": "On Permission Change",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Failure to Invalidate Session",
+    "On Permission Change"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_key_generation.improper_asymmetric_exponent_selection",
+  "name": "Improper Asymmetric Exponent Selection",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Key Generation",
+    "Improper Asymmetric Exponent Selection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

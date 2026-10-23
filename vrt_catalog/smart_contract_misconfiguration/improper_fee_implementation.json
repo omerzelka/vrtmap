@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.improper_fee_implementation",
+  "name": "Improper Fee Implementation",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Improper Fee Implementation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

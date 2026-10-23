@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.misconfigured_dns.zone_transfer",
+  "name": "Zone Transfer",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Misconfigured DNS",
+    "Zone Transfer"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.improper_input_handling.unicode_confusables",
+  "name": "Unicode Confusables",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "AI Application Security",
+    "Improper Input Handling",
+    "Unicode Confusables"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

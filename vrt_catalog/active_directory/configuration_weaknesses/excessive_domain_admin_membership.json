@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.configuration_weaknesses.excessive_domain_admin_membership",
+  "name": "Excessive Domain Admin Membership",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Active Directory (AD)",
+    "Configuration Weaknesses",
+    "Excessive Domain Admin Membership"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

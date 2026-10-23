@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.sensitive_information_disclosure.key_leak",
+  "name": "Key Leak",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "AI Application Security",
+    "Sensitive Information Disclosure",
+    "Key Leak"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

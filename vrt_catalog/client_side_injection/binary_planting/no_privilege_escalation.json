@@ -1,0 +1,15 @@
+{
+  "vrt_id": "client_side_injection.binary_planting.no_privilege_escalation",
+  "name": "No Privilege Escalation",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Client-Side Injection",
+    "Binary Planting",
+    "No Privilege Escalation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

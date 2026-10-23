@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.improper_decimals_implementation",
+  "name": "Improper Decimals Implementation",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Improper Decimals Implementation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

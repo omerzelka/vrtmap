@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.configuration_weaknesses.dormant_enabled_user_accounts",
+  "name": "Dormant / Inactive User Accounts Enabled in the Domain",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Active Directory (AD)",
+    "Configuration Weaknesses",
+    "Dormant / Inactive User Accounts Enabled in the Domain"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,452 @@
+# VRT Catalog Index
+
+Total types: 437  (source release 2026-07-08T00:00:00+00:00)
+
+## P1 (31)
+- `active_directory.kerberos_abuse.domain_compromise_unconstrained_delegated` — Domain Compromise via Unconstrained Delegated  →  `active_directory/kerberos_abuse/domain_compromise_unconstrained_delegated.json`
+- `ai_application_security.model_extraction.api_query_based_model_reconstruction` — API Query-Based Model Reconstruction  →  `ai_application_security/model_extraction/api_query_based_model_reconstruction.json`
+- `ai_application_security.remote_code_execution.full_system_compromise` — Full System Compromise  →  `ai_application_security/remote_code_execution/full_system_compromise.json`
+- `ai_application_security.sensitive_information_disclosure.cross_tenant_pii_leakage_exposure` — Cross-Tenant PII Leakage/Exposure  →  `ai_application_security/sensitive_information_disclosure/cross_tenant_pii_leakage_exposure.json`
+- `ai_application_security.sensitive_information_disclosure.key_leak` — Key Leak  →  `ai_application_security/sensitive_information_disclosure/key_leak.json`
+- `ai_application_security.training_data_poisoning.backdoor_injection_bias_manipulation` — Backdoor Injection / Bias Manipulation  →  `ai_application_security/training_data_poisoning/backdoor_injection_bias_manipulation.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.sensitive_data_leakage_exposure` — Sensitive data Leakage/Exposure  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/sensitive_data_leakage_exposure.json`
+- `automotive_security_misconfiguration.rf_hub.key_fob_cloning` — Key Fob Cloning  →  `automotive_security_misconfiguration/rf_hub/key_fob_cloning.json`
+- `broken_access_control.idor.modify_view_sensitive_information_iterable_object_identifiers` — Modify/View Sensitive Information(Iterable Object Identifiers)  →  `broken_access_control/idor/modify_view_sensitive_information_iterable_object_identifiers.json`
+- `broken_authentication_and_session_management.authentication_bypass` — Authentication Bypass  →  `broken_authentication_and_session_management/authentication_bypass.json`
+- `cloud_security.identity_and_access_management_iam_misconfigurations.publicly_accessible_iam_credentials` — Publicly Accessible IAM Credentials  →  `cloud_security/identity_and_access_management_iam_misconfigurations/publicly_accessible_iam_credentials.json`
+- `decentralized_application_misconfiguration.insecure_data_storage.plaintext_private_key` — Plaintext Private Key  →  `decentralized_application_misconfiguration/insecure_data_storage/plaintext_private_key.json`
+- `decentralized_application_misconfiguration.marketplace_security.orderbook_manipulation` — Orderbook Manipulation  →  `decentralized_application_misconfiguration/marketplace_security/orderbook_manipulation.json`
+- `decentralized_application_misconfiguration.marketplace_security.signer_account_takeover` — Signer Account Takeover  →  `decentralized_application_misconfiguration/marketplace_security/signer_account_takeover.json`
+- `decentralized_application_misconfiguration.marketplace_security.unauthorized_asset_transfer` — Unauthorized Asset Transfer  →  `decentralized_application_misconfiguration/marketplace_security/unauthorized_asset_transfer.json`
+- `decentralized_application_misconfiguration.protocol_security_misconfiguration.node_level_denial_of_service` — Node-level Denial of Service  →  `decentralized_application_misconfiguration/protocol_security_misconfiguration/node_level_denial_of_service.json`
+- `insecure_os_firmware.command_injection` — Command Injection  →  `insecure_os_firmware/command_injection.json`
+- `insecure_os_firmware.hardcoded_password.privileged_user` — Privileged User  →  `insecure_os_firmware/hardcoded_password/privileged_user.json`
+- `sensitive_data_exposure.disclosure_of_secrets.for_publicly_accessible_asset` — For Publicly Accessible Asset  →  `sensitive_data_exposure/disclosure_of_secrets/for_publicly_accessible_asset.json`
+- `server_security_misconfiguration.exposed_portal.admin_portal` — Admin Portal  →  `server_security_misconfiguration/exposed_portal/admin_portal.json`
+- `server_security_misconfiguration.using_default_credentials` — Using Default Credentials  →  `server_security_misconfiguration/using_default_credentials.json`
+- `server_side_injection.file_inclusion.local` — Local  →  `server_side_injection/file_inclusion/local.json`
+- `server_side_injection.remote_code_execution_rce` — Remote Code Execution (RCE)  →  `server_side_injection/remote_code_execution_rce.json`
+- `server_side_injection.sql_injection` — SQL Injection  →  `server_side_injection/sql_injection.json`
+- `server_side_injection.xml_external_entity_injection_xxe` — XML External Entity Injection (XXE)  →  `server_side_injection/xml_external_entity_injection_xxe.json`
+- `smart_contract_misconfiguration.reentrancy_attack` — Reentrancy Attack  →  `smart_contract_misconfiguration/reentrancy_attack.json`
+- `smart_contract_misconfiguration.smart_contract_owner_takeover` — Smart Contract Owner Takeover  →  `smart_contract_misconfiguration/smart_contract_owner_takeover.json`
+- `smart_contract_misconfiguration.unauthorized_transfer_of_funds` — Unauthorized Transfer of Funds  →  `smart_contract_misconfiguration/unauthorized_transfer_of_funds.json`
+- `smart_contract_misconfiguration.uninitialized_variables` — Uninitialized Variables  →  `smart_contract_misconfiguration/uninitialized_variables.json`
+- `zero_knowledge_security_misconfiguration.deanonymization_of_data` — Deanonymization of Data  →  `zero_knowledge_security_misconfiguration/deanonymization_of_data.json`
+- `zero_knowledge_security_misconfiguration.improper_proof_validation_and_finalization_logic` — Improper Proof Validation and Finalization Logic  →  `zero_knowledge_security_misconfiguration/improper_proof_validation_and_finalization_logic.json`
+
+## P2 (31)
+- `active_directory.configuration_weaknesses.shared_administrator_passwords` — Shared Administrator Passwords  →  `active_directory/configuration_weaknesses/shared_administrator_passwords.json`
+- `active_directory.configuration_weaknesses.weak_domain_password_policy` — Weak Domain Password Policy  →  `active_directory/configuration_weaknesses/weak_domain_password_policy.json`
+- `active_directory.kerberos_abuse.insecure_service_account_management` — Insecure Service Account Management (Kerberoasting)  →  `active_directory/kerberos_abuse/insecure_service_account_management.json`
+- `active_directory.kerberos_abuse.no_pre_authentication` — User Does Not Require Pre-authentication (ASREPRoasting)  →  `active_directory/kerberos_abuse/no_pre_authentication.json`
+- `ai_application_security.denial_of_service_dos.application_wide` — Application-Wide  →  `ai_application_security/denial_of_service_dos/application_wide.json`
+- `ai_application_security.prompt_injection.system_prompt_leakage` — System Prompt Leakage  →  `ai_application_security/prompt_injection/system_prompt_leakage.json`
+- `ai_application_security.remote_code_execution.sandboxed_container_code_execution` — Sandboxed Container Code Execution  →  `ai_application_security/remote_code_execution/sandboxed_container_code_execution.json`
+- `ai_application_security.vector_and_embedding_weaknesses.embedding_exfiltration_model_extraction` — Embedding Exfiltration / Model Extraction  →  `ai_application_security/vector_and_embedding_weaknesses/embedding_exfiltration_model_extraction.json`
+- `application_level_denial_of_service_dos.critical_impact_and_or_easy_difficulty` — Critical Impact and/or Easy Difficulty  →  `application_level_denial_of_service_dos/critical_impact_and_or_easy_difficulty.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.code_execution_can_bus_pivot` — Code Execution (CAN Bus Pivot)  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/code_execution_can_bus_pivot.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.ota_firmware_manipulation` — OTA Firmware Manipulation  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/ota_firmware_manipulation.json`
+- `automotive_security_misconfiguration.rf_hub.can_injection_interaction` — CAN Injection / Interaction  →  `automotive_security_misconfiguration/rf_hub/can_injection_interaction.json`
+- `broken_access_control.idor.modify_sensitive_information_iterable_object_identifiers` — Modify Sensitive Information(Iterable Object Identifiers)  →  `broken_access_control/idor/modify_sensitive_information_iterable_object_identifiers.json`
+- `cloud_security.identity_and_access_management_iam_misconfigurations.overly_permissive_iam_roles` — Overly Permissive IAM Roles  →  `cloud_security/identity_and_access_management_iam_misconfigurations/overly_permissive_iam_roles.json`
+- `cloud_security.storage_misconfigurations.unencrypted_sensitive_data_at_rest` — Unencrypted Sensitive Data at Rest  →  `cloud_security/storage_misconfigurations/unencrypted_sensitive_data_at_rest.json`
+- `cross_site_request_forgery_csrf.application_wide` — Application-Wide  →  `cross_site_request_forgery_csrf/application_wide.json`
+- `cross_site_scripting_xss.stored.non_admin_to_anyone` — Non-Privileged User to Anyone  →  `cross_site_scripting_xss/stored/non_admin_to_anyone.json`
+- `cryptographic_weakness.key_reuse.inter_environment` — Inter-Environment  →  `cryptographic_weakness/key_reuse/inter_environment.json`
+- `decentralized_application_misconfiguration.marketplace_security.malicious_order_offer` — Malicious Order Offer  →  `decentralized_application_misconfiguration/marketplace_security/malicious_order_offer.json`
+- `decentralized_application_misconfiguration.marketplace_security.price_or_fee_manipulation` — Price or Fee Manipulation  →  `decentralized_application_misconfiguration/marketplace_security/price_or_fee_manipulation.json`
+- `insecure_os_firmware.hardcoded_password.non_privileged_user` — Non-Privileged User  →  `insecure_os_firmware/hardcoded_password/non_privileged_user.json`
+- `insecure_os_firmware.local_administrator_on_default_environment` — Local Administrator on default environment  →  `insecure_os_firmware/local_administrator_on_default_environment.json`
+- `insecure_os_firmware.over_permissioned_credentials_on_storage` — Over-Permissioned Credentials on Storage  →  `insecure_os_firmware/over_permissioned_credentials_on_storage.json`
+- `physical_security_issues.weakness_in_physical_access_control.commonly_keyed_system` — Commonly Keyed System  →  `physical_security_issues/weakness_in_physical_access_control/commonly_keyed_system.json`
+- `protocol_specific_misconfiguration.frontrunning_enabled_attack` — Frontrunning-Enabled Attack  →  `protocol_specific_misconfiguration/frontrunning_enabled_attack.json`
+- `protocol_specific_misconfiguration.sandwich_enabled_attack` — Sandwich-Enabled Attack  →  `protocol_specific_misconfiguration/sandwich_enabled_attack.json`
+- `sensitive_data_exposure.weak_password_reset_implementation.token_leakage_via_host_header_poisoning` — Token Leakage via Host Header Poisoning  →  `sensitive_data_exposure/weak_password_reset_implementation/token_leakage_via_host_header_poisoning.json`
+- `server_security_misconfiguration.oauth_misconfiguration.account_takeover` — Account Takeover  →  `server_security_misconfiguration/oauth_misconfiguration/account_takeover.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.internal_secrets_exposure` — Internal Secrets Exposure  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/internal_secrets_exposure.json`
+- `smart_contract_misconfiguration.integer_overflow_underflow` — Integer Overflow / Underflow  →  `smart_contract_misconfiguration/integer_overflow_underflow.json`
+- `smart_contract_misconfiguration.unauthorized_smart_contract_approval` — Unauthorized Smart Contract Approval  →  `smart_contract_misconfiguration/unauthorized_smart_contract_approval.json`
+
+## P3 (46)
+- `active_directory.configuration_weaknesses.dormant_enabled_user_accounts` — Dormant / Inactive User Accounts Enabled in the Domain  →  `active_directory/configuration_weaknesses/dormant_enabled_user_accounts.json`
+- `active_directory.configuration_weaknesses.excessive_domain_admin_membership` — Excessive Domain Admin Membership  →  `active_directory/configuration_weaknesses/excessive_domain_admin_membership.json`
+- `ai_application_security.improper_output_handling.cross_site_scripting_xss` — Cross-Site Scripting (XSS)  →  `ai_application_security/improper_output_handling/cross_site_scripting_xss.json`
+- `ai_application_security.vector_and_embedding_weaknesses.semantic_indexing` — Semantic Indexing  →  `ai_application_security/vector_and_embedding_weaknesses/semantic_indexing.json`
+- `application_level_denial_of_service_dos.high_impact_and_or_medium_difficulty` — High Impact and/or Medium Difficulty  →  `application_level_denial_of_service_dos/high_impact_and_or_medium_difficulty.json`
+- `automotive_security_misconfiguration.abs.unintended_acceleration_brake` — Unintended Acceleration / Brake  →  `automotive_security_misconfiguration/abs/unintended_acceleration_brake.json`
+- `automotive_security_misconfiguration.battery_management_system.firmware_dump` — Firmware Dump  →  `automotive_security_misconfiguration/battery_management_system/firmware_dump.json`
+- `automotive_security_misconfiguration.can.injection_basic_safety_message` — Injection (Basic Safety Message)  →  `automotive_security_misconfiguration/can/injection_basic_safety_message.json`
+- `automotive_security_misconfiguration.can.injection_battery_management_system` — Injection (Battery Management System)  →  `automotive_security_misconfiguration/can/injection_battery_management_system.json`
+- `automotive_security_misconfiguration.can.injection_headlights` — Injection (Headlights)  →  `automotive_security_misconfiguration/can/injection_headlights.json`
+- `automotive_security_misconfiguration.can.injection_powertrain` — Injection (Powertrain)  →  `automotive_security_misconfiguration/can/injection_powertrain.json`
+- `automotive_security_misconfiguration.can.injection_pyrotechnical_device_deployment_tool` — Injection (Pyrotechnical Device Deployment Tool)  →  `automotive_security_misconfiguration/can/injection_pyrotechnical_device_deployment_tool.json`
+- `automotive_security_misconfiguration.can.injection_sensors` — Injection (Sensors)  →  `automotive_security_misconfiguration/can/injection_sensors.json`
+- `automotive_security_misconfiguration.can.injection_steering_control` — Injection (Steering Control)  →  `automotive_security_misconfiguration/can/injection_steering_control.json`
+- `automotive_security_misconfiguration.can.injection_vehicle_anti_theft_systems` — Injection (Vehicle Anti-theft Systems)  →  `automotive_security_misconfiguration/can/injection_vehicle_anti_theft_systems.json`
+- `automotive_security_misconfiguration.immobilizer.engine_start` — Engine Start  →  `automotive_security_misconfiguration/immobilizer/engine_start.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.code_execution_no_can_bus_pivot` — Code Execution (No CAN Bus Pivot)  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/code_execution_no_can_bus_pivot.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.unauthorized_access_to_services` — Unauthorized Access to Services (API / Endpoints)  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/unauthorized_access_to_services.json`
+- `automotive_security_misconfiguration.rf_hub.data_leakage_pull_encryption_mechanism` — Data Leakage / Pull Encryption Mechanism  →  `automotive_security_misconfiguration/rf_hub/data_leakage_pull_encryption_mechanism.json`
+- `broken_access_control.idor.view_sensitive_information_iterable_object_identifiers` — View Sensitive Information(Iterable Object Identifiers)  →  `broken_access_control/idor/view_sensitive_information_iterable_object_identifiers.json`
+- `broken_authentication_and_session_management.session_fixation.remote_attack_vector` — Remote Attack Vector  →  `broken_authentication_and_session_management/session_fixation/remote_attack_vector.json`
+- `broken_authentication_and_session_management.two_fa_bypass` — Second Factor Authentication (2FA) Bypass  →  `broken_authentication_and_session_management/two_fa_bypass.json`
+- `client_side_injection.binary_planting.privilege_escalation` — Default Folder Privilege Escalation  →  `client_side_injection/binary_planting/privilege_escalation.json`
+- `cloud_security.network_configuration_issues.lack_of_network_segmentation` — Lack of Network Segmentation  →  `cloud_security/network_configuration_issues/lack_of_network_segmentation.json`
+- `cloud_security.network_configuration_issues.open_management_ports_to_the_internet` — Open Management Ports to the Internet  →  `cloud_security/network_configuration_issues/open_management_ports_to_the_internet.json`
+- `cross_site_scripting_xss.reflected.non_self` — Non-Self  →  `cross_site_scripting_xss/reflected/non_self.json`
+- `cross_site_scripting_xss.stored.privileged_user_to_privilege_elevation` — Privileged User to Privilege Elevation  →  `cross_site_scripting_xss/stored/privileged_user_to_privilege_elevation.json`
+- `cross_site_scripting_xss.stored.url_based` — CSRF/URL-Based  →  `cross_site_scripting_xss/stored/url_based.json`
+- `cryptographic_weakness.broken_cryptography.use_of_broken_cryptographic_primitive` — Use of Broken Cryptographic Primitive  →  `cryptographic_weakness/broken_cryptography/use_of_broken_cryptographic_primitive.json`
+- `cryptographic_weakness.insecure_key_generation.insufficient_key_space` — Insufficient Key Space  →  `cryptographic_weakness/insecure_key_generation/insufficient_key_space.json`
+- `decentralized_application_misconfiguration.marketplace_security.ofac_bypass` — OFAC Bypass  →  `decentralized_application_misconfiguration/marketplace_security/ofac_bypass.json`
+- `insecure_os_firmware.shared_credentials_on_storage` — Shared Credentials on Storage  →  `insecure_os_firmware/shared_credentials_on_storage.json`
+- `insecure_os_firmware.weakness_in_firmware_updates.firmware_does_not_validate_update_integrity` — Firmware does not validate update integrity  →  `insecure_os_firmware/weakness_in_firmware_updates/firmware_does_not_validate_update_integrity.json`
+- `sensitive_data_exposure.disclosure_of_secrets.for_internal_asset` — For Internal Asset  →  `sensitive_data_exposure/disclosure_of_secrets/for_internal_asset.json`
+- `sensitive_data_exposure.exif_geolocation_data_not_stripped_from_uploaded_images.automatic_user_enumeration` — Automatic User Enumeration  →  `sensitive_data_exposure/exif_geolocation_data_not_stripped_from_uploaded_images/automatic_user_enumeration.json`
+- `server_security_misconfiguration.exposed_portal.non_admin_portal` — Non-Admin Portal  →  `server_security_misconfiguration/exposed_portal/non_admin_portal.json`
+- `server_security_misconfiguration.mail_server_misconfiguration.no_spoofing_protection_on_email_domain` — No Spoofing Protection on Email Domain  →  `server_security_misconfiguration/mail_server_misconfiguration/no_spoofing_protection_on_email_domain.json`
+- `server_security_misconfiguration.misconfigured_dns.subdomain_takeover` — Subdomain Takeover  →  `server_security_misconfiguration/misconfigured_dns/subdomain_takeover.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.internal_data_exposure` — Internal Data Exposure  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/internal_data_exposure.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.internal_port_service_scan` — Internal Port Service Scan  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/internal_port_service_scan.json`
+- `server_side_injection.content_spoofing.iframe_injection` — iframe Injection  →  `server_side_injection/content_spoofing/iframe_injection.json`
+- `server_side_injection.http_response_manipulation.response_splitting_crlf` — Response Splitting (CRLF)  →  `server_side_injection/http_response_manipulation/response_splitting_crlf.json`
+- `smart_contract_misconfiguration.function_level_denial_of_service` — Function-level Denial of Service  →  `smart_contract_misconfiguration/function_level_denial_of_service.json`
+- `smart_contract_misconfiguration.improper_fee_implementation` — Improper Fee Implementation  →  `smart_contract_misconfiguration/improper_fee_implementation.json`
+- `smart_contract_misconfiguration.irreversible_function_call` — Irreversible Function Call  →  `smart_contract_misconfiguration/irreversible_function_call.json`
+- `smart_contract_misconfiguration.malicious_superuser_risk` — Malicious Superuser Risk  →  `smart_contract_misconfiguration/malicious_superuser_risk.json`
+
+## P4 (78)
+- `ai_application_security.adversarial_example_injection.ai_misclassification_attacks` — AI Misclassification Attacks  →  `ai_application_security/adversarial_example_injection/ai_misclassification_attacks.json`
+- `ai_application_security.ai_safety.misinformation_wrong_factual_data` — Misinformation / Wrong Factual Data  →  `ai_application_security/ai_safety/misinformation_wrong_factual_data.json`
+- `ai_application_security.denial_of_service_dos.tenant_scoped` — Tenant-Scoped  →  `ai_application_security/denial_of_service_dos/tenant_scoped.json`
+- `ai_application_security.improper_output_handling.markdown_html_injection` — Markdown/HTML Injection  →  `ai_application_security/improper_output_handling/markdown_html_injection.json`
+- `ai_application_security.insufficient_rate_limiting.query_flooding_api_token_abuse` — Query Flooding / API Token Abuse  →  `ai_application_security/insufficient_rate_limiting/query_flooding_api_token_abuse.json`
+- `automotive_security_misconfiguration.battery_management_system.fraudulent_interface` — Fraudulent Interface  →  `automotive_security_misconfiguration/battery_management_system/fraudulent_interface.json`
+- `automotive_security_misconfiguration.can.injection_disallowed_messages` — Injection (Disallowed Messages)  →  `automotive_security_misconfiguration/can/injection_disallowed_messages.json`
+- `automotive_security_misconfiguration.can.injection_dos` — Injection (DoS)  →  `automotive_security_misconfiguration/can/injection_dos.json`
+- `automotive_security_misconfiguration.gnss_gps.spoofing` — Spoofing  →  `automotive_security_misconfiguration/gnss_gps/spoofing.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.default_credentials` — Default Credentials  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/default_credentials.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.dos_brick` — Denial of Service (DoS / Brick)  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/dos_brick.json`
+- `automotive_security_misconfiguration.infotainment_radio_head_unit.source_code_dump` — Source Code Dump  →  `automotive_security_misconfiguration/infotainment_radio_head_unit/source_code_dump.json`
+- `automotive_security_misconfiguration.rf_hub.unauthorized_access_turn_on` — Unauthorized Access / Turn On  →  `automotive_security_misconfiguration/rf_hub/unauthorized_access_turn_on.json`
+- `automotive_security_misconfiguration.rsu.sybil_attack` — Sybil Attack  →  `automotive_security_misconfiguration/rsu/sybil_attack.json`
+- `broken_access_control.bypass_of_password_confirmation.change_password` — Change Password  →  `broken_access_control/bypass_of_password_confirmation/change_password.json`
+- `broken_access_control.idor.modify_view_sensitive_information_guid` — Modify/View Sensitive Information(Complex Object Identifiers GUID/UUID)  →  `broken_access_control/idor/modify_view_sensitive_information_guid.json`
+- `broken_access_control.username_enumeration.non_brute_force` — Non-Brute Force  →  `broken_access_control/username_enumeration/non_brute_force.json`
+- `broken_authentication_and_session_management.cleartext_transmission_of_session_token` — Cleartext Transmission of Session Token  →  `broken_authentication_and_session_management/cleartext_transmission_of_session_token.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.on_logout` — On Logout (Client and Server-Side)  →  `broken_authentication_and_session_management/failure_to_invalidate_session/on_logout.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.on_password_change` — On Password Reset and/or Change  →  `broken_authentication_and_session_management/failure_to_invalidate_session/on_password_change.json`
+- `broken_authentication_and_session_management.weak_login_function.other_plaintext_protocol_no_secure_alternative` — Other Plaintext Protocol with no Secure Alternative  →  `broken_authentication_and_session_management/weak_login_function/other_plaintext_protocol_no_secure_alternative.json`
+- `broken_authentication_and_session_management.weak_login_function.over_http` — Over HTTP  →  `broken_authentication_and_session_management/weak_login_function/over_http.json`
+- `broken_authentication_and_session_management.weak_registration_implementation.over_http` — Over HTTP  →  `broken_authentication_and_session_management/weak_registration_implementation/over_http.json`
+- `cloud_security.misconfigured_services_and_apis.insecure_api_endpoints` — Insecure API Endpoints  →  `cloud_security/misconfigured_services_and_apis/insecure_api_endpoints.json`
+- `cross_site_scripting_xss.off_domain.data_uri` — Data URI  →  `cross_site_scripting_xss/off_domain/data_uri.json`
+- `cross_site_scripting_xss.referer` — Referer  →  `cross_site_scripting_xss/referer.json`
+- `cross_site_scripting_xss.stored.privileged_user_to_no_privilege_elevation` — Privileged User to No Privilege Elevation  →  `cross_site_scripting_xss/stored/privileged_user_to_no_privilege_elevation.json`
+- `cross_site_scripting_xss.universal_uxss` — Universal (UXSS)  →  `cross_site_scripting_xss/universal_uxss.json`
+- `cryptographic_weakness.broken_cryptography.use_of_vulnerable_cryptographic_library` — Use of Vulnerable Cryptographic Library  →  `cryptographic_weakness/broken_cryptography/use_of_vulnerable_cryptographic_library.json`
+- `cryptographic_weakness.insecure_key_generation.key_exchange_without_entity_authentication` — Key Exchage Without Entity Authentication  →  `cryptographic_weakness/insecure_key_generation/key_exchange_without_entity_authentication.json`
+- `cryptographic_weakness.insufficient_entropy.limited_rng_entropy_source` — Limited Random Number Generator (RNG) Entropy Source  →  `cryptographic_weakness/insufficient_entropy/limited_rng_entropy_source.json`
+- `cryptographic_weakness.insufficient_entropy.predictable_initialization_vector` — Predictable Initialization Vector (IV)  →  `cryptographic_weakness/insufficient_entropy/predictable_initialization_vector.json`
+- `cryptographic_weakness.insufficient_entropy.predictable_prng_seed` — Predictable Pseudo-Random Number Generator (PRNG) Seed  →  `cryptographic_weakness/insufficient_entropy/predictable_prng_seed.json`
+- `cryptographic_weakness.insufficient_entropy.small_seed_space_in_prng` — Small Seed Space in Pseudo-Random Number Generator (PRNG)  →  `cryptographic_weakness/insufficient_entropy/small_seed_space_in_prng.json`
+- `cryptographic_weakness.insufficient_verification_of_data_authenticity.identity_check_value` — Integrity Check Value (ICV)  →  `cryptographic_weakness/insufficient_verification_of_data_authenticity/identity_check_value.json`
+- `cryptographic_weakness.key_reuse.lack_of_perfect_forward_secrecy` — Lack of Perfect Forward Secrecy  →  `cryptographic_weakness/key_reuse/lack_of_perfect_forward_secrecy.json`
+- `cryptographic_weakness.side_channel_attack.padding_oracle_attack` — Padding Oracle Attack  →  `cryptographic_weakness/side_channel_attack/padding_oracle_attack.json`
+- `cryptographic_weakness.side_channel_attack.timing_attack` — Timing Attack  →  `cryptographic_weakness/side_channel_attack/timing_attack.json`
+- `cryptographic_weakness.use_of_expired_cryptographic_key_or_cert` — Use of Expired Cryptographic Key (or Certificate)  →  `cryptographic_weakness/use_of_expired_cryptographic_key_or_cert.json`
+- `insecure_data_storage.sensitive_application_data_stored_unencrypted.on_external_storage` — On External Storage  →  `insecure_data_storage/sensitive_application_data_stored_unencrypted/on_external_storage.json`
+- `insecure_data_storage.server_side_credentials_storage.plaintext` — Plaintext  →  `insecure_data_storage/server_side_credentials_storage/plaintext.json`
+- `insecure_data_transport.executable_download.no_secure_integrity_check` — No Secure Integrity Check  →  `insecure_data_transport/executable_download/no_secure_integrity_check.json`
+- `insufficient_security_configurability.no_password_policy` — No Password Policy  →  `insufficient_security_configurability/no_password_policy.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_is_not_invalidated_after_use` — Token is Not Invalidated After Use  →  `insufficient_security_configurability/weak_password_reset_implementation/token_is_not_invalidated_after_use.json`
+- `insufficient_security_configurability.weak_two_fa_implementation.two_fa_secret_cannot_be_rotated` — 2FA Secret Cannot be Rotated  →  `insufficient_security_configurability/weak_two_fa_implementation/two_fa_secret_cannot_be_rotated.json`
+- `insufficient_security_configurability.weak_two_fa_implementation.two_fa_secret_remains_obtainable_after_two_fa_is_enabled` — 2FA Secret Remains Obtainable After 2FA is Enabled  →  `insufficient_security_configurability/weak_two_fa_implementation/two_fa_secret_remains_obtainable_after_two_fa_is_enabled.json`
+- `privacy_concerns.unnecessary_data_collection.wifi_ssid_password` — WiFi SSID+Password  →  `privacy_concerns/unnecessary_data_collection/wifi_ssid_password.json`
+- `sensitive_data_exposure.disclosure_of_secrets.pay_per_use_abuse` — Pay-Per-Use Abuse  →  `sensitive_data_exposure/disclosure_of_secrets/pay_per_use_abuse.json`
+- `sensitive_data_exposure.exif_geolocation_data_not_stripped_from_uploaded_images.manual_user_enumeration` — Manual User Enumeration  →  `sensitive_data_exposure/exif_geolocation_data_not_stripped_from_uploaded_images/manual_user_enumeration.json`
+- `sensitive_data_exposure.sensitive_token_in_url.user_facing` — User Facing  →  `sensitive_data_exposure/sensitive_token_in_url/user_facing.json`
+- `sensitive_data_exposure.token_leakage_via_referer.over_http` — Over HTTP  →  `sensitive_data_exposure/token_leakage_via_referer/over_http.json`
+- `sensitive_data_exposure.token_leakage_via_referer.untrusted_third_party` — Untrusted 3rd Party  →  `sensitive_data_exposure/token_leakage_via_referer/untrusted_third_party.json`
+- `sensitive_data_exposure.via_localstorage_sessionstorage.sensitive_token` — Sensitive Token  →  `sensitive_data_exposure/via_localstorage_sessionstorage/sensitive_token.json`
+- `sensitive_data_exposure.visible_detailed_error_page.detailed_server_configuration` — Detailed Server Configuration  →  `sensitive_data_exposure/visible_detailed_error_page/detailed_server_configuration.json`
+- `sensitive_data_exposure.weak_password_reset_implementation.password_reset_token_sent_over_http` — Password Reset Token Sent Over HTTP  →  `sensitive_data_exposure/weak_password_reset_implementation/password_reset_token_sent_over_http.json`
+- `server_security_misconfiguration.captcha.implementation_vulnerability` — Implementation Vulnerability  →  `server_security_misconfiguration/captcha/implementation_vulnerability.json`
+- `server_security_misconfiguration.clickjacking.sensitive_action` — Sensitive Click-Based Action  →  `server_security_misconfiguration/clickjacking/sensitive_action.json`
+- `server_security_misconfiguration.dbms_misconfiguration.excessively_privileged_user_dba` — Excessively Privileged User / DBA  →  `server_security_misconfiguration/dbms_misconfiguration/excessively_privileged_user_dba.json`
+- `server_security_misconfiguration.lack_of_password_confirmation.delete_account` — Delete Account  →  `server_security_misconfiguration/lack_of_password_confirmation/delete_account.json`
+- `server_security_misconfiguration.lack_of_security_headers.cache_control_for_a_sensitive_page` — Cache-Control for a Sensitive Page  →  `server_security_misconfiguration/lack_of_security_headers/cache_control_for_a_sensitive_page.json`
+- `server_security_misconfiguration.mail_server_misconfiguration.email_spoofing_to_inbox_due_to_missing_or_misconfigured_dmarc_on_email_domain` — Email Spoofing to Inbox due to Missing or Misconfigured DMARC on Email Domain  →  `server_security_misconfiguration/mail_server_misconfiguration/email_spoofing_to_inbox_due_to_missing_or_misconfigured_dmarc_on_email_domain.json`
+- `server_security_misconfiguration.misconfigured_dns.zone_transfer` — Zone Transfer  →  `server_security_misconfiguration/misconfigured_dns/zone_transfer.json`
+- `server_security_misconfiguration.missing_secure_or_httponly_cookie_flag.session_token` — Session Token  →  `server_security_misconfiguration/missing_secure_or_httponly_cookie_flag/session_token.json`
+- `server_security_misconfiguration.no_rate_limiting_on_form.email_triggering` — Email-Triggering  →  `server_security_misconfiguration/no_rate_limiting_on_form/email_triggering.json`
+- `server_security_misconfiguration.no_rate_limiting_on_form.login` — Login  →  `server_security_misconfiguration/no_rate_limiting_on_form/login.json`
+- `server_security_misconfiguration.no_rate_limiting_on_form.registration` — Registration  →  `server_security_misconfiguration/no_rate_limiting_on_form/registration.json`
+- `server_security_misconfiguration.no_rate_limiting_on_form.sms_triggering` — SMS-Triggering  →  `server_security_misconfiguration/no_rate_limiting_on_form/sms_triggering.json`
+- `server_security_misconfiguration.oauth_misconfiguration.account_squatting` — Account Squatting  →  `server_security_misconfiguration/oauth_misconfiguration/account_squatting.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.internal_exposure_presence_data_secrets` — Internal Exposure of the Presence of Data/Secrets  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/internal_exposure_presence_data_secrets.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.internal_port_scan_only` — Internal Port Scan Only  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/internal_port_scan_only.json`
+- `server_security_misconfiguration.waf_bypass.direct_server_access` — Direct Server Access  →  `server_security_misconfiguration/waf_bypass/direct_server_access.json`
+- `server_side_injection.content_spoofing.email_html_injection` — Email HTML Injection  →  `server_side_injection/content_spoofing/email_html_injection.json`
+- `server_side_injection.content_spoofing.external_authentication_injection` — External Authentication Injection  →  `server_side_injection/content_spoofing/external_authentication_injection.json`
+- `server_side_injection.content_spoofing.impersonation_via_broken_link_hijacking` — Impersonation via Broken Link Hijacking  →  `server_side_injection/content_spoofing/impersonation_via_broken_link_hijacking.json`
+- `server_side_injection.ssti.basic` — Basic  →  `server_side_injection/ssti/basic.json`
+- `smart_contract_misconfiguration.improper_decimals_implementation` — Improper Decimals Implementation  →  `smart_contract_misconfiguration/improper_decimals_implementation.json`
+- `smart_contract_misconfiguration.improper_use_of_modifier` — Improper Use of Modifier  →  `smart_contract_misconfiguration/improper_use_of_modifier.json`
+- `unvalidated_redirects_and_forwards.open_redirect.get_based` — GET-Based  →  `unvalidated_redirects_and_forwards/open_redirect/get_based.json`
+
+## P5 (165)
+- `ai_application_security.improper_input_handling.ansi_escape_codes` — ANSI Escape Codes  →  `ai_application_security/improper_input_handling/ansi_escape_codes.json`
+- `ai_application_security.improper_input_handling.rtl_overrides` — RTL Overrides  →  `ai_application_security/improper_input_handling/rtl_overrides.json`
+- `ai_application_security.improper_input_handling.unicode_confusables` — Unicode Confusables  →  `ai_application_security/improper_input_handling/unicode_confusables.json`
+- `application_level_denial_of_service_dos.app_crash.malformed_android_intents` — Malformed Android Intents  →  `application_level_denial_of_service_dos/app_crash/malformed_android_intents.json`
+- `application_level_denial_of_service_dos.app_crash.malformed_ios_url_schemes` — Malformed iOS URL Schemes  →  `application_level_denial_of_service_dos/app_crash/malformed_ios_url_schemes.json`
+- `automotive_security_misconfiguration.rf_hub.relay` — Relay  →  `automotive_security_misconfiguration/rf_hub/relay.json`
+- `automotive_security_misconfiguration.rf_hub.replay` — Replay  →  `automotive_security_misconfiguration/rf_hub/replay.json`
+- `automotive_security_misconfiguration.rf_hub.roll_jam` — Roll Jam  →  `automotive_security_misconfiguration/rf_hub/roll_jam.json`
+- `broken_access_control.idor.view_non_sensitive_information` — View Non-Sensitive Information  →  `broken_access_control/idor/view_non_sensitive_information.json`
+- `broken_authentication_and_session_management.concurrent_logins` — Concurrent Logins  →  `broken_authentication_and_session_management/concurrent_logins.json`
+- `broken_authentication_and_session_management.excessive_jwt_lifetime` — Excessive JSON Web Token (JWT) Lifetime  →  `broken_authentication_and_session_management/excessive_jwt_lifetime.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.all_sessions` — Concurrent Sessions On Logout  →  `broken_authentication_and_session_management/failure_to_invalidate_session/all_sessions.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.long_timeout` — Long Timeout  →  `broken_authentication_and_session_management/failure_to_invalidate_session/long_timeout.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.on_email_change` — On Email Change  →  `broken_authentication_and_session_management/failure_to_invalidate_session/on_email_change.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.on_logout_server_side_only` — On Logout (Server-Side Only)  →  `broken_authentication_and_session_management/failure_to_invalidate_session/on_logout_server_side_only.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.on_two_fa_activation_change` — On 2FA Activation/Change  →  `broken_authentication_and_session_management/failure_to_invalidate_session/on_two_fa_activation_change.json`
+- `broken_authentication_and_session_management.saml_replay` — SAML Replay  →  `broken_authentication_and_session_management/saml_replay.json`
+- `broken_authentication_and_session_management.secret_questions_account_verification` — Secret Questions Used for Account Verification  →  `broken_authentication_and_session_management/secret_questions_account_verification.json`
+- `broken_authentication_and_session_management.session_fixation.local_attack_vector` — Local Attack Vector  →  `broken_authentication_and_session_management/session_fixation/local_attack_vector.json`
+- `broken_authentication_and_session_management.weak_login_function.not_operational` — Not Operational or Intended Public Access  →  `broken_authentication_and_session_management/weak_login_function/not_operational.json`
+- `client_side_injection.binary_planting.no_privilege_escalation` — No Privilege Escalation  →  `client_side_injection/binary_planting/no_privilege_escalation.json`
+- `client_side_injection.binary_planting.non_default_folder_privilege_escalation` — Non-Default Folder Privilege Escalation  →  `client_side_injection/binary_planting/non_default_folder_privilege_escalation.json`
+- `cloud_security.logging_and_monitoring_issues.disabled_or_insufficient_logging` — Disabled or Insufficient Logging  →  `cloud_security/logging_and_monitoring_issues/disabled_or_insufficient_logging.json`
+- `cross_site_request_forgery_csrf.action_specific.logout` — Logout  →  `cross_site_request_forgery_csrf/action_specific/logout.json`
+- `cross_site_request_forgery_csrf.csrf_token_not_unique_per_request` — CSRF Token Not Unique Per Request  →  `cross_site_request_forgery_csrf/csrf_token_not_unique_per_request.json`
+- `cross_site_request_forgery_csrf.flash_based` — Flash-Based  →  `cross_site_request_forgery_csrf/flash_based.json`
+- `cross_site_scripting_xss.cookie_based` — Cookie-Based  →  `cross_site_scripting_xss/cookie_based.json`
+- `cross_site_scripting_xss.flash_based` — Flash-Based  →  `cross_site_scripting_xss/flash_based.json`
+- `cross_site_scripting_xss.ie_only` — IE-Only  →  `cross_site_scripting_xss/ie_only.json`
+- `cross_site_scripting_xss.reflected.self` — Self  →  `cross_site_scripting_xss/reflected/self.json`
+- `cross_site_scripting_xss.stored.self` — Self  →  `cross_site_scripting_xss/stored/self.json`
+- `cross_site_scripting_xss.trace_method` — TRACE Method  →  `cross_site_scripting_xss/trace_method.json`
+- `cryptographic_weakness.incomplete_cleanup_of_keying_material` — Incomplete Cleanup of Keying Material  →  `cryptographic_weakness/incomplete_cleanup_of_keying_material.json`
+- `cryptographic_weakness.insufficient_entropy.initialization_vector_reuse` — Initialization Vector (IV) Reuse  →  `cryptographic_weakness/insufficient_entropy/initialization_vector_reuse.json`
+- `cryptographic_weakness.insufficient_entropy.prng_seed_reuse` — Pseudo-Random Number Generator (PRNG) Seed Reuse  →  `cryptographic_weakness/insufficient_entropy/prng_seed_reuse.json`
+- `cryptographic_weakness.insufficient_entropy.use_of_trng_for_nonsecurity_purpose` — Use of True Random Number Generator (TRNG) for Non-Security Purpose  →  `cryptographic_weakness/insufficient_entropy/use_of_trng_for_nonsecurity_purpose.json`
+- `cryptographic_weakness.key_reuse.intra_environment` — Intra-Environment  →  `cryptographic_weakness/key_reuse/intra_environment.json`
+- `cryptographic_weakness.side_channel_attack.emanations_attack` — Emanations Attack  →  `cryptographic_weakness/side_channel_attack/emanations_attack.json`
+- `cryptographic_weakness.side_channel_attack.power_analysis_attack` — Power Analysis Attack  →  `cryptographic_weakness/side_channel_attack/power_analysis_attack.json`
+- `cryptographic_weakness.weak_hash.use_of_predictable_salt` — Use of Predictable Salt  →  `cryptographic_weakness/weak_hash/use_of_predictable_salt.json`
+- `external_behavior.browser_feature.aggressive_offline_caching` — Aggressive Offline Caching  →  `external_behavior/browser_feature/aggressive_offline_caching.json`
+- `external_behavior.browser_feature.autocomplete_enabled` — Autocomplete Enabled  →  `external_behavior/browser_feature/autocomplete_enabled.json`
+- `external_behavior.browser_feature.autocorrect_enabled` — Autocorrect Enabled  →  `external_behavior/browser_feature/autocorrect_enabled.json`
+- `external_behavior.browser_feature.plaintext_password_field` — Plaintext Password Field  →  `external_behavior/browser_feature/plaintext_password_field.json`
+- `external_behavior.browser_feature.save_password` — Save Password  →  `external_behavior/browser_feature/save_password.json`
+- `external_behavior.captcha_bypass.crowdsourcing` — Crowdsourcing  →  `external_behavior/captcha_bypass/crowdsourcing.json`
+- `external_behavior.csv_injection` — CSV Injection  →  `external_behavior/csv_injection.json`
+- `external_behavior.system_clipboard_leak.shared_links` — Shared Links  →  `external_behavior/system_clipboard_leak/shared_links.json`
+- `external_behavior.user_password_persisted_in_memory` — User Password Persisted in Memory  →  `external_behavior/user_password_persisted_in_memory.json`
+- `insecure_data_storage.non_sensitive_application_data_stored_unencrypted` — Non-Sensitive Application Data Stored Unencrypted  →  `insecure_data_storage/non_sensitive_application_data_stored_unencrypted.json`
+- `insecure_data_storage.screen_caching_enabled` — Screen Caching Enabled  →  `insecure_data_storage/screen_caching_enabled.json`
+- `insecure_data_storage.sensitive_application_data_stored_unencrypted.on_internal_storage` — On Internal Storage  →  `insecure_data_storage/sensitive_application_data_stored_unencrypted/on_internal_storage.json`
+- `insecure_data_transport.executable_download.secure_integrity_check` — Secure Integrity Check  →  `insecure_data_transport/executable_download/secure_integrity_check.json`
+- `insecure_os_firmware.data_not_encrypted_at_rest.non_sensitive` — Non sensitive  →  `insecure_os_firmware/data_not_encrypted_at_rest/non_sensitive.json`
+- `insecure_os_firmware.weakness_in_firmware_updates.firmware_is_not_encrypted` — Firmware is not encrypted  →  `insecure_os_firmware/weakness_in_firmware_updates/firmware_is_not_encrypted.json`
+- `insufficient_security_configurability.lack_of_notification_email` — Lack of Notification Email  →  `insufficient_security_configurability/lack_of_notification_email.json`
+- `insufficient_security_configurability.no_account_lockout` — No Account Lockout  →  `insufficient_security_configurability/no_account_lockout.json`
+- `insufficient_security_configurability.no_two_fa_implementation` — No 2FA Implementation  →  `insufficient_security_configurability/no_two_fa_implementation.json`
+- `insufficient_security_configurability.password_policy_bypass` — Password Policy Bypass  →  `insufficient_security_configurability/password_policy_bypass.json`
+- `insufficient_security_configurability.verification_of_contact_method_not_required` — Verification of Contact Method not Required  →  `insufficient_security_configurability/verification_of_contact_method_not_required.json`
+- `insufficient_security_configurability.weak_jwt_hashing_algorithm` — Weak JSON Web Token (JWT) Hashing Algorithm  →  `insufficient_security_configurability/weak_jwt_hashing_algorithm.json`
+- `insufficient_security_configurability.weak_password_policy` — Weak Password Policy  →  `insufficient_security_configurability/weak_password_policy.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_has_long_timed_expiry` — Token Has Long Timed Expiry  →  `insufficient_security_configurability/weak_password_reset_implementation/token_has_long_timed_expiry.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_is_not_invalidated_after_email_change` — Token is Not Invalidated After Email Change  →  `insufficient_security_configurability/weak_password_reset_implementation/token_is_not_invalidated_after_email_change.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_is_not_invalidated_after_login` — Token is Not Invalidated After Login  →  `insufficient_security_configurability/weak_password_reset_implementation/token_is_not_invalidated_after_login.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_is_not_invalidated_after_new_token_is_requested` — Token is Not Invalidated After New Token is Requested  →  `insufficient_security_configurability/weak_password_reset_implementation/token_is_not_invalidated_after_new_token_is_requested.json`
+- `insufficient_security_configurability.weak_password_reset_implementation.token_is_not_invalidated_after_password_change` — Token is Not Invalidated After Password Change  →  `insufficient_security_configurability/weak_password_reset_implementation/token_is_not_invalidated_after_password_change.json`
+- `insufficient_security_configurability.weak_registration_implementation.allows_disposable_email_addresses` — Allows Disposable Email Addresses  →  `insufficient_security_configurability/weak_registration_implementation/allows_disposable_email_addresses.json`
+- `insufficient_security_configurability.weak_two_fa_implementation.missing_failsafe` — Missing Failsafe  →  `insufficient_security_configurability/weak_two_fa_implementation/missing_failsafe.json`
+- `insufficient_security_configurability.weak_two_fa_implementation.old_two_fa_code_is_not_invalidated_after_new_code_is_generated` — Old 2FA Code is Not Invalidated After New Code is Generated  →  `insufficient_security_configurability/weak_two_fa_implementation/old_two_fa_code_is_not_invalidated_after_new_code_is_generated.json`
+- `insufficient_security_configurability.weak_two_fa_implementation.two_fa_code_is_not_updated_after_new_code_is_requested` — 2FA Code is Not Updated After New Code is Requested  →  `insufficient_security_configurability/weak_two_fa_implementation/two_fa_code_is_not_updated_after_new_code_is_requested.json`
+- `lack_of_binary_hardening.lack_of_exploit_mitigations` — Lack of Exploit Mitigations  →  `lack_of_binary_hardening/lack_of_exploit_mitigations.json`
+- `lack_of_binary_hardening.lack_of_jailbreak_detection` — Lack of Jailbreak Detection  →  `lack_of_binary_hardening/lack_of_jailbreak_detection.json`
+- `lack_of_binary_hardening.lack_of_obfuscation` — Lack of Obfuscation  →  `lack_of_binary_hardening/lack_of_obfuscation.json`
+- `lack_of_binary_hardening.runtime_instrumentation_based` — Runtime Instrumentation-Based  →  `lack_of_binary_hardening/runtime_instrumentation_based.json`
+- `mobile_security_misconfiguration.auto_backup_allowed_by_default` — Auto Backup Allowed by Default  →  `mobile_security_misconfiguration/auto_backup_allowed_by_default.json`
+- `mobile_security_misconfiguration.clipboard_enabled` — Clipboard Enabled  →  `mobile_security_misconfiguration/clipboard_enabled.json`
+- `mobile_security_misconfiguration.ssl_certificate_pinning.absent` — Absent  →  `mobile_security_misconfiguration/ssl_certificate_pinning/absent.json`
+- `mobile_security_misconfiguration.ssl_certificate_pinning.defeatable` — Defeatable  →  `mobile_security_misconfiguration/ssl_certificate_pinning/defeatable.json`
+- `mobile_security_misconfiguration.tapjacking` — Tapjacking  →  `mobile_security_misconfiguration/tapjacking.json`
+- `network_security_misconfiguration.telnet_enabled` — Telnet Enabled  →  `network_security_misconfiguration/telnet_enabled.json`
+- `sensitive_data_exposure.disclosure_of_known_public_information` — Disclosure of Known Public Information  →  `sensitive_data_exposure/disclosure_of_known_public_information.json`
+- `sensitive_data_exposure.disclosure_of_secrets.data_traffic_spam` — Data/Traffic Spam  →  `sensitive_data_exposure/disclosure_of_secrets/data_traffic_spam.json`
+- `sensitive_data_exposure.disclosure_of_secrets.intentionally_public_sample_or_invalid` — Intentionally Public, Sample or Invalid  →  `sensitive_data_exposure/disclosure_of_secrets/intentionally_public_sample_or_invalid.json`
+- `sensitive_data_exposure.disclosure_of_secrets.non_corporate_user` — Non-Corporate User  →  `sensitive_data_exposure/disclosure_of_secrets/non_corporate_user.json`
+- `sensitive_data_exposure.disclosure_of_secrets.publicly_accessible_robots` — Publicly accessible Robots.txt  →  `sensitive_data_exposure/disclosure_of_secrets/publicly_accessible_robots.json`
+- `sensitive_data_exposure.disclosure_of_secrets.sensitive_information_disclosed_jwt` — Sensitive Information Disclosed in JSON Web Token (JWT)  →  `sensitive_data_exposure/disclosure_of_secrets/sensitive_information_disclosed_jwt.json`
+- `sensitive_data_exposure.graphql_introspection_enabled` — GraphQL Introspection Enabled  →  `sensitive_data_exposure/graphql_introspection_enabled.json`
+- `sensitive_data_exposure.internal_ip_disclosure` — Internal IP Disclosure  →  `sensitive_data_exposure/internal_ip_disclosure.json`
+- `sensitive_data_exposure.json_hijacking` — JSON Hijacking  →  `sensitive_data_exposure/json_hijacking.json`
+- `sensitive_data_exposure.mixed_content` — Mixed Content (HTTPS Sourcing HTTP)  →  `sensitive_data_exposure/mixed_content.json`
+- `sensitive_data_exposure.non_sensitive_token_in_url` — Non-Sensitive Token in URL  →  `sensitive_data_exposure/non_sensitive_token_in_url.json`
+- `sensitive_data_exposure.sensitive_data_hardcoded.file_paths` — File Paths  →  `sensitive_data_exposure/sensitive_data_hardcoded/file_paths.json`
+- `sensitive_data_exposure.sensitive_data_hardcoded.oauth_secret` — OAuth Secret  →  `sensitive_data_exposure/sensitive_data_hardcoded/oauth_secret.json`
+- `sensitive_data_exposure.sensitive_token_in_url.in_the_background` — In the Background  →  `sensitive_data_exposure/sensitive_token_in_url/in_the_background.json`
+- `sensitive_data_exposure.sensitive_token_in_url.on_password_reset` — On Password Reset  →  `sensitive_data_exposure/sensitive_token_in_url/on_password_reset.json`
+- `sensitive_data_exposure.token_leakage_via_referer.password_reset_token` — Password Reset Token  →  `sensitive_data_exposure/token_leakage_via_referer/password_reset_token.json`
+- `sensitive_data_exposure.token_leakage_via_referer.trusted_third_party` — Trusted 3rd Party  →  `sensitive_data_exposure/token_leakage_via_referer/trusted_third_party.json`
+- `sensitive_data_exposure.via_localstorage_sessionstorage.non_sensitive_token` — Non-Sensitive Token  →  `sensitive_data_exposure/via_localstorage_sessionstorage/non_sensitive_token.json`
+- `sensitive_data_exposure.visible_detailed_error_page.descriptive_stack_trace` — Descriptive Stack Trace  →  `sensitive_data_exposure/visible_detailed_error_page/descriptive_stack_trace.json`
+- `sensitive_data_exposure.visible_detailed_error_page.full_path_disclosure` — Full Path Disclosure  →  `sensitive_data_exposure/visible_detailed_error_page/full_path_disclosure.json`
+- `server_security_misconfiguration.bitsquatting` — Bitsquatting  →  `server_security_misconfiguration/bitsquatting.json`
+- `server_security_misconfiguration.captcha.brute_force` — Brute Force  →  `server_security_misconfiguration/captcha/brute_force.json`
+- `server_security_misconfiguration.captcha.missing` — Missing  →  `server_security_misconfiguration/captcha/missing.json`
+- `server_security_misconfiguration.clickjacking.form_input` — Form Input  →  `server_security_misconfiguration/clickjacking/form_input.json`
+- `server_security_misconfiguration.clickjacking.non_sensitive_action` — Non-Sensitive Action  →  `server_security_misconfiguration/clickjacking/non_sensitive_action.json`
+- `server_security_misconfiguration.cookie_scoped_to_parent_domain` — Cookie Scoped to Parent Domain  →  `server_security_misconfiguration/cookie_scoped_to_parent_domain.json`
+- `server_security_misconfiguration.directory_listing_enabled.non_sensitive_data_exposure` — Non-Sensitive Data Exposure  →  `server_security_misconfiguration/directory_listing_enabled/non_sensitive_data_exposure.json`
+- `server_security_misconfiguration.email_verification_bypass` — Email Verification Bypass  →  `server_security_misconfiguration/email_verification_bypass.json`
+- `server_security_misconfiguration.exposed_portal.protected` — Protected  →  `server_security_misconfiguration/exposed_portal/protected.json`
+- `server_security_misconfiguration.fingerprinting_banner_disclosure.software_version_in_response_headers` — Software Versions Disclosed in Response Headers  →  `server_security_misconfiguration/fingerprinting_banner_disclosure/software_version_in_response_headers.json`
+- `server_security_misconfiguration.insecure_ssl.certificate_error` — Certificate Error  →  `server_security_misconfiguration/insecure_ssl/certificate_error.json`
+- `server_security_misconfiguration.insecure_ssl.insecure_cipher_suite` — Insecure Cipher Suite  →  `server_security_misconfiguration/insecure_ssl/insecure_cipher_suite.json`
+- `server_security_misconfiguration.insecure_ssl.lack_of_forward_secrecy` — Lack of Forward Secrecy  →  `server_security_misconfiguration/insecure_ssl/lack_of_forward_secrecy.json`
+- `server_security_misconfiguration.lack_of_password_confirmation.change_email_address` — Change Email Address  →  `server_security_misconfiguration/lack_of_password_confirmation/change_email_address.json`
+- `server_security_misconfiguration.lack_of_password_confirmation.change_password` — Change Password  →  `server_security_misconfiguration/lack_of_password_confirmation/change_password.json`
+- `server_security_misconfiguration.lack_of_password_confirmation.manage_two_fa` — Manage 2FA  →  `server_security_misconfiguration/lack_of_password_confirmation/manage_two_fa.json`
+- `server_security_misconfiguration.lack_of_security_headers.cache_control_for_a_non_sensitive_page` — Cache-Control for a Non-Sensitive Page  →  `server_security_misconfiguration/lack_of_security_headers/cache_control_for_a_non_sensitive_page.json`
+- `server_security_misconfiguration.lack_of_security_headers.content_security_policy` — Content-Security-Policy  →  `server_security_misconfiguration/lack_of_security_headers/content_security_policy.json`
+- `server_security_misconfiguration.lack_of_security_headers.content_security_policy_report_only` — Content-Security-Policy-Report-Only  →  `server_security_misconfiguration/lack_of_security_headers/content_security_policy_report_only.json`
+- `server_security_misconfiguration.lack_of_security_headers.public_key_pins` — Public-Key-Pins  →  `server_security_misconfiguration/lack_of_security_headers/public_key_pins.json`
+- `server_security_misconfiguration.lack_of_security_headers.strict_transport_security` — Strict-Transport-Security  →  `server_security_misconfiguration/lack_of_security_headers/strict_transport_security.json`
+- `server_security_misconfiguration.lack_of_security_headers.x_content_security_policy` — X-Content-Security-Policy  →  `server_security_misconfiguration/lack_of_security_headers/x_content_security_policy.json`
+- `server_security_misconfiguration.lack_of_security_headers.x_content_type_options` — X-Content-Type-Options  →  `server_security_misconfiguration/lack_of_security_headers/x_content_type_options.json`
+- `server_security_misconfiguration.lack_of_security_headers.x_frame_options` — X-Frame-Options  →  `server_security_misconfiguration/lack_of_security_headers/x_frame_options.json`
+- `server_security_misconfiguration.lack_of_security_headers.x_webkit_csp` — X-Webkit-CSP  →  `server_security_misconfiguration/lack_of_security_headers/x_webkit_csp.json`
+- `server_security_misconfiguration.lack_of_security_headers.x_xss_protection` — X-XSS-Protection  →  `server_security_misconfiguration/lack_of_security_headers/x_xss_protection.json`
+- `server_security_misconfiguration.mail_server_misconfiguration.email_spoofing_on_non_email_domain` — Email Spoofing on Non-Email Domain  →  `server_security_misconfiguration/mail_server_misconfiguration/email_spoofing_on_non_email_domain.json`
+- `server_security_misconfiguration.mail_server_misconfiguration.email_spoofing_to_spam_folder` — Email Spoofing to Spam Folder  →  `server_security_misconfiguration/mail_server_misconfiguration/email_spoofing_to_spam_folder.json`
+- `server_security_misconfiguration.mail_server_misconfiguration.missing_or_misconfigured_spf_and_or_dkim` — Missing or Misconfigured SPF and/or DKIM  →  `server_security_misconfiguration/mail_server_misconfiguration/missing_or_misconfigured_spf_and_or_dkim.json`
+- `server_security_misconfiguration.misconfigured_dns.missing_caa_record` — Missing Certification Authority Authorization (CAA) Record  →  `server_security_misconfiguration/misconfigured_dns/missing_caa_record.json`
+- `server_security_misconfiguration.misconfigured_file_share.non_sensitive_data_exposure_ftp_smb` — Non-Sensitive Data Exposure via Anonymous FTP/SMB Enabled  →  `server_security_misconfiguration/misconfigured_file_share/non_sensitive_data_exposure_ftp_smb.json`
+- `server_security_misconfiguration.misconfigured_security_headers.insecure_csp` — Insecure Content-Security-Policy  →  `server_security_misconfiguration/misconfigured_security_headers/insecure_csp.json`
+- `server_security_misconfiguration.missing_dnssec` — Missing DNSSEC  →  `server_security_misconfiguration/missing_dnssec.json`
+- `server_security_misconfiguration.missing_secure_or_httponly_cookie_flag.non_session_cookie` — Non-Session Cookie  →  `server_security_misconfiguration/missing_secure_or_httponly_cookie_flag/non_session_cookie.json`
+- `server_security_misconfiguration.missing_subresource_integrity` — Missing Subresource Integrity  →  `server_security_misconfiguration/missing_subresource_integrity.json`
+- `server_security_misconfiguration.no_rate_limiting_on_form.change_password` — Change Password  →  `server_security_misconfiguration/no_rate_limiting_on_form/change_password.json`
+- `server_security_misconfiguration.potentially_unsafe_http_method_enabled.options` — OPTIONS  →  `server_security_misconfiguration/potentially_unsafe_http_method_enabled/options.json`
+- `server_security_misconfiguration.potentially_unsafe_http_method_enabled.trace` — TRACE  →  `server_security_misconfiguration/potentially_unsafe_http_method_enabled/trace.json`
+- `server_security_misconfiguration.rfd` — Reflected File Download (RFD)  →  `server_security_misconfiguration/rfd.json`
+- `server_security_misconfiguration.same_site_scripting` — Same-Site Scripting  →  `server_security_misconfiguration/same_site_scripting.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.external_dns_query_only` — External - DNS Query Only  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/external_dns_query_only.json`
+- `server_security_misconfiguration.server_side_request_forgery_ssrf.external_low_impact` — External - Low impact  →  `server_security_misconfiguration/server_side_request_forgery_ssrf/external_low_impact.json`
+- `server_security_misconfiguration.unsafe_file_upload.file_extension_filter_bypass` — File Extension Filter Bypass  →  `server_security_misconfiguration/unsafe_file_upload/file_extension_filter_bypass.json`
+- `server_security_misconfiguration.unsafe_file_upload.no_antivirus` — No Antivirus  →  `server_security_misconfiguration/unsafe_file_upload/no_antivirus.json`
+- `server_security_misconfiguration.unsafe_file_upload.no_size_limit` — No Size Limit  →  `server_security_misconfiguration/unsafe_file_upload/no_size_limit.json`
+- `server_security_misconfiguration.username_enumeration.brute_force` — Brute Force  →  `server_security_misconfiguration/username_enumeration/brute_force.json`
+- `server_side_injection.content_spoofing.email_hyperlink_injection_based_on_email_provider` — Email Hyperlink Injection Based on Email Provider  →  `server_side_injection/content_spoofing/email_hyperlink_injection_based_on_email_provider.json`
+- `server_side_injection.content_spoofing.flash_based_external_authentication_injection` — Flash Based External Authentication Injection  →  `server_side_injection/content_spoofing/flash_based_external_authentication_injection.json`
+- `server_side_injection.content_spoofing.homograph_idn_based` — Homograph/IDN-Based  →  `server_side_injection/content_spoofing/homograph_idn_based.json`
+- `server_side_injection.content_spoofing.html_content_injection` — HTML Content Injection  →  `server_side_injection/content_spoofing/html_content_injection.json`
+- `server_side_injection.content_spoofing.rtlo` — Right-to-Left Override (RTLO)  →  `server_side_injection/content_spoofing/rtlo.json`
+- `server_side_injection.content_spoofing.self_email_html_injection` — Self Email HTML Injection  →  `server_side_injection/content_spoofing/self_email_html_injection.json`
+- `server_side_injection.content_spoofing.text_injection` — Text Injection  →  `server_side_injection/content_spoofing/text_injection.json`
+- `server_side_injection.exposed_data.non_sensitive_data` — Non Sensitive Data  →  `server_side_injection/exposed_data/non_sensitive_data.json`
+- `server_side_injection.parameter_pollution.social_media_sharing_buttons` — Social Media Sharing Buttons  →  `server_side_injection/parameter_pollution/social_media_sharing_buttons.json`
+- `unvalidated_redirects_and_forwards.lack_of_security_speed_bump_page` — Lack of Security Speed Bump Page  →  `unvalidated_redirects_and_forwards/lack_of_security_speed_bump_page.json`
+- `unvalidated_redirects_and_forwards.open_redirect.flash_based` — Flash-Based  →  `unvalidated_redirects_and_forwards/open_redirect/flash_based.json`
+- `unvalidated_redirects_and_forwards.open_redirect.header_based` — Header-Based  →  `unvalidated_redirects_and_forwards/open_redirect/header_based.json`
+- `unvalidated_redirects_and_forwards.open_redirect.post_based` — POST-Based  →  `unvalidated_redirects_and_forwards/open_redirect/post_based.json`
+- `unvalidated_redirects_and_forwards.tabnabbing` — Tabnabbing  →  `unvalidated_redirects_and_forwards/tabnabbing.json`
+- `using_components_with_known_vulnerabilities.captcha_bypass.ocr_optical_character_recognition` — OCR (Optical Character Recognition)  →  `using_components_with_known_vulnerabilities/captcha_bypass/ocr_optical_character_recognition.json`
+- `using_components_with_known_vulnerabilities.outdated_software_version` — Outdated Software Version  →  `using_components_with_known_vulnerabilities/outdated_software_version.json`
+- `using_components_with_known_vulnerabilities.rosetta_flash` — Rosetta Flash  →  `using_components_with_known_vulnerabilities/rosetta_flash.json`
+- `using_components_with_known_vulnerabilities.unpatched_javascript_libraries` — Unpatched Javascript Libraries  →  `using_components_with_known_vulnerabilities/unpatched_javascript_libraries.json`
+
+## Varies (86)
+- `active_directory.configuration_weaknesses.passwords_found_domain_description` — Passwords Found within Domain User Account Description  →  `active_directory/configuration_weaknesses/passwords_found_domain_description.json`
+- `active_directory.dacl_abuse` — DACL Abuse  →  `active_directory/dacl_abuse.json`
+- `active_directory.misconfigured_active_directory_certificate_services` — Misconfigured Active Directory Certificate Services (ADCS)  →  `active_directory/misconfigured_active_directory_certificate_services.json`
+- `active_directory.sensitive_data_exposure.ldap_anonymous_bind_enabled` — LDAP Anonymous Bind Enabled  →  `active_directory/sensitive_data_exposure/ldap_anonymous_bind_enabled.json`
+- `active_directory.sensitive_data_exposure.sensitive_data_in_open_file_shares` — Sensitive Data in Open File Shares  →  `active_directory/sensitive_data_exposure/sensitive_data_in_open_file_shares.json`
+- `active_directory.sscm_abuse.automatic_device_approval` — Automatic Device Approval Enabled  →  `active_directory/sscm_abuse/automatic_device_approval.json`
+- `active_directory.sscm_abuse.distribution_point_anonymous_access` — Distribution Point Permits Anonymous Access  →  `active_directory/sscm_abuse/distribution_point_anonymous_access.json`
+- `active_directory.sscm_abuse.ntlm_automatic_push_installation` — NTLM Relay Via Automatic Client Push Installation  →  `active_directory/sscm_abuse/ntlm_automatic_push_installation.json`
+- `active_directory.sscm_abuse.ntlm_management_point_site_database` — NTLM Relay From Management Point to Site Database  →  `active_directory/sscm_abuse/ntlm_management_point_site_database.json`
+- `active_directory.sscm_abuse.ntlm_site_server_site_systems` — NTLM Relay From Site Server To Site Systems  →  `active_directory/sscm_abuse/ntlm_site_server_site_systems.json`
+- `active_directory.sscm_abuse.privileged_credentials_exposed` — Privileged Credentials Exposed In Task Sequences, Collection Variables or Network Access Account  →  `active_directory/sscm_abuse/privileged_credentials_exposed.json`
+- `active_directory.sscm_abuse.pxe_boot_media_theft` — PXE Boot Media Theft  →  `active_directory/sscm_abuse/pxe_boot_media_theft.json`
+- `algorithmic_biases.aggregation_bias` — Aggregation Bias  →  `algorithmic_biases/aggregation_bias.json`
+- `algorithmic_biases.processing_bias` — Processing Bias  →  `algorithmic_biases/processing_bias.json`
+- `application_level_denial_of_service_dos.excessive_resource_consumption.injection_prompt` — Injection (Prompt)  →  `application_level_denial_of_service_dos/excessive_resource_consumption/injection_prompt.json`
+- `blockchain_infrastructure_misconfiguration.improper_bridge_validation_and_verification_logic` — Improper Bridge Validation and Verification Logic  →  `blockchain_infrastructure_misconfiguration/improper_bridge_validation_and_verification_logic.json`
+- `broken_access_control.exposed_sensitive_android_intent` — Exposed Sensitive Android Intent  →  `broken_access_control/exposed_sensitive_android_intent.json`
+- `broken_access_control.exposed_sensitive_ios_url_scheme` — Exposed Sensitive iOS URL Scheme  →  `broken_access_control/exposed_sensitive_ios_url_scheme.json`
+- `broken_access_control.privilege_escalation` — Privilege Escalation  →  `broken_access_control/privilege_escalation.json`
+- `broken_authentication_and_session_management.failure_to_invalidate_session.permission_change` — On Permission Change  →  `broken_authentication_and_session_management/failure_to_invalidate_session/permission_change.json`
+- `cloud_security.misconfigured_services_and_apis.exposed_debug_or_admin_interfaces` — Exposed Debug or Admin Interfaces  →  `cloud_security/misconfigured_services_and_apis/exposed_debug_or_admin_interfaces.json`
+- `cloud_security.storage_misconfigurations.publicly_accessible_cloud_storage` — Publicly Accessible Cloud Storage  →  `cloud_security/storage_misconfigurations/publicly_accessible_cloud_storage.json`
+- `cross_site_request_forgery_csrf.action_specific.authenticated_action` — Authenticated Action  →  `cross_site_request_forgery_csrf/action_specific/authenticated_action.json`
+- `cross_site_request_forgery_csrf.action_specific.unauthenticated_action` — Unauthenticated Action  →  `cross_site_request_forgery_csrf/action_specific/unauthenticated_action.json`
+- `cryptographic_weakness.insecure_implementation.improper_following_of_specification` — Improper Following of Specification (Other)  →  `cryptographic_weakness/insecure_implementation/improper_following_of_specification.json`
+- `cryptographic_weakness.insecure_implementation.missing_cryptographic_step` — Missing Cryptographic Step  →  `cryptographic_weakness/insecure_implementation/missing_cryptographic_step.json`
+- `cryptographic_weakness.insecure_key_generation.improper_asymmetric_exponent_selection` — Improper Asymmetric Exponent Selection  →  `cryptographic_weakness/insecure_key_generation/improper_asymmetric_exponent_selection.json`
+- `cryptographic_weakness.insecure_key_generation.improper_asymmetric_prime_selection` — Improper Asymmetric Prime Selection  →  `cryptographic_weakness/insecure_key_generation/improper_asymmetric_prime_selection.json`
+- `cryptographic_weakness.insecure_key_generation.insufficient_key_stretching` — Insufficient Key Stretching  →  `cryptographic_weakness/insecure_key_generation/insufficient_key_stretching.json`
+- `cryptographic_weakness.insufficient_verification_of_data_authenticity.cryptographic_signature` — Cryptographic Signature  →  `cryptographic_weakness/insufficient_verification_of_data_authenticity/cryptographic_signature.json`
+- `cryptographic_weakness.side_channel_attack.differential_fault_analysis` — Differential Fault Analysis  →  `cryptographic_weakness/side_channel_attack/differential_fault_analysis.json`
+- `cryptographic_weakness.weak_hash.lack_of_salt` — Lack of Salt  →  `cryptographic_weakness/weak_hash/lack_of_salt.json`
+- `cryptographic_weakness.weak_hash.predictable_hash_collision` — Predictable Hash Collision  →  `cryptographic_weakness/weak_hash/predictable_hash_collision.json`
+- `data_biases.pre_existing_bias` — Pre-existing Bias  →  `data_biases/pre_existing_bias.json`
+- `data_biases.representation_bias` — Representation Bias  →  `data_biases/representation_bias.json`
+- `decentralized_application_misconfiguration.defi_security.flash_loan_attack` — Flash Loan Attack  →  `decentralized_application_misconfiguration/defi_security/flash_loan_attack.json`
+- `decentralized_application_misconfiguration.defi_security.function_level_accounting_error` — Function-Level Accounting Error  →  `decentralized_application_misconfiguration/defi_security/function_level_accounting_error.json`
+- `decentralized_application_misconfiguration.defi_security.improper_implementation_of_governance` — Improper Implementation of Governance  →  `decentralized_application_misconfiguration/defi_security/improper_implementation_of_governance.json`
+- `decentralized_application_misconfiguration.defi_security.pricing_oracle_manipulation` — Pricing Oracle Manipulation  →  `decentralized_application_misconfiguration/defi_security/pricing_oracle_manipulation.json`
+- `decentralized_application_misconfiguration.improper_authorization.insufficient_signature_validation` — Insufficient Signature Validation  →  `decentralized_application_misconfiguration/improper_authorization/insufficient_signature_validation.json`
+- `decentralized_application_misconfiguration.insecure_data_storage.sensitive_information_exposure` — Sensitive Information Exposure  →  `decentralized_application_misconfiguration/insecure_data_storage/sensitive_information_exposure.json`
+- `decentralized_application_misconfiguration.marketplace_security.denial_of_service` — Denial of Service  →  `decentralized_application_misconfiguration/marketplace_security/denial_of_service.json`
+- `decentralized_application_misconfiguration.marketplace_security.improper_validation_and_checks_for_deposits_and_withdrawals` — Improper Validation and Checks For Deposits and Withdrawals  →  `decentralized_application_misconfiguration/marketplace_security/improper_validation_and_checks_for_deposits_and_withdrawals.json`
+- `decentralized_application_misconfiguration.marketplace_security.miscalculated_accounting_logic` — Miscalculated Accounting Logic  →  `decentralized_application_misconfiguration/marketplace_security/miscalculated_accounting_logic.json`
+- `developer_biases.implicit_bias` — Implicit Bias  →  `developer_biases/implicit_bias.json`
+- `indicators_of_compromise` — Indicators of Compromise  →  `indicators_of_compromise.json`
+- `insecure_data_transport.cleartext_transmission_of_sensitive_data` — Cleartext Transmission of Sensitive Data  →  `insecure_data_transport/cleartext_transmission_of_sensitive_data.json`
+- `insecure_os_firmware.data_not_encrypted_at_rest.sensitive` — Sensitive  →  `insecure_os_firmware/data_not_encrypted_at_rest/sensitive.json`
+- `insecure_os_firmware.failure_to_remove_sensitive_artifacts_from_disk` — Failure to Remove Sensitive Artifacts from Disk  →  `insecure_os_firmware/failure_to_remove_sensitive_artifacts_from_disk.json`
+- `insecure_os_firmware.kiosk_escape_or_breakout` — Kiosk Escape or Breakout  →  `insecure_os_firmware/kiosk_escape_or_breakout.json`
+- `insecure_os_firmware.poorly_configured_disk_encryption` — Poorly Configured Disk Encryption  →  `insecure_os_firmware/poorly_configured_disk_encryption.json`
+- `insecure_os_firmware.poorly_configured_operating_system_security` — Poorly Configured Operating System Security  →  `insecure_os_firmware/poorly_configured_operating_system_security.json`
+- `insecure_os_firmware.recovery_of_disk_contains_sensitive_material` — Recovery of Disk Contains Sensitive Material  →  `insecure_os_firmware/recovery_of_disk_contains_sensitive_material.json`
+- `insecure_os_firmware.weakness_in_firmware_updates.firmware_cannot_be_updated` — Firmware cannot be updated  →  `insecure_os_firmware/weakness_in_firmware_updates/firmware_cannot_be_updated.json`
+- `misinterpretation_biases.context_ignorance` — Context Ignorance  →  `misinterpretation_biases/context_ignorance.json`
+- `physical_security_issues.bypass_of_physical_access_control` — Bypass of physical access control  →  `physical_security_issues/bypass_of_physical_access_control.json`
+- `physical_security_issues.weakness_in_physical_access_control.cloneable_key` — Cloneable Key  →  `physical_security_issues/weakness_in_physical_access_control/cloneable_key.json`
+- `physical_security_issues.weakness_in_physical_access_control.master_key_identification` — Master Key Identification  →  `physical_security_issues/weakness_in_physical_access_control/master_key_identification.json`
+- `protocol_specific_misconfiguration.improper_validation_and_finalization_logic` — Improper Validation and Finalization Logic  →  `protocol_specific_misconfiguration/improper_validation_and_finalization_logic.json`
+- `protocol_specific_misconfiguration.misconfigured_staking_logic` — Misconfigured Staking Logic  →  `protocol_specific_misconfiguration/misconfigured_staking_logic.json`
+- `sensitive_data_exposure.disclosure_of_secrets.pii_leakage_exposure` — PII Leakage/Exposure  →  `sensitive_data_exposure/disclosure_of_secrets/pii_leakage_exposure.json`
+- `sensitive_data_exposure.xssi` — Cross Site Script Inclusion (XSSI)  →  `sensitive_data_exposure/xssi.json`
+- `server_security_misconfiguration.cache_deception` — Cache Deception  →  `server_security_misconfiguration/cache_deception.json`
+- `server_security_misconfiguration.cache_poisoning` — Cache Poisoning  →  `server_security_misconfiguration/cache_poisoning.json`
+- `server_security_misconfiguration.directory_listing_enabled.sensitive_data_exposure` — Sensitive Data Exposure  →  `server_security_misconfiguration/directory_listing_enabled/sensitive_data_exposure.json`
+- `server_security_misconfiguration.misconfigured_file_share.anonymous_ftp_enabled` — Anonymous FTP Enabled  →  `server_security_misconfiguration/misconfigured_file_share/anonymous_ftp_enabled.json`
+- `server_security_misconfiguration.misconfigured_file_share.anonymous_smb_enabled` — Anonymous SMB Enabled  →  `server_security_misconfiguration/misconfigured_file_share/anonymous_smb_enabled.json`
+- `server_security_misconfiguration.oauth_misconfiguration.insecure_redirect_uri` — Insecure Redirect URI  →  `server_security_misconfiguration/oauth_misconfiguration/insecure_redirect_uri.json`
+- `server_security_misconfiguration.oauth_misconfiguration.missing_state_parameter` — Missing/Broken State Parameter  →  `server_security_misconfiguration/oauth_misconfiguration/missing_state_parameter.json`
+- `server_security_misconfiguration.path_traversal` — Path Traversal  →  `server_security_misconfiguration/path_traversal.json`
+- `server_security_misconfiguration.race_condition` — Race Condition  →  `server_security_misconfiguration/race_condition.json`
+- `server_security_misconfiguration.request_smuggling` — HTTP Request Smuggling  →  `server_security_misconfiguration/request_smuggling.json`
+- `server_security_misconfiguration.software_package_takeover` — Software Package Takeover  →  `server_security_misconfiguration/software_package_takeover.json`
+- `server_security_misconfiguration.ssl_attack_breach_poodle_etc` — SSL Attack (BREACH, POODLE etc.)  →  `server_security_misconfiguration/ssl_attack_breach_poodle_etc.json`
+- `server_security_misconfiguration.unsafe_cross_origin_resource_sharing` — Unsafe Cross-Origin Resource Sharing  →  `server_security_misconfiguration/unsafe_cross_origin_resource_sharing.json`
+- `server_side_injection.exposed_data.sensitive_data` — Sensitive Data  →  `server_side_injection/exposed_data/sensitive_data.json`
+- `server_side_injection.ldap_injection` — LDAP Injection  →  `server_side_injection/ldap_injection.json`
+- `server_side_injection.ssti.custom` — Custom  →  `server_side_injection/ssti/custom.json`
+- `smart_contract_misconfiguration.bypass_of_function_modifiers_and_checks` — Bypass of Function Modifiers and Checks  →  `smart_contract_misconfiguration/bypass_of_function_modifiers_and_checks.json`
+- `smart_contract_misconfiguration.inaccurate_rounding_calculation` — Inaccurate Rounding Calculation  →  `smart_contract_misconfiguration/inaccurate_rounding_calculation.json`
+- `societal_biases.confirmation_bias` — Confirmation Bias  →  `societal_biases/confirmation_bias.json`
+- `societal_biases.systemic_bias` — Systemic Bias  →  `societal_biases/systemic_bias.json`
+- `zero_knowledge_security_misconfiguration.misconfigured_trusted_setup` — Misconfigured Trusted Setup  →  `zero_knowledge_security_misconfiguration/misconfigured_trusted_setup.json`
+- `zero_knowledge_security_misconfiguration.mismatching_bit_lengths` — Mismatching Bit Lengths  →  `zero_knowledge_security_misconfiguration/mismatching_bit_lengths.json`
+- `zero_knowledge_security_misconfiguration.missing_constraint` — Missing Constraint  →  `zero_knowledge_security_misconfiguration/missing_constraint.json`
+- `zero_knowledge_security_misconfiguration.missing_range_check` — Missing Range Check  →  `zero_knowledge_security_misconfiguration/missing_range_check.json`

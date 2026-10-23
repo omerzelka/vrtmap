@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.clickjacking.sensitive_action",
+  "name": "Sensitive Click-Based Action",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Clickjacking",
+    "Sensitive Click-Based Action"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

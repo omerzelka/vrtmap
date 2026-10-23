@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.insecure_ssl.insecure_cipher_suite",
+  "name": "Insecure Cipher Suite",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Insecure SSL",
+    "Insecure Cipher Suite"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

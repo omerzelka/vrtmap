@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.username_enumeration.brute_force",
+  "name": "Brute Force",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Username/Email Enumeration",
+    "Brute Force"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

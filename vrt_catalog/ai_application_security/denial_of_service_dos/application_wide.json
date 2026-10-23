@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.denial_of_service_dos.application_wide",
+  "name": "Application-Wide",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "AI Application Security",
+    "Denial-of-Service (DoS)",
+    "Application-Wide"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

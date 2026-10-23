@@ -1,0 +1,15 @@
+{
+  "vrt_id": "client_side_injection.binary_planting.non_default_folder_privilege_escalation",
+  "name": "Non-Default Folder Privilege Escalation",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Client-Side Injection",
+    "Binary Planting",
+    "Non-Default Folder Privilege Escalation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

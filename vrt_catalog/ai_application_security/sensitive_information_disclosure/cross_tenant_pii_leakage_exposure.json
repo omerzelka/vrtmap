@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.sensitive_information_disclosure.cross_tenant_pii_leakage_exposure",
+  "name": "Cross-Tenant PII Leakage/Exposure",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "AI Application Security",
+    "Sensitive Information Disclosure",
+    "Cross-Tenant PII Leakage/Exposure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

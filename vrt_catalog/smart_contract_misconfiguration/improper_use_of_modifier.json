@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.improper_use_of_modifier",
+  "name": "Improper Use of Modifier",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Improper Use of Modifier"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "active_directory.dacl_abuse",
+  "name": "DACL Abuse",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "DACL Abuse"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

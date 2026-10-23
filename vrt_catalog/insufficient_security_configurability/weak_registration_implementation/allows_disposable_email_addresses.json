@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insufficient_security_configurability.weak_registration_implementation.allows_disposable_email_addresses",
+  "name": "Allows Disposable Email Addresses",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "Weak Registration Implementation",
+    "Allows Disposable Email Addresses"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

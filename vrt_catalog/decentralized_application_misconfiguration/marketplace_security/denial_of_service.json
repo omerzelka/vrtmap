@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.marketplace_security.denial_of_service",
+  "name": "Denial of Service",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Marketplace Security",
+    "Denial of Service"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

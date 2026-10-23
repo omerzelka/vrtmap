@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rf_hub.key_fob_cloning",
+  "name": "Key Fob Cloning",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "RF Hub",
+    "Key Fob Cloning"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

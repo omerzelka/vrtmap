@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.broken_cryptography.use_of_vulnerable_cryptographic_library",
+  "name": "Use of Vulnerable Cryptographic Library",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Broken Cryptography",
+    "Use of Vulnerable Cryptographic Library"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

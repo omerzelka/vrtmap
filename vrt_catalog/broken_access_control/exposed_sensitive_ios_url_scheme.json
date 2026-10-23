@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_access_control.exposed_sensitive_ios_url_scheme",
+  "name": "Exposed Sensitive iOS URL Scheme",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Broken Access Control (BAC)",
+    "Exposed Sensitive iOS URL Scheme"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

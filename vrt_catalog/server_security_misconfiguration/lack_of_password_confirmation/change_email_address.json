@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.lack_of_password_confirmation.change_email_address",
+  "name": "Change Email Address",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Lack of Password Confirmation",
+    "Change Email Address"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

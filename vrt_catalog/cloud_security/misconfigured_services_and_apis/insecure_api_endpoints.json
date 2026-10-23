@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.misconfigured_services_and_apis.insecure_api_endpoints",
+  "name": "Insecure API Endpoints",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cloud Security",
+    "Misconfigured Services and APIs",
+    "Insecure API Endpoints"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

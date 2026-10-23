@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.vector_and_embedding_weaknesses.semantic_indexing",
+  "name": "Semantic Indexing",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "AI Application Security",
+    "Vector and Embedding Weaknesses",
+    "Semantic Indexing"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

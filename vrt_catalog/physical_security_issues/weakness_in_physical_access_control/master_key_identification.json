@@ -1,0 +1,15 @@
+{
+  "vrt_id": "physical_security_issues.weakness_in_physical_access_control.master_key_identification",
+  "name": "Master Key Identification",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Physical Security Issues",
+    "Weakness in physical access control",
+    "Master Key Identification"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "physical_security_issues.bypass_of_physical_access_control",
+  "name": "Bypass of physical access control",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Physical Security Issues",
+    "Bypass of physical access control"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

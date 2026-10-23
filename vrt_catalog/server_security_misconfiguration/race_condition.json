@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.race_condition",
+  "name": "Race Condition",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Race Condition"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

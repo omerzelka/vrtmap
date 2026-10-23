@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.session_fixation.remote_attack_vector",
+  "name": "Remote Attack Vector",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Session Fixation",
+    "Remote Attack Vector"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

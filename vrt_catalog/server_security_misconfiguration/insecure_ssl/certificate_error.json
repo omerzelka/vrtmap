@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.insecure_ssl.certificate_error",
+  "name": "Certificate Error",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Insecure SSL",
+    "Certificate Error"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

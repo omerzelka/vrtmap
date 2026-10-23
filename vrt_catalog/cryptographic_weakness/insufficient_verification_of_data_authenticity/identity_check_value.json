@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_verification_of_data_authenticity.identity_check_value",
+  "name": "Integrity Check Value (ICV)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Verification of Data Authenticity",
+    "Integrity Check Value (ICV)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

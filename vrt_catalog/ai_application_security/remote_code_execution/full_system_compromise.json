@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.remote_code_execution.full_system_compromise",
+  "name": "Full System Compromise",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "AI Application Security",
+    "Remote Code Execution",
+    "Full System Compromise"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

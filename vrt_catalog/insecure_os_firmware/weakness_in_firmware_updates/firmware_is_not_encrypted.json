@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insecure_os_firmware.weakness_in_firmware_updates.firmware_is_not_encrypted",
+  "name": "Firmware is not encrypted",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Weakness in Firmware Updates",
+    "Firmware is not encrypted"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

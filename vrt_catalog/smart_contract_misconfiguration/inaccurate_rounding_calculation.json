@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.inaccurate_rounding_calculation",
+  "name": "Inaccurate Rounding Calculation",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Inaccurate Rounding Calculation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

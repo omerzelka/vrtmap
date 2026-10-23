@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.side_channel_attack.emanations_attack",
+  "name": "Emanations Attack",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Side-Channel Attack",
+    "Emanations Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

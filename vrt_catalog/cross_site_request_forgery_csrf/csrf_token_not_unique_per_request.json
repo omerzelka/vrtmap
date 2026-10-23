@@ -1,0 +1,14 @@
+{
+  "vrt_id": "cross_site_request_forgery_csrf.csrf_token_not_unique_per_request",
+  "name": "CSRF Token Not Unique Per Request",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cross-Site Request Forgery (CSRF)",
+    "CSRF Token Not Unique Per Request"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

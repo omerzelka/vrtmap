@@ -1,0 +1,15 @@
+{
+  "vrt_id": "using_components_with_known_vulnerabilities.captcha_bypass.ocr_optical_character_recognition",
+  "name": "OCR (Optical Character Recognition)",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Using Components with Known Vulnerabilities",
+    "Captcha Bypass",
+    "OCR (Optical Character Recognition)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "decentralized_application_misconfiguration.insecure_data_storage.plaintext_private_key",
+  "name": "Plaintext Private Key",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Decentralized Application Misconfiguration",
+    "Insecure Data Storage",
+    "Plaintext Private Key"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

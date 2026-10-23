@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.infotainment_radio_head_unit.sensitive_data_leakage_exposure",
+  "name": "Sensitive data Leakage/Exposure",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Infotainment, Radio Head Unit",
+    "Sensitive data Leakage/Exposure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

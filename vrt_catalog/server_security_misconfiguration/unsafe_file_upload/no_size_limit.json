@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.unsafe_file_upload.no_size_limit",
+  "name": "No Size Limit",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Unsafe File Upload",
+    "No Size Limit"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

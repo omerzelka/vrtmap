@@ -1,0 +1,14 @@
+{
+  "vrt_id": "application_level_denial_of_service_dos.high_impact_and_or_medium_difficulty",
+  "name": "High Impact and/or Medium Difficulty",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Application-Level Denial-of-Service (DoS)",
+    "High Impact and/or Medium Difficulty"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

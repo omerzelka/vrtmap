@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.server_side_request_forgery_ssrf.internal_port_scan_only",
+  "name": "Internal Port Scan Only",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Server-Side Request Forgery (SSRF)",
+    "Internal Port Scan Only"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

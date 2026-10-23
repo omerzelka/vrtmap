@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.battery_management_system.firmware_dump",
+  "name": "Firmware Dump",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "Battery Management System",
+    "Firmware Dump"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

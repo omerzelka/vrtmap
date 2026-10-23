@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.key_reuse.intra_environment",
+  "name": "Intra-Environment",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Key Reuse",
+    "Intra-Environment"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

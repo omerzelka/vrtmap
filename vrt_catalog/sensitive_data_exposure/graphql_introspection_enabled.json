@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.graphql_introspection_enabled",
+  "name": "GraphQL Introspection Enabled",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "GraphQL Introspection Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

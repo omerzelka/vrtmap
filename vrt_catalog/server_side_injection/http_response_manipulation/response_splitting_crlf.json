@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.http_response_manipulation.response_splitting_crlf",
+  "name": "Response Splitting (CRLF)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Server-Side Injection",
+    "HTTP Response Manipulation",
+    "Response Splitting (CRLF)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

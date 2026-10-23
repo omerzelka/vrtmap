@@ -1,0 +1,14 @@
+{
+  "vrt_id": "protocol_specific_misconfiguration.improper_validation_and_finalization_logic",
+  "name": "Improper Validation and Finalization Logic",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Protocol Specific Misconfiguration",
+    "Improper Validation and Finalization Logic"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

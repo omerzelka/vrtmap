@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rf_hub.data_leakage_pull_encryption_mechanism",
+  "name": "Data Leakage / Pull Encryption Mechanism",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "RF Hub",
+    "Data Leakage / Pull Encryption Mechanism"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

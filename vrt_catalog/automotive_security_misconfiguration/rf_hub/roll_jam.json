@@ -1,0 +1,15 @@
+{
+  "vrt_id": "automotive_security_misconfiguration.rf_hub.roll_jam",
+  "name": "Roll Jam",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Automotive Security Misconfiguration",
+    "RF Hub",
+    "Roll Jam"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

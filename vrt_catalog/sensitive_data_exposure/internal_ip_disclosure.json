@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.internal_ip_disclosure",
+  "name": "Internal IP Disclosure",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Internal IP Disclosure"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

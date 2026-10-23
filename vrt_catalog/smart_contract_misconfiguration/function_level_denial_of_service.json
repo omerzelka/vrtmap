@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.function_level_denial_of_service",
+  "name": "Function-level Denial of Service",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Function-level Denial of Service"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

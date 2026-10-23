@@ -1,0 +1,14 @@
+{
+  "vrt_id": "data_biases.representation_bias",
+  "name": "Representation Bias",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Data Biases",
+    "Representation Bias"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

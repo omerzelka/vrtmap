@@ -1,0 +1,15 @@
+{
+  "vrt_id": "ai_application_security.improper_output_handling.cross_site_scripting_xss",
+  "name": "Cross-Site Scripting (XSS)",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "AI Application Security",
+    "Improper Output Handling",
+    "Cross-Site Scripting (XSS)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

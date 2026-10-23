@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insecure_implementation.missing_cryptographic_step",
+  "name": "Missing Cryptographic Step",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insecure Implementation",
+    "Missing Cryptographic Step"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

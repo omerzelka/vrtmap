@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.ssti.custom",
+  "name": "Custom",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server-Side Injection",
+    "Server-Side Template Injection (SSTI)",
+    "Custom"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

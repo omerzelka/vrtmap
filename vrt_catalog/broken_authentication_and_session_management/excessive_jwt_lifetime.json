@@ -1,0 +1,14 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.excessive_jwt_lifetime",
+  "name": "Excessive JSON Web Token (JWT) Lifetime",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Excessive JSON Web Token (JWT) Lifetime"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

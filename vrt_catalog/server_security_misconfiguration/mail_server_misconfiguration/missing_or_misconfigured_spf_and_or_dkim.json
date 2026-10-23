@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.mail_server_misconfiguration.missing_or_misconfigured_spf_and_or_dkim",
+  "name": "Missing or Misconfigured SPF and/or DKIM",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Mail Server Misconfiguration",
+    "Missing or Misconfigured SPF and/or DKIM"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

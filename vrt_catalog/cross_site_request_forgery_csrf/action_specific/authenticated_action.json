@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cross_site_request_forgery_csrf.action_specific.authenticated_action",
+  "name": "Authenticated Action",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Cross-Site Request Forgery (CSRF)",
+    "Action-Specific",
+    "Authenticated Action"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

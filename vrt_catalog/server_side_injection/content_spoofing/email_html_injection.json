@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.content_spoofing.email_html_injection",
+  "name": "Email HTML Injection",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Server-Side Injection",
+    "Content Spoofing",
+    "Email HTML Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.network_configuration_issues.lack_of_network_segmentation",
+  "name": "Lack of Network Segmentation",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Cloud Security",
+    "Network Configuration Issues",
+    "Lack of Network Segmentation"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

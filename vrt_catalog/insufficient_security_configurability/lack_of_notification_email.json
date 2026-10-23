@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insufficient_security_configurability.lack_of_notification_email",
+  "name": "Lack of Notification Email",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "Lack of Notification Email"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

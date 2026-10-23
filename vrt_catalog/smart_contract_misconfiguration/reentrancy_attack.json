@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.reentrancy_attack",
+  "name": "Reentrancy Attack",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Reentrancy Attack"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

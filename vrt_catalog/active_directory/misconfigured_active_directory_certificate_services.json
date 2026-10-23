@@ -1,0 +1,14 @@
+{
+  "vrt_id": "active_directory.misconfigured_active_directory_certificate_services",
+  "name": "Misconfigured Active Directory Certificate Services (ADCS)",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "Misconfigured Active Directory Certificate Services (ADCS)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

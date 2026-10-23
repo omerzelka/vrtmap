@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_side_injection.parameter_pollution.social_media_sharing_buttons",
+  "name": "Social Media Sharing Buttons",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server-Side Injection",
+    "Parameter Pollution",
+    "Social Media Sharing Buttons"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

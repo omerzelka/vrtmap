@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.fingerprinting_banner_disclosure.software_version_in_response_headers",
+  "name": "Software Versions Disclosed in Response Headers",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Fingerprinting/Banner Disclosure",
+    "Software Versions Disclosed in Response Headers"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

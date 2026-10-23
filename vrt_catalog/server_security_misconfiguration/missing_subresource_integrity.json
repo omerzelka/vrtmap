@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.missing_subresource_integrity",
+  "name": "Missing Subresource Integrity",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Missing Subresource Integrity"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

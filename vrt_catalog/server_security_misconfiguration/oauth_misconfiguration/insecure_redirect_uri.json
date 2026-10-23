@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.oauth_misconfiguration.insecure_redirect_uri",
+  "name": "Insecure Redirect URI",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "OAuth Misconfiguration",
+    "Insecure Redirect URI"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

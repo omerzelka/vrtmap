@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.weak_hash.use_of_predictable_salt",
+  "name": "Use of Predictable Salt",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Weak Hash",
+    "Use of Predictable Salt"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

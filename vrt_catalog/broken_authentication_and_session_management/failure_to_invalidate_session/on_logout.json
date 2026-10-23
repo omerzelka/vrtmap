@@ -1,0 +1,15 @@
+{
+  "vrt_id": "broken_authentication_and_session_management.failure_to_invalidate_session.on_logout",
+  "name": "On Logout (Client and Server-Side)",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Broken Authentication and Session Management",
+    "Failure to Invalidate Session",
+    "On Logout (Client and Server-Side)"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

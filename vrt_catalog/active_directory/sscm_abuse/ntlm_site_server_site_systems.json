@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.ntlm_site_server_site_systems",
+  "name": "NTLM Relay From Site Server To Site Systems",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "NTLM Relay From Site Server To Site Systems"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

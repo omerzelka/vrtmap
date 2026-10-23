@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.malicious_superuser_risk",
+  "name": "Malicious Superuser Risk",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Malicious Superuser Risk"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

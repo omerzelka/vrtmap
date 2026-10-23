@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.failure_to_remove_sensitive_artifacts_from_disk",
+  "name": "Failure to Remove Sensitive Artifacts from Disk",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Failure to Remove Sensitive Artifacts from Disk"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

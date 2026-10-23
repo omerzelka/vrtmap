@@ -1,0 +1,14 @@
+{
+  "vrt_id": "smart_contract_misconfiguration.uninitialized_variables",
+  "name": "Uninitialized Variables",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Smart Contract Misconfiguration",
+    "Uninitialized Variables"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

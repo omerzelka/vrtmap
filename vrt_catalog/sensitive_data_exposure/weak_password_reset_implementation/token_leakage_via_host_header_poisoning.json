@@ -1,0 +1,15 @@
+{
+  "vrt_id": "sensitive_data_exposure.weak_password_reset_implementation.token_leakage_via_host_header_poisoning",
+  "name": "Token Leakage via Host Header Poisoning",
+  "priority": 2,
+  "effective_priority": 2,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Weak Password Reset Implementation",
+    "Token Leakage via Host Header Poisoning"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

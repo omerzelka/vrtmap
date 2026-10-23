@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cloud_security.logging_and_monitoring_issues.disabled_or_insufficient_logging",
+  "name": "Disabled or Insufficient Logging",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cloud Security",
+    "Logging and Monitoring Issues",
+    "Disabled or Insufficient Logging"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

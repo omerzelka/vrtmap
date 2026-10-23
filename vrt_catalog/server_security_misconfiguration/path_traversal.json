@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.path_traversal",
+  "name": "Path Traversal",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Path Traversal"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

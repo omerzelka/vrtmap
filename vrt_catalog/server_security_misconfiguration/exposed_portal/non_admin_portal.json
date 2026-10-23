@@ -1,0 +1,15 @@
+{
+  "vrt_id": "server_security_misconfiguration.exposed_portal.non_admin_portal",
+  "name": "Non-Admin Portal",
+  "priority": 3,
+  "effective_priority": 3,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Exposed Portal",
+    "Non-Admin Portal"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "mobile_security_misconfiguration.auto_backup_allowed_by_default",
+  "name": "Auto Backup Allowed by Default",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Mobile Security Misconfiguration",
+    "Auto Backup Allowed by Default"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cross_site_scripting_xss.stored.self",
+  "name": "Self",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Cross-Site Scripting (XSS)",
+    "Stored",
+    "Self"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

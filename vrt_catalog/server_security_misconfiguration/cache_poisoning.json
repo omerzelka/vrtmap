@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.cache_poisoning",
+  "name": "Cache Poisoning",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Cache Poisoning"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

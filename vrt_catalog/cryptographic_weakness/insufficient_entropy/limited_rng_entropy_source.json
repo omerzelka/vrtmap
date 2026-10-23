@@ -1,0 +1,15 @@
+{
+  "vrt_id": "cryptographic_weakness.insufficient_entropy.limited_rng_entropy_source",
+  "name": "Limited Random Number Generator (RNG) Entropy Source",
+  "priority": 4,
+  "effective_priority": 4,
+  "category_path": [
+    "Cryptographic Weakness",
+    "Insufficient Entropy",
+    "Limited Random Number Generator (RNG) Entropy Source"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

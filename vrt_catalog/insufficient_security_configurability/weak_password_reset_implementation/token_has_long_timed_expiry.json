@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insufficient_security_configurability.weak_password_reset_implementation.token_has_long_timed_expiry",
+  "name": "Token Has Long Timed Expiry",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "Weak Password Reset Implementation",
+    "Token Has Long Timed Expiry"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

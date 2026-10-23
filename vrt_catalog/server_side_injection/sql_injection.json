@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_side_injection.sql_injection",
+  "name": "SQL Injection",
+  "priority": 1,
+  "effective_priority": 1,
+  "category_path": [
+    "Server-Side Injection",
+    "SQL Injection"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

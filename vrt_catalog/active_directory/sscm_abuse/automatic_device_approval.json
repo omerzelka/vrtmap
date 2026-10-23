@@ -1,0 +1,15 @@
+{
+  "vrt_id": "active_directory.sscm_abuse.automatic_device_approval",
+  "name": "Automatic Device Approval Enabled",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Active Directory (AD)",
+    "SCCM Abuse",
+    "Automatic Device Approval Enabled"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

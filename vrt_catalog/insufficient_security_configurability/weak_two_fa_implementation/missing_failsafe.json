@@ -1,0 +1,15 @@
+{
+  "vrt_id": "insufficient_security_configurability.weak_two_fa_implementation.missing_failsafe",
+  "name": "Missing Failsafe",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Insufficient Security Configurability",
+    "Weak 2FA Implementation",
+    "Missing Failsafe"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

@@ -1,0 +1,14 @@
+{
+  "vrt_id": "server_security_misconfiguration.same_site_scripting",
+  "name": "Same-Site Scripting",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Server Security Misconfiguration",
+    "Same-Site Scripting"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

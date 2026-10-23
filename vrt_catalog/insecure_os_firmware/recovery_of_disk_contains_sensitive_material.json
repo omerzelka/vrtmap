@@ -1,0 +1,14 @@
+{
+  "vrt_id": "insecure_os_firmware.recovery_of_disk_contains_sensitive_material",
+  "name": "Recovery of Disk Contains Sensitive Material",
+  "priority": null,
+  "effective_priority": null,
+  "category_path": [
+    "Insecure OS/Firmware",
+    "Recovery of Disk Contains Sensitive Material"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}

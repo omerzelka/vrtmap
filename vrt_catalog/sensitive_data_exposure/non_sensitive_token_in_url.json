@@ -1,0 +1,14 @@
+{
+  "vrt_id": "sensitive_data_exposure.non_sensitive_token_in_url",
+  "name": "Non-Sensitive Token in URL",
+  "priority": 5,
+  "effective_priority": 5,
+  "category_path": [
+    "Sensitive Data Exposure",
+    "Non-Sensitive Token in URL"
+  ],
+  "enabled": true,
+  "notes": "",
+  "payloads": [],
+  "references": []
+}
