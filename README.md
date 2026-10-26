@@ -29,7 +29,25 @@ python -m vrt_scanner.cli http://localhost:3000 --authorized
 
 python -m vrt_scanner.cli http://localhost:3000 --authorized \
     --scope localhost --max-pages 80 --rate 5 --json report.json
+
+# shareable HTML report (payloads are escaped — the report is not XSS-able):
+python -m vrt_scanner.cli http://localhost:3000 --authorized --html report.html
 ```
+
+## Active Directory engine
+
+A separate, credentialed engine for an AD domain (read-only LDAP; authorized
+targets only). Needs `ldap3` (`pip install ldap3`).
+
+```bash
+python -m vrt_scanner.ad --dc dc01.lab.local --domain LAB \
+    --user analyst --password '***' --authorized --html ad-report.html
+```
+
+Checks (all map to `active_directory.*` VRT leaves): Kerberoastable accounts,
+AS-REP roastable accounts, unconstrained delegation, excessive Domain Admins,
+passwords in object descriptions, weak domain password policy, dormant enabled
+accounts, anonymous LDAP bind. Deep DACL/ACE abuse is not implemented yet.
 
 ## Coverage — how much of the VRT is automated
 

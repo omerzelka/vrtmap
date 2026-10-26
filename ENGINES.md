@@ -66,13 +66,18 @@ disclosure, missing HTTPS enforcement / mixed content — all clone the existing
 
 ---
 
-## 3. Active Directory — *planned*
+## 3. Active Directory — *query-based checks implemented*
 
 - **Input:** domain, DC address, **valid credentials** (authenticated bind)
-- **Library:** `ldap3` or `impacket`
-- **What it does:** read `nTSecurityDescriptor`, parse ACEs, flag dangerous
-  rights (WriteDacl, GenericAll, WriteOwner, AddMember…) from low-priv
-  principals onto high-value objects; Kerberos (AS-REP, delegation); ADCS.
+- **Library:** `ldap3`
+- **Code / entry point:** `vrt_scanner/ad.py` — `python -m vrt_scanner.ad`
+- **Status:** 8 query-based checks implemented (Kerberoastable, AS-REP
+  roastable, unconstrained delegation, excessive Domain Admins, passwords in
+  descriptions, weak password policy, dormant enabled accounts, anonymous
+  bind). Read-only. **Must be validated against a real lab DC.**
+- **Still TODO:** deep DACL/ACE abuse — parse `nTSecurityDescriptor`, flag
+  dangerous rights (WriteDacl, GenericAll, WriteOwner, AddMember…) from
+  low-priv principals onto high-value objects; ADCS misconfig.
 - **Note:** completely independent of `HttpEngine`; its own entry point. Run
   only against your own lab or a domain you have written permission to test.
 

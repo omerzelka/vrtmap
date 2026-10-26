@@ -135,3 +135,16 @@ en çok 300 ile sınırlı. SPA/linksiz sitelerde kapsamı ciddi artırır.
 bulguları öncelik renklerine göre gruplanmış, bağımsız (tek dosya) bir HTML
 sayfası üretir. Tüm hedef-kaynaklı metin `html.escape` ile kaçırılır — yani
 yansıyan bir XSS payload'u raporun kendisini ele geçiremez (self-XSS yok).
+
+---
+
+## AD engine (vrt_scanner/ad.py) — ikinci engine
+Ayrı giriş noktası: `python -m vrt_scanner.ad --dc ... --domain ... --user ...
+--password ... --authorized`. Kimlik bilgisiyle LDAP'a bağlanıp SALT OKUR,
+sorgu tabanlı 8 kontrol yapar, hepsini `active_directory.*` VRT leaf'ine bağlar:
+Kerberoastable (SPN'li hesap), AS-REP roastable (pre-auth yok), unconstrained
+delegation, aşırı Domain Admin, açıklamada parola, zayıf parola politikası,
+atıl aktif hesap, anonim LDAP bind. `ldap3` gerekir (yoksa zarifçe uyarır).
+Web engine'den tamamen bağımsız; `core`'daki Finding/VRTCatalog/report'u
+paylaşır. **ÖNEMLİ:** gerçek DC'de test EDİLMEDİ — kullanıcı kendi lab'ında
+doğrulamalı. DACL/ACE parse (asıl DACL abuse) henüz TODO.

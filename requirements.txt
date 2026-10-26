@@ -1,2 +1,4 @@
 httpx>=0.27,<0.29
 beautifulsoup4>=4.12,<5
+# AD engine only (python -m vrt_scanner.ad); web engine does not need it:
+ldap3>=2.9,<3
