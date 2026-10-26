@@ -248,3 +248,12 @@ secret (AIza/AKIA/private key/token/password) → plaintext credential storage;
 external storage kullanımı; pinning markerı yoksa ssl_certificate_pinning.absent.
 (2) Manifest katmanı (androguard opsiyonel, DENEYSEL) — allowBackup, exported
 components. APK sadece okunur/parse edilir, asla çalıştırılmaz. 5 mobil leaf.
+
+---
+
+## Manuel test checklist'i (core.checklist_markdown + cli --checklist)
+Manuel leaf'ler artık sadece "sayılmıyor" — `--checklist dosya.md` ile hedefe
+uygulanan manuel VRT leaf'lerini kategoriye göre gruplu, öncelik + VRT id +
+kategori başına "nasıl test edilir" rehberli, işaretlenebilir (- [ ]) bir
+Markdown checklist olarak çıkarır. 130 madde. core'daki _CHECKLIST_HINTS
+kategori rehberlerini tutar. Çıktı argümansızsa bir özet satırı basar.

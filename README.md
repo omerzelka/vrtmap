@@ -142,3 +142,16 @@ python -m pytest -q
 Unit tests cover the core helpers and the passive detection modules; an
 integration test runs a full scan against an embedded intentionally-vulnerable
 server and asserts the form-based XSS and SQLi are found. No network needed.
+
+## Manual-testing checklist
+
+Most of the VRT cannot be found by a generic scanner. For every web scan the
+tool can emit the applicable manual VRT leaves as an actionable checklist:
+
+```bash
+python -m vrt_scanner web http://localhost:3000 --authorized --checklist checklist.md
+```
+
+The Markdown file groups the leaves by category, with priority, the official
+VRT id and a short "how to test" note per category — a ready to-do list for the
+human part of the assessment.

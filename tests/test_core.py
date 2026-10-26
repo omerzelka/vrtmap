@@ -62,3 +62,14 @@ def test_all_module_ids_exist_in_catalog():
 def test_web_manual_bucket_nonempty():
     from vrt_scanner.modules import WebManual
     assert len(WebManual.VRT_IDS) > 100   # remaining web leaves catalogued manual
+
+
+def test_checklist_markdown_is_actionable():
+    from vrt_scanner.core import checklist_markdown
+    cat = VRTCatalog.load_dir(CATALOG)
+    ids = ["broken_access_control.privilege_escalation",
+           "cross_site_scripting_xss.stored.self"]
+    md = checklist_markdown(cat, ids, "http://t")
+    assert "Manual testing checklist" in md
+    assert "- [ ]" in md
+    assert "broken_access_control.privilege_escalation" in md

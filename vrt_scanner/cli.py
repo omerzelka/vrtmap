@@ -11,7 +11,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .core import (
-    Scope, HttpEngine, Crawler, VRTCatalog, report, report_html, OutOfScope,
+    Scope, HttpEngine, Crawler, VRTCatalog, report, report_html,
+    checklist_markdown, OutOfScope,
 )
 from .modules import ALL_MODULES
 
@@ -89,6 +90,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Write findings to this JSON file.")
     p.add_argument("--html", dest="html_out", default=None,
                    help="Write a shareable HTML report to this file.")
+    p.add_argument("--checklist", default=None,
+                   help="Write a manual-testing checklist (Markdown) of the VRT "
+                        "leaves a human must verify to this file.")
     return p
 
 
@@ -121,6 +125,15 @@ async def _amain(args) -> int:
     if args.html_out:
         report_html(findings, engine.requests_made, len(pages),
                     args.target, args.html_out)
+    # manual-testing checklist: the VRT leaves a human must verify
+    manual_ids = [v for m in ALL_MODULES if m.MANUAL for v in m.VRT_IDS]
+    if args.checklist:
+        Path(args.checklist).write_text(
+            checklist_markdown(catalog, manual_ids, args.target), encoding="utf-8")
+        print(f"Manual checklist ({len(manual_ids)} items) written to {args.checklist}")
+    else:
+        print(f"[*] {len(manual_ids)} manual checks also apply (not auto-detectable) "
+              f"— add --checklist FILE to save them as a to-do list.")
     return 0
 
 
