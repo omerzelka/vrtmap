@@ -182,3 +182,9 @@ principal'a verilen GenericAll/GenericWrite/WriteDacl/WriteOwner haklarını
 `active_directory.dacl_abuse` leaf'ine bağlar. impacket opsiyonel (yoksa atlar).
 Privileged SID/RID'ler (512/519/544...) elenir. DC olmadan TEST EDİLMEDİ —
 doğrulaması TODO-user.md'de.
+
+**Headless crawler (headless.py + cli --headless) — DENEYSEL:** Playwright ile
+JS render eden crawler; SPA'ları gerçekten tarar. Mevcut Crawler ile aynı Page
+nesnesini üretir, tüm modüller değişmeden çalışır. Playwright yoksa statik
+crawler'a zarifçe düşer (bu test edildi). Render kısmı Playwright kurulmadan
+test EDİLMEDİ — doğrulaması TODO-user.md'de.

@@ -44,7 +44,13 @@ test EDİLEMEDİ — deneysel.**
 - Not: Juice Shop bir SPA — formları JS ile render ettiği için statik crawler
   az sayfa görür. Sunucu-render (klasik) bir hedefte çok daha fazla bulur.
 
-## 4. (İleride) Headless tarayıcı ile crawl  (öncelik: düşük)
-SPA'ları gerçekten taramak için JS çalıştıran bir crawler (Playwright) gerekir.
-Bu büyük bir ekleme; istersen ayrı bir görev olarak planlayalım. (Not: bu da
-yeni bir sistem bağımlılığı kurmanı gerektirir.)
+## 4. Headless crawler'ı doğrula  (öncelik: düşük — kod YAZILDI)
+JS çalıştıran crawler (`vrt_scanner/headless.py`) eklendi ve `--headless`
+bayrağına bağlandı. Playwright burada kurulu olmadığı için **render test
+edilemedi** (bayrak yoksa statik crawler'a düşüyor — bu kısım test edildi).
+- [ ] `pip install playwright && playwright install chromium`
+- [ ] `python -m vrt_scanner.cli http://localhost:3000 --authorized --headless`
+      (Juice Shop açık) — statik modda 1 sayfa görülen yerde artık form/link
+      dolu çok daha fazla sayfa görmeli.
+- [ ] `wait_until="networkidle"` ve 15 sn timeout ağır SPA'larda yeterli mi,
+      gerekirse `headless.py`'de ayarla.

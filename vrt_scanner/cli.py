@@ -30,9 +30,9 @@ def _enrich(catalog: VRTCatalog, finding):
 
 
 async def orchestrate(engine: HttpEngine, catalog: VRTCatalog,
-                      start_url: str, max_pages: int):
-    print(f"[*] Crawling {start_url} (max {max_pages} pages)...")
-    pages = await Crawler(engine, max_pages=max_pages).crawl(start_url)
+                      crawler, start_url: str):
+    print(f"[*] Crawling {start_url} (max {crawler.max_pages} pages)...")
+    pages = await crawler.crawl(start_url)
     active = [m for m in ALL_MODULES if not m.MANUAL]
     print(f"[*] Discovered {len(pages)} page(s). Running "
           f"{len(active)} active VRT modules...")
@@ -81,6 +81,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--timeout", type=float, default=10.0)
     p.add_argument("--insecure", action="store_true",
                    help="Do not verify TLS certificates.")
+    p.add_argument("--headless", action="store_true",
+                   help="Render pages with a headless browser (Playwright) so "
+                        "JavaScript SPAs can be crawled. Needs: pip install "
+                        "playwright && playwright install chromium.")
     p.add_argument("--json", dest="json_out", default=None,
                    help="Write findings to this JSON file.")
     p.add_argument("--html", dest="html_out", default=None,
@@ -97,9 +101,20 @@ async def _amain(args) -> int:
     catalog = VRTCatalog.load_dir(CATALOG_DIR)
     engine = HttpEngine(scope, rate=args.rate, concurrency=args.concurrency,
                         timeout=args.timeout, verify_tls=not args.insecure)
+    if args.headless:
+        try:
+            import playwright  # noqa: F401
+            from .headless import HeadlessCrawler
+            crawler = HeadlessCrawler(engine, max_pages=args.max_pages)
+            print("[*] Using headless (JS-rendering) crawler.")
+        except ImportError:
+            print("[!] --headless needs Playwright (pip install playwright && "
+                  "playwright install chromium); using the static crawler.")
+            crawler = Crawler(engine, max_pages=args.max_pages)
+    else:
+        crawler = Crawler(engine, max_pages=args.max_pages)
     try:
-        pages, findings = await orchestrate(
-            engine, catalog, args.target, args.max_pages)
+        pages, findings = await orchestrate(engine, catalog, crawler, args.target)
     finally:
         await engine.aclose()
     report(findings, engine.requests_made, len(pages), args.json_out)
