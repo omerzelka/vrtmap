@@ -560,6 +560,72 @@ class SensitivePageCaching(Module):
         return out
 
 
+class CSRFTokenMissing(Module):
+    VRT_IDS = ["cross_site_request_forgery_csrf.application_wide"]
+    TOKEN = re.compile(r"csrf|xsrf|authenticity|nonce|_token|anti.?forgery", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            for form in page.forms:
+                if form.method != "POST":
+                    continue
+                if any(n and self.TOKEN.search(n) for n in form.inputs):
+                    continue
+                fields = ",".join(n for n in form.inputs if n)
+                out.append(self.f(self.VRT_IDS[0], form.action,
+                           evidence="POST form has no anti-CSRF token field",
+                           param=fields or None))
+        return out
+
+
+class InternalIPDisclosure(Module):
+    VRT_IDS = ["sensitive_data_exposure.internal_ip_disclosure"]
+    # RFC 1918 private ranges (loopback 127.x is intentionally excluded)
+    PRIV = re.compile(
+        r"\b(10\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+        r"|192\.168\.\d{1,3}\.\d{1,3}"
+        r"|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})\b")
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.text:
+                continue
+            m = self.PRIV.search(page.text)
+            if m:
+                out.append(self.f(self.VRT_IDS[0], page.url,
+                           evidence=f"response discloses a private/internal IP: "
+                                    f"{m.group(1)}"))
+        return out
+
+
+class MissingSubresourceIntegrity(Module):
+    VRT_IDS = ["server_security_misconfiguration.missing_subresource_integrity"]
+    SCRIPT = re.compile(
+        r"<script\b[^>]*\bsrc\s*=\s*['\"](https?://[^'\"]+)['\"][^>]*>", re.I)
+    INTEGRITY = re.compile(r"\bintegrity\s*=", re.I)
+
+    async def run(self, engine, pages):
+        from urllib.parse import urlparse
+        out = []
+        for page in pages:
+            if not page.text:
+                continue
+            host = urlparse(page.url).hostname or ""
+            for m in self.SCRIPT.finditer(page.text):
+                src = m.group(1)
+                if (urlparse(src).hostname or "") == host:
+                    continue   # same-origin script — SRI not expected
+                if not self.INTEGRITY.search(m.group(0)):
+                    out.append(self.f(self.VRT_IDS[0], page.url,
+                               evidence=f"external script without Subresource "
+                                        f"Integrity: {src[:120]}",
+                               param=src))
+                    break
+        return out
+
+
 # --------------------------------------------------------------------------- #
 # MANUAL classes — real VRT leaves that need app context + human verification.
 # Counted as "manual" coverage, never auto-run.
@@ -589,6 +655,9 @@ ALL_MODULES: list[Module] = [
     PasswordAutocomplete(),
     SensitivePageCaching(),
     DescriptiveStackTrace(),
+    CSRFTokenMissing(),
+    InternalIPDisclosure(),
+    MissingSubresourceIntegrity(),
     # active probes
     ReflectedXSS(),
     SQLInjection(),

@@ -148,3 +148,18 @@ atıl aktif hesap, anonim LDAP bind. `ldap3` gerekir (yoksa zarifçe uyarır).
 Web engine'den tamamen bağımsız; `core`'daki Finding/VRTCatalog/report'u
 paylaşır. **ÖNEMLİ:** gerçek DC'de test EDİLMEDİ — kullanıcı kendi lab'ında
 doğrulamalı. DACL/ACE parse (asıl DACL abuse) henüz TODO.
+
+---
+
+## 3 yeni web modülü (kapsam 23 -> 26)
+
+**CSRFTokenMissing** (`cross_site_request_forgery_csrf.application_wide`, pasif):
+POST formunda anti-CSRF token alanı (csrf/xsrf/_token/nonce...) yoksa raporlar.
+
+**InternalIPDisclosure** (`sensitive_data_exposure.internal_ip_disclosure`,
+pasif): sayfa metninde RFC1918 özel IP (10.x, 192.168.x, 172.16-31.x) sızıyorsa
+raporlar. Loopback 127.x hariç.
+
+**MissingSubresourceIntegrity** (`server_security_misconfiguration.missing_subresource_integrity`,
+pasif): harici (cross-origin) `<script src=https://...>` etiketi `integrity`
+olmadan yüklenmişse raporlar. Aynı-origin script'ler atlanır.
