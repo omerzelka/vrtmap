@@ -24,11 +24,19 @@ olmadan test edilemedi.** Kendi lab'ında (veya yazılı izinli bir domain'de):
         positive/negative var mı).
 - [ ] LDAPS gerekiyorsa `--ssl --port 636` ile dene.
 
-## 2. (İsteğe bağlı) AD için DACL/ACE parse ekle  (öncelik: orta)
-Asıl "DACL Abuse" (nTSecurityDescriptor içindeki ACE'leri parse edip düşük
-yetkili principal'ların WriteDacl/GenericAll/WriteOwner haklarını bulma) henüz
-yok. Bu genelde `impacket` ister ve yine **lab'da doğrulama** gerektirir.
-Yapmak istersen söyle, iskeletini yazarım; ama test etmesi sende.
+## 2. AD DACL/ACE parse'ı doğrula  (öncelik: orta — kod YAZILDI, DENEYSEL)
+Asıl "DACL Abuse" kontrolü (`ad.py > check_dacl_abuse`) eklendi: her nesnenin
+nTSecurityDescriptor'ını okuyup düşük yetkili principal'lara verilen tehlikeli
+hakları (GenericAll/GenericWrite/WriteDacl/WriteOwner) bulur. **Ama DC olmadan
+test EDİLEMEDİ — deneysel.**
+- [ ] `pip install impacket` (yoksa bu kontrol zarifçe atlanır).
+- [ ] Lab DC'de çalıştırıp doğrula:
+  - [ ] `nTSecurityDescriptor` SD_FLAGS control (sadece DACL) doğru geliyor mu.
+  - [ ] impacket `ldaptypes` ACE alan erişimleri (`ace['Ace']['Mask']['Mask']`,
+        `ace['Ace']['Sid'].formatCanonical()`) senin impacket sürümünle uyumlu mu.
+  - [ ] `_privileged()` SID/RID beyaz listesi yeterli mi (false positive);
+        gerekirse Domain Admins vb. ekle.
+  - [ ] 500 nesne / 50 bulgu limitlerini ortamına göre ayarla.
 
 ## 3. Juice Shop / gerçek hedefte web engine'i dene  (öncelik: düşük)
 - [ ] `docker run --rm -p 3000:3000 bkimminich/juice-shop`

@@ -35,6 +35,40 @@ DORMANT_DAYS = 90
 WEAK_MIN_PWD_LEN = 14
 MAX_DOMAIN_ADMINS = 5
 
+# dangerous access-mask bits on an object's DACL (DACL abuse)
+ADS_RIGHT_GENERIC_ALL = 0x10000000
+ADS_RIGHT_GENERIC_WRITE = 0x40000000
+ADS_RIGHT_WRITE_DAC = 0x00040000
+ADS_RIGHT_WRITE_OWNER = 0x00080000
+DANGEROUS_MASK = (ADS_RIGHT_GENERIC_ALL | ADS_RIGHT_GENERIC_WRITE
+                  | ADS_RIGHT_WRITE_DAC | ADS_RIGHT_WRITE_OWNER)
+# well-known privileged RIDs/SIDs that legitimately hold such rights
+PRIVILEGED_RIDS = {512, 516, 518, 519, 544, 548, 549}
+PRIVILEGED_SIDS = {"S-1-5-18", "S-1-5-32-544", "S-1-3-0",
+                   "S-1-5-9", "S-1-5-10"}   # SYSTEM, Administrators, CreatorOwner, EDCs, Self
+
+
+def _mask_names(mask):
+    names = []
+    if mask & ADS_RIGHT_GENERIC_ALL:
+        names.append("GenericAll")
+    if mask & ADS_RIGHT_GENERIC_WRITE:
+        names.append("GenericWrite")
+    if mask & ADS_RIGHT_WRITE_DAC:
+        names.append("WriteDacl")
+    if mask & ADS_RIGHT_WRITE_OWNER:
+        names.append("WriteOwner")
+    return "+".join(names) or hex(mask)
+
+
+def _privileged(sid):
+    if sid in PRIVILEGED_SIDS:
+        return True
+    try:
+        return int(sid.rsplit("-", 1)[1]) in PRIVILEGED_RIDS
+    except (ValueError, IndexError):
+        return False
+
 
 def _f(vrt_id, where, evidence, detail=""):
     return Finding(vrt_id=vrt_id, title="", url=where, evidence=evidence, detail=detail)
@@ -211,6 +245,53 @@ class ADScanner:
                        "anonymous LDAP bind can read directory objects")]
         return []
 
+    def check_dacl_abuse(self):
+        """EXPERIMENTAL / UNTESTED (needs a real DC + impacket). Reads each
+        object's DACL and flags ACEs that grant dangerous rights (GenericAll,
+        GenericWrite, WriteDacl, WriteOwner) to a non-privileged principal —
+        the core of 'DACL abuse'. Validate against your lab before trusting it."""
+        try:
+            from impacket.ldap import ldaptypes
+            from ldap3.protocol.microsoft import security_descriptor_control
+        except ImportError:
+            print("    - check_dacl_abuse: skipped (needs impacket); see TODO-user.md")
+            return []
+        from ldap3 import SUBTREE
+        controls = security_descriptor_control(sdflags=0x04)   # DACL only
+        self.conn.search(self.base_dn,
+                         "(|(objectClass=group)(objectCategory=person))",
+                         SUBTREE,
+                         attributes=["sAMAccountName", "nTSecurityDescriptor"],
+                         controls=controls)
+        out = []
+        for entry in list(self.conn.entries)[:500]:
+            raw = entry["nTSecurityDescriptor"].raw_values
+            if not raw:
+                continue
+            try:
+                sd = ldaptypes.SR_SECURITY_DESCRIPTOR(data=raw[0])
+            except Exception:
+                continue
+            if not sd["Dacl"]:
+                continue
+            target = str(entry.sAMAccountName)
+            for ace in sd["Dacl"]["Data"]:
+                if ace["AceType"] not in (0x00, 0x05):   # ALLOWED / ALLOWED_OBJECT
+                    continue
+                mask = ace["Ace"]["Mask"]["Mask"]
+                if not (mask & DANGEROUS_MASK):
+                    continue
+                sid = ace["Ace"]["Sid"].formatCanonical()
+                if _privileged(sid):
+                    continue
+                out.append(_f("active_directory.dacl_abuse", f"ldap://{self.dc}",
+                           f"{sid} has {_mask_names(mask)} over '{target}'",
+                           detail="DACL abuse: verify this principal should not "
+                                  "hold this right over this object"))
+                if len(out) >= 50:
+                    return out
+        return out
+
     CHECKS = [
         "check_anonymous_bind",
         "check_kerberoastable",
@@ -220,6 +301,7 @@ class ADScanner:
         "check_passwords_in_description",
         "check_password_policy",
         "check_dormant_accounts",
+        "check_dacl_abuse",
     ]
 
     def run(self):

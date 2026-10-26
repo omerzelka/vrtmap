@@ -4,3 +4,5 @@ beautifulsoup4>=4.12,<5
 ldap3>=2.9,<3
 # MailSpoofing module only (SPF/DMARC via DNS); optional, skipped if absent:
 dnspython>=2.4
+# AD DACL/ACE parse (check_dacl_abuse) only; optional:
+impacket>=0.11

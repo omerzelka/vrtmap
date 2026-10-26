@@ -175,3 +175,10 @@ opsiyonel — yoksa atlar). SPF+DMARC yoksa "spoofable"; DMARC yok ya da p=none
 ise "inbox spoofing". IP/localhost hedeflerde atlar. DNS bloklama olmasın diye
 asyncio.to_thread ile çağrılır. Gerçek domain'lerde doğrulandı (google/github
 korumalı; neverssl.com ve iana.org bulgu verdi).
+
+**AD DACL/ACE parse (ad.py check_dacl_abuse) — DENEYSEL:** Her nesnenin
+nTSecurityDescriptor DACL'ini okuyup (impacket ldaptypes), düşük yetkili
+principal'a verilen GenericAll/GenericWrite/WriteDacl/WriteOwner haklarını
+`active_directory.dacl_abuse` leaf'ine bağlar. impacket opsiyonel (yoksa atlar).
+Privileged SID/RID'ler (512/519/544...) elenir. DC olmadan TEST EDİLMEDİ —
+doğrulaması TODO-user.md'de.
