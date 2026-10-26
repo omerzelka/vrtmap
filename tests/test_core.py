@@ -1,10 +1,10 @@
 """Unit tests for core helpers (no network)."""
 from pathlib import Path
 
-from vrt_scanner.core import (
+from vrtmap.core import (
     set_query_param, query_params, same_origin, Scope, VRTCatalog,
 )
-from vrt_scanner.modules import _similar
+from vrtmap.modules import _similar
 
 CATALOG = Path(__file__).resolve().parent.parent / "vrt_catalog"
 
@@ -52,7 +52,7 @@ def test_catalog_loads_known_leaf():
 
 def test_all_module_ids_exist_in_catalog():
     """Every VRT id referenced by any module must be a real catalog leaf."""
-    from vrt_scanner.modules import ALL_MODULES
+    from vrtmap.modules import ALL_MODULES
     cat = VRTCatalog.load_dir(CATALOG)
     bad = [(type(m).__name__, v) for m in ALL_MODULES
            for v in m.VRT_IDS if cat.info(v) is None]

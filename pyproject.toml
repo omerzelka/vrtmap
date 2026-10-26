@@ -3,7 +3,7 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "vrt-scanner"
+name = "vrtmap"
 version = "0.1.0"
 description = "VRT-organized web vulnerability scanner, mapped to the Bugcrowd Vulnerability Rating Taxonomy."
 readme = "README.md"
@@ -18,11 +18,11 @@ dependencies = [
 dns = ["dnspython>=2.4"]
 dev = ["pytest>=7"]
 
-# Command:  vrt <url> --authorized [options]
+# Command:  vrtmap <url> --authorized [options]
 [project.scripts]
-vrt = "vrt_scanner.cli:main"
+vrtmap = "vrtmap.cli:main"
 
 [tool.setuptools]
 # The VRT catalog lives at the repo root (vrt_catalog/), so use an editable
 # install — pip install -e . — which keeps that path valid.
-packages = ["vrt_scanner"]
+packages = ["vrtmap"]

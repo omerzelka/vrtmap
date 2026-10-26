@@ -1,6 +1,6 @@
 """Command-line entry point and orchestrator.
 
-Run with:  python -m vrt_scanner.cli https://your-target --authorized
+Run with:  python -m vrtmap.cli https://your-target --authorized
 """
 from __future__ import annotations
 
@@ -64,7 +64,7 @@ async def orchestrate(engine: HttpEngine, catalog: VRTCatalog,
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="vrt-scanner",
+        prog="vrtmap",
         description="VRT-organized web vulnerability scanner "
                     "(authorized targets only).")
     p.add_argument("target", help="Start URL, e.g. https://localhost:3000")

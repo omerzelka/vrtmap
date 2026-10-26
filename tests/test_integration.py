@@ -8,8 +8,8 @@ from urllib.parse import urlparse, parse_qs
 
 import pytest
 
-from vrt_scanner.core import Scope, HttpEngine, Crawler
-from vrt_scanner.modules import ALL_MODULES
+from vrtmap.core import Scope, HttpEngine, Crawler
+from vrtmap.modules import ALL_MODULES
 
 PAGE = ("<!doctype html><html><body><a href='/search'>s</a>"
         "<form method='POST' action='/login'>"

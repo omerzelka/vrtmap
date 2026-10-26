@@ -2,7 +2,7 @@
 437-type VRT catalog and show what is automated, what is manual, and what has
 no module yet — broken down by priority.
 
-Run with:  python -m vrt_scanner.coverage
+Run with:  python -m vrtmap.coverage
 Options:   --list auto|manual|none   (print the leaf ids in that bucket)
            --missing-ids             (warn about module ids absent from catalog)
 """

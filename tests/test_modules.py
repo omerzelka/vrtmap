@@ -1,8 +1,8 @@
 """Unit tests for passive detection modules (no network — fed Page objects)."""
 import asyncio
 
-from vrt_scanner.core import Page, Form
-from vrt_scanner import modules as M
+from vrtmap.core import Page, Form
+from vrtmap import modules as M
 
 
 def run(mod, pages):

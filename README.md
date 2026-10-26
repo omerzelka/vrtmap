@@ -12,6 +12,10 @@ tests URL parameters **and form fields**, and runs 30+ checks: injection
 clickjacking, cookie flags, sensitive-file and directory-listing exposure,
 TLS posture, DNS hygiene, SPF/DMARC spoofing, exposed admin portals, and more.
 
+> The VRT is a taxonomy published by Bugcrowd. This project maps its findings
+> to VRT leaf ids but is an independent tool — not affiliated with, endorsed by,
+> or produced by Bugcrowd.
+
 ## ⚠️ Authorization
 
 Run this **only** against systems you own or have written permission to test —
@@ -28,35 +32,35 @@ pip install -r requirements.txt            # core
 pip install -r requirements-extra.txt
 ```
 
-Or install the package, which gives a `vrt` command:
+Or install the package, which gives a `vrtmap` command:
 
 ```bash
-pip install -e .            # + the `vrt` command
+pip install -e .            # + the `vrtmap` command
 pip install -e '.[dns]'     # also the DNS/mail checks ([dev] for tests)
 ```
 
-`python -m vrt_scanner <url> ...` always works even without `vrt` on your PATH.
+`python -m vrtmap <url> ...` always works even without `vrtmap` on your PATH.
 
 ## Scan
 
 ```bash
 # Spin up a legal practice target first, e.g. OWASP Juice Shop:
 #   docker run --rm -p 3000:3000 bkimminich/juice-shop
-python -m vrt_scanner http://localhost:3000 --authorized
+python -m vrtmap http://localhost:3000 --authorized
 
-python -m vrt_scanner http://localhost:3000 --authorized \
+python -m vrtmap http://localhost:3000 --authorized \
     --scope localhost --max-pages 80 --rate 5 --json report.json
 
 # shareable HTML report (payloads are escaped — the report is not XSS-able):
-python -m vrt_scanner http://localhost:3000 --authorized --html report.html
+python -m vrtmap http://localhost:3000 --authorized --html report.html
 ```
 
 ## Coverage — how much of the VRT is automated
 
 ```bash
-python -m vrt_scanner.coverage              # summary by priority
-python -m vrt_scanner.coverage --list auto  # which leaves are automated
-python -m vrt_scanner.coverage --list none  # which have no module
+python -m vrtmap.coverage              # summary by priority
+python -m vrtmap.coverage --list auto  # which leaves are automated
+python -m vrtmap.coverage --list none  # which have no module
 ```
 
 **47 of 437** leaf types are automated. That gap is expected and honest: most
@@ -109,14 +113,14 @@ redirect support custom payloads).
 | Email spoofing (SPF / DMARC) | `server_security_misconfiguration.mail_server_misconfiguration.*` |
 | Sensitive files / directory listing | `sensitive_data_exposure.disclosure_of_secrets.*` |
 
-Run `python -m vrt_scanner.coverage --list auto` for the full list.
+Run `python -m vrtmap.coverage --list auto` for the full list.
 
 ## Extend it
 
-Add a module in `vrt_scanner/modules.py`: subclass `Module`, set `VRT_IDS` to
+Add a module in `vrtmap/modules.py`: subclass `Module`, set `VRT_IDS` to
 the official leaf id(s) it covers (check against `vrt_catalog/index.json`),
 implement `run()` returning `Finding`s via `self.f(vrt_id, url, evidence, ...)`,
-and append to `ALL_MODULES`. Run `python -m vrt_scanner.coverage` to see the
+and append to `ALL_MODULES`. Run `python -m vrtmap.coverage` to see the
 coverage number move.
 
 ## Tests

@@ -102,7 +102,7 @@ class Scope:
 class HttpEngine:
     def __init__(self, scope: Scope, rate: float = 5.0, concurrency: int = 5,
                  timeout: float = 10.0, verify_tls: bool = True,
-                 user_agent: str = "vrt-scanner/0.1 (authorized-testing)"):
+                 user_agent: str = "vrtmap/0.1 (authorized-testing)"):
         self.scope = scope
         self._sem = asyncio.Semaphore(max(1, concurrency))
         self._delay = (1.0 / rate) if rate and rate > 0 else 0.0
