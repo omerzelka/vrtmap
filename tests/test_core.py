@@ -48,3 +48,17 @@ def test_catalog_loads_known_leaf():
     assert cat.info("this.leaf.does.not.exist") is None
     cfg = cat.leaf_config("server_side_injection.sql_injection")
     assert cfg["enabled"] is True
+
+
+def test_all_module_ids_exist_in_catalog():
+    """Every VRT id referenced by any module must be a real catalog leaf."""
+    from vrt_scanner.modules import ALL_MODULES
+    cat = VRTCatalog.load_dir(CATALOG)
+    bad = [(type(m).__name__, v) for m in ALL_MODULES
+           for v in m.VRT_IDS if cat.info(v) is None]
+    assert bad == [], f"unknown VRT ids: {bad}"
+
+
+def test_web_manual_bucket_nonempty():
+    from vrt_scanner.modules import WebManual
+    assert len(WebManual.VRT_IDS) > 100   # remaining web leaves catalogued manual

@@ -231,3 +231,10 @@ Yaygın admin/yönetim yollarını (/admin, /wp-admin, /phpmyadmin, /jenkins...)
 ve kullanıcı portallarını probe eder; soft-404 baseline + login imzası ile
 catch-all false positive'leri eler. admin_portal / non_admin_portal leaf'leri.
 Test sunucusunda sadece gerçek /admin bulundu.
+
+## Aşama 4 — kalan web leaf'leri MANUAL (dürüst tamamlama)
+WebManual (dinamik, modules.py sonunda): web kategorilerindeki otomatikleştir-
+ilemeyen leaf'leri katalogdan hesaplayıp MANUAL olarak işaretler (mobil/binary'ye
+ait olanlar hariç). Böylece 178 web leaf: 41 otomatik + 130 manuel, boşta kalan
+7 leaf mobil/binary engine'e ait. Elle id yazılmadı → transkripsiyon hatası yok.
+test_core'a eklenen test tüm modül id'lerinin kataloğa uyduğunu garantiler.
