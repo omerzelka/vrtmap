@@ -46,6 +46,33 @@ async def _safe_get(engine, url, **kw):
         return None
 
 
+def _similar(a: str, b: str) -> bool:
+    """True if two response bodies are ~the same page. Used to detect a
+    catch-all / SPA server that answers every path with the same template
+    (soft-404), so a 200 is not mistaken for a real file."""
+    if a == b:
+        return True
+    la, lb = len(a), len(b)
+    if la == 0 or lb == 0:
+        return la == lb
+    return abs(la - lb) / max(la, lb) < 0.05   # lengths within 5%
+
+
+async def _submit_form(engine, form, field, payload, filler="vrttest"):
+    """Submit `form` with one `field` set to `payload` and the other inputs to
+    a harmless filler. GET forms carry the data in the query string, POST forms
+    in the request body. Returns the response, or None on error/out-of-scope."""
+    from urllib.parse import urlparse, urlencode, urlunparse
+    data = {n: (payload if n == field else filler) for n in form.inputs if n}
+    try:
+        if form.method == "POST":
+            return await engine.post(form.action, data=data)
+        p = urlparse(form.action)
+        return await engine.get(urlunparse(p._replace(query=urlencode(data))))
+    except (OutOfScope, httpx.HTTPError):
+        return None
+
+
 # --------------------------------------------------------------------------- #
 # Passive header / config checks
 # --------------------------------------------------------------------------- #
@@ -156,6 +183,7 @@ class ReflectedXSS(Module):
         out = []
         payloads = [self.DEFAULT] + self.extra_payloads
         for page in pages:
+            # 1) URL query parameters
             for param in query_params(page.url):
                 for pl in payloads:
                     test = set_query_param(page.url, param, pl)
@@ -165,6 +193,19 @@ class ReflectedXSS(Module):
                                    f"payload '{pl}' reflected unescaped",
                                    param=param))
                         break
+            # 2) form fields (GET and POST forms)
+            for form in page.forms:
+                for field in form.inputs:
+                    if not field:
+                        continue
+                    for pl in payloads:
+                        r = await _submit_form(engine, form, field, pl)
+                        if r is not None and pl in r.text:
+                            out.append(self.f(self.VRT_IDS[0], form.action,
+                                       f"payload '{pl}' reflected unescaped via "
+                                       f"form field '{field}'",
+                                       param=field))
+                            break
         return out
 
 
@@ -184,6 +225,7 @@ class SQLInjection(Module):
         pat = re.compile("|".join(self.ERRORS), re.I)
         payloads = self.DEFAULT + self.extra_payloads
         for page in pages:
+            # 1) URL query parameters
             for param in query_params(page.url):
                 for pl in payloads:
                     test = set_query_param(page.url, param, pl)
@@ -194,6 +236,20 @@ class SQLInjection(Module):
                                    param=param,
                                    detail="confirm with boolean/time-based payloads"))
                         break
+            # 2) form fields (GET and POST forms)
+            for form in page.forms:
+                for field in form.inputs:
+                    if not field:
+                        continue
+                    for pl in payloads:
+                        r = await _submit_form(engine, form, field, pl)
+                        if r is not None and pat.search(r.text):
+                            out.append(self.f(self.VRT_IDS[0], form.action,
+                                       f"payload '{pl}' triggered a SQL error via "
+                                       f"form field '{field}'",
+                                       param=field,
+                                       detail="confirm with boolean/time-based payloads"))
+                            break
         return out
 
 
@@ -279,20 +335,33 @@ class SensitiveFiles(Module):
         "/wp-config.php.bak": "DB_PASSWORD",
     }
 
+    BASELINE_PATH = "/vrt9z7q-this-path-should-not-exist"
+
     async def run(self, engine, pages):
         if not pages:
             return []
         from urllib.parse import urlparse
         p = urlparse(pages[0].url)
         base = f"{p.scheme}://{p.netloc}"
+        # soft-404 baseline: how does the server answer a path that cannot exist?
+        b = await _safe_get(engine, base + self.BASELINE_PATH)
+        base_200 = b is not None and b.status_code == 200
+        base_body = b.text if b is not None else ""
         out = []
         for path, sig in self.PROBES.items():
             r = await _safe_get(engine, base + path)
             if r is None or r.status_code != 200:
                 continue
-            if sig == "" or sig in r.text:
-                out.append(self.f(self.VRT_IDS[0], base + path,
-                           f"HTTP 200 + content signature matched ({sig or 'any'})"))
+            # catch-all / SPA: this path returns the same page as a path that
+            # cannot exist -> not a real file, skip (kills the false positive)
+            if base_200 and _similar(r.text, base_body):
+                continue
+            # with a signature: it must be present here AND absent from baseline
+            if sig and (sig not in r.text or sig in base_body):
+                continue
+            out.append(self.f(self.VRT_IDS[0], base + path,
+                       "HTTP 200, distinct from soft-404 baseline"
+                       + (f", signature '{sig}' matched" if sig else "")))
         return out
 
 

@@ -109,3 +109,18 @@ Parola alanı içeren (hassas) bir sayfa `Cache-Control: no-store`/`private`
 göndermezse, tarayıcı/ara önbellek bu sayfayı diskte tutabilir — ortak cihazda
 sonraki kullanıcı erişebilir. Modül hassas sayfalarda zayıf Cache-Control
 başlığını yakalar. Pasif.
+
+---
+
+## Değişiklikler / yetenekler
+
+**Soft-404 koruması (SensitiveFiles):** Bazı sunucular (SPA / catch-all) var
+olmayan yola bile 200 + aynı sayfayı döner. Modül artık önce imkânsız bir yolu
+isteyip "baseline" alır; bir dosya probu baseline ile aynı sayfayı dönüyorsa
+gerçek dosya saymaz. False positive'leri engeller. Yardımcı: `_similar()`.
+
+**Form fuzzing (ReflectedXSS + SQLInjection):** Aktif modüller artık yalnız URL
+`?param=` değerlerini değil, crawl edilen sayfalardaki **form alanlarını** da
+test eder. GET formları query string'e, POST formları gövdeye payload basar.
+Ortak yardımcı: `_submit_form(engine, form, field, payload)`. Gerçek sitelerde
+açıkların çoğu login/arama/iletişim formlarında olduğu için en değerli artış bu.
