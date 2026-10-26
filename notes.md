@@ -238,3 +238,13 @@ ilemeyen leaf'leri katalogdan hesaplayıp MANUAL olarak işaretler (mobil/binary
 ait olanlar hariç). Böylece 178 web leaf: 41 otomatik + 130 manuel, boşta kalan
 7 leaf mobil/binary engine'e ait. Elle id yazılmadı → transkripsiyon hatası yok.
 test_core'a eklenen test tüm modül id'lerinin kataloğa uyduğunu garantiler.
+
+---
+
+## Mobile engine (mobile.py) — Android APK
+Ayrı giriş: `python -m vrt_scanner mobile app.apk --authorized`. İki katman:
+(1) ZIP katmanı (bağımlılıksız, TEST EDİLDİ) — APK'yı zip olarak tarar: hardcoded
+secret (AIza/AKIA/private key/token/password) → plaintext credential storage;
+external storage kullanımı; pinning markerı yoksa ssl_certificate_pinning.absent.
+(2) Manifest katmanı (androguard opsiyonel, DENEYSEL) — allowBackup, exported
+components. APK sadece okunur/parse edilir, asla çalıştırılmaz. 5 mobil leaf.

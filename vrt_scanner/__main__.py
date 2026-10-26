@@ -12,13 +12,14 @@ import sys
 USAGE = (
     "usage: python -m vrt_scanner <engine> [options]\n"
     "  engines:\n"
-    "    web    crawl + scan a web target\n"
-    "    ad     Active Directory (LDAP, needs credentials)\n"
-    "    cloud  AWS account (read-only, needs credentials)\n"
+    "    web     crawl + scan a web target\n"
+    "    ad      Active Directory (LDAP, needs credentials)\n"
+    "    cloud   AWS account (read-only, needs credentials)\n"
+    "    mobile  Android APK static analysis\n"
     "  per-engine help: python -m vrt_scanner <engine> --help"
 )
 
-ENGINES = {"web": "cli", "ad": "ad", "cloud": "cloud"}
+ENGINES = {"web": "cli", "ad": "ad", "cloud": "cloud", "mobile": "mobile"}
 
 
 def main(argv=None):

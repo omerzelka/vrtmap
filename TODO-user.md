@@ -63,3 +63,13 @@ AdministratorAccess). **AWS hesabı olmadan test EDİLEMEDİ.**
 - [ ] `python -m vrt_scanner.cloud --profile <p> --region <r> --authorized`
 - [ ] Yalnızca sahip olduğun / yazılı izinli hesapta çalıştır.
 - [ ] Her kontrolün IAM izni yetiyor mu (yetmezse "module error" basar, zararsız).
+
+## 6. Mobile engine manifest katmanını doğrula  (öncelik: orta — ZIP katmanı HAZIR)
+`vrt_scanner/mobile.py` yazıldı. ZIP katmanı (hardcoded secret, external
+storage, pinning yok) test edildi ve çalışıyor. androguard manifest katmanı
+(allowBackup, exported components) **gerçek APK ile test edilmedi**.
+- [ ] `pip install androguard`
+- [ ] `python -m vrt_scanner mobile <gercek.apk> --authorized --html m.html`
+- [ ] androguard sürümüne göre `APK` import yolu (4.x vs 3.x) + `get_elements`/
+      `get_attribute_value` davranışını doğrula; gerekirse `scan_manifest`'i uyarla.
+- [ ] Sadece sahip olduğun / yazılı izinli uygulamayı analiz et.

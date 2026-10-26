@@ -102,11 +102,15 @@ disclosure, missing HTTPS enforcement / mixed content — all clone the existing
 
 ---
 
-## 5. Mobile — *planned*
+## 5. Mobile (Android APK) — *ZIP layer implemented*
 
-- **Input:** `.apk` / `.ipa` **file**
-- **Library:** static analysis (apktool / androguard; MobSF-style checks). The
-  installed `rea` tooling overlaps here.
+- **Input:** `.apk` **file**
+- **Library:** stdlib `zipfile` (always) + `androguard` (optional, manifest)
+- **Code / entry point:** `vrt_scanner/mobile.py` — `python -m vrt_scanner mobile app.apk`
+- **Status:** ZIP layer works and is tested (hardcoded secrets → plaintext
+  credential storage; external-storage usage; certificate-pinning absent). The
+  androguard manifest layer (allowBackup, exported components) is EXPERIMENTAL
+  — validate against real APKs. iOS `.ipa` and dex decompilation not done yet.
 
 | Category | Leaves |
 |---|---|
