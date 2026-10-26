@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -173,8 +174,49 @@ class Crawler:
             forms.append(Form(method=method, action=action, inputs=names))
         return forms
 
+    async def _seed(self, start_url: str) -> list[str]:
+        """Discover extra entry points from robots.txt and sitemap.xml so the
+        crawl is not limited to links found on the start page. Returns only
+        in-scope, same-origin URLs."""
+        p = urlparse(start_url)
+        base = f"{p.scheme}://{p.netloc}"
+        found: list[str] = []
+        sitemaps = [f"{base}/sitemap.xml"]
+        # robots.txt: Allow/Disallow paths + Sitemap: declarations
+        try:
+            r = await self.engine.get(f"{base}/robots.txt")
+            if r.status_code == 200 and "html" not in r.headers.get("content-type", ""):
+                for line in r.text.splitlines():
+                    line = line.strip()
+                    low = line.lower()
+                    if low.startswith(("allow:", "disallow:")):
+                        path = line.split(":", 1)[1].strip()
+                        if path.startswith("/") and "*" not in path:
+                            found.append(base + path)
+                    elif low.startswith("sitemap:"):
+                        sm = line.split(":", 1)[1].strip()
+                        if sm.startswith("http"):
+                            sitemaps.append(sm)
+        except (OutOfScope, httpx.HTTPError):
+            pass
+        # sitemap.xml: <loc>URL</loc> entries
+        for sm in sitemaps:
+            try:
+                r = await self.engine.get(sm)
+            except (OutOfScope, httpx.HTTPError):
+                continue
+            if r.status_code == 200:
+                found += re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", r.text, re.I)
+        # keep only in-scope, same-origin URLs (cap to avoid a huge sitemap flood)
+        out = []
+        for u in found[:300]:
+            u = urldefrag(u).url
+            if same_origin(u, start_url) and self.engine.scope.allows(u):
+                out.append(u)
+        return out
+
     async def crawl(self, start_url: str) -> list[Page]:
-        queue = [start_url]
+        queue = [start_url] + await self._seed(start_url)
         seen: set[str] = set()
         pages: list[Page] = []
         while queue and len(pages) < self.max_pages:

@@ -124,3 +124,9 @@ gerçek dosya saymaz. False positive'leri engeller. Yardımcı: `_similar()`.
 test eder. GET formları query string'e, POST formları gövdeye payload basar.
 Ortak yardımcı: `_submit_form(engine, form, field, payload)`. Gerçek sitelerde
 açıkların çoğu login/arama/iletişim formlarında olduğu için en değerli artış bu.
+
+**Crawler seeding (core.Crawler._seed):** Crawl artık yalnız başlangıç
+sayfasındaki linklerle sınırlı değil; `/robots.txt` (Allow/Disallow yolları +
+Sitemap: adresleri) ve `/sitemap.xml` (`<loc>` URL'leri) kaynaklarından ekstra
+giriş noktası toplayıp kuyruğa ekler. Sadece scope içi + aynı-origin URL'ler,
+en çok 300 ile sınırlı. SPA/linksiz sitelerde kapsamı ciddi artırır.
