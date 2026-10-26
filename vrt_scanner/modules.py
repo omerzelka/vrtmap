@@ -805,6 +805,140 @@ class CookieScope(Module):
         return out
 
 
+class TLSInspection(Module):
+    """TLS/SSL posture of the target (stdlib ssl — no extra dependency).
+    Flags a certificate error, an obsolete protocol, a weak cipher, and the
+    lack of forward secrecy."""
+    BASE = "server_security_misconfiguration"
+    VRT_IDS = [f"{BASE}.insecure_ssl.certificate_error",
+               f"{BASE}.ssl_attack_breach_poodle_etc",
+               f"{BASE}.insecure_ssl.insecure_cipher_suite",
+               f"{BASE}.insecure_ssl.lack_of_forward_secrecy"]
+    OLD_PROTOCOLS = {"SSLv2", "SSLv3", "TLSv1", "TLSv1.1"}
+    WEAK_CIPHER = re.compile(r"RC4|3DES|\bDES\b|NULL|EXPORT|MD5", re.I)
+
+    async def run(self, engine, pages):
+        import asyncio
+        host, port = self._target(engine, pages)
+        if not host:
+            return []
+        info = await asyncio.to_thread(self._probe, host, port)
+        if info is None:
+            return []
+        where = f"https://{host}:{port}"
+        out = []
+        if info["cert_error"]:
+            out.append(self.f(self.VRT_IDS[0], where,
+                       f"TLS certificate error: {info['cert_error'][:120]}"))
+        if info["proto"] in self.OLD_PROTOCOLS:
+            out.append(self.f(self.VRT_IDS[1], where,
+                       f"obsolete TLS protocol negotiated: {info['proto']}"))
+        name = (info["cipher"] or [""])[0] or ""
+        if name and self.WEAK_CIPHER.search(name):
+            out.append(self.f(self.VRT_IDS[2], where,
+                       f"weak cipher negotiated: {name}"))
+        if name and "ECDHE" not in name.upper() and "DHE" not in name.upper():
+            out.append(self.f(self.VRT_IDS[3], where,
+                       f"cipher without forward secrecy: {name}"))
+        return out
+
+    @staticmethod
+    def _target(engine, pages):
+        from urllib.parse import urlparse
+        if pages:
+            p = urlparse(pages[0].url)
+            if p.scheme == "https":
+                return p.hostname, (p.port or 443)
+        host = next(iter(engine.scope.allowed), None) if engine else None
+        return host, 443
+
+    @staticmethod
+    def _probe(host, port):
+        import ssl
+        import socket
+        cert_error = None
+        proto = cipher = None
+        try:
+            ctx = ssl.create_default_context()
+            with socket.create_connection((host, port), timeout=6) as s:
+                with ctx.wrap_socket(s, server_hostname=host) as ss:
+                    proto, cipher = ss.version(), ss.cipher()
+        except ssl.SSLCertVerificationError as e:
+            cert_error = str(e)
+        except (ssl.SSLError, OSError):
+            pass
+        if cert_error is not None or proto is None:
+            try:
+                ctx = ssl._create_unverified_context()
+                with socket.create_connection((host, port), timeout=6) as s:
+                    with ctx.wrap_socket(s, server_hostname=host) as ss:
+                        proto, cipher = ss.version(), ss.cipher()
+            except (ssl.SSLError, OSError):
+                if cert_error is None and proto is None:
+                    return None
+        return {"cert_error": cert_error, "proto": proto, "cipher": cipher}
+
+
+class DNSMisconfig(Module):
+    """DNS hygiene for the target's domain (dnspython, optional): missing CAA
+    record, DNSSEC not enabled, and AXFR zone transfer allowed."""
+    BASE = "server_security_misconfiguration"
+    VRT_IDS = [f"{BASE}.misconfigured_dns.missing_caa_record",
+               f"{BASE}.missing_dnssec",
+               f"{BASE}.misconfigured_dns.zone_transfer"]
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        try:
+            import dns.resolver  # noqa: F401
+        except ImportError:
+            return []
+        import asyncio
+        from urllib.parse import urlparse
+        host = (urlparse(pages[0].url).hostname or "").lower()
+        labels = host.split(".")
+        if len(labels) < 2 or host.replace(".", "").isdigit():
+            return []
+        domain = ".".join(labels[-2:])
+        return await asyncio.to_thread(self._checks, domain)
+
+    def _checks(self, domain):
+        import dns.resolver
+        import dns.query
+        import dns.zone
+        out = []
+
+        def has(name, rtype):
+            try:
+                dns.resolver.resolve(name, rtype, lifetime=5)
+                return True
+            except Exception:
+                return False
+
+        if not has(domain, "CAA"):
+            out.append(self.f(self.VRT_IDS[0], f"dns://{domain}",
+                       "no CAA record — any CA may issue certs for this domain"))
+        if not has(domain, "DNSKEY"):
+            out.append(self.f(self.VRT_IDS[1], f"dns://{domain}",
+                       "no DNSKEY — DNSSEC not enabled"))
+        try:
+            ns = [str(r.target).rstrip(".")
+                  for r in dns.resolver.resolve(domain, "NS", lifetime=5)]
+        except Exception:
+            ns = []
+        for nsname in ns[:4]:
+            try:
+                ip = str(dns.resolver.resolve(nsname, "A", lifetime=5)[0])
+                if dns.zone.from_xfr(dns.query.xfr(ip, domain, lifetime=8)):
+                    out.append(self.f(self.VRT_IDS[2], f"dns://{domain}",
+                               f"zone transfer (AXFR) allowed from {nsname}"))
+                    break
+            except Exception:
+                continue
+        return out
+
+
 # --------------------------------------------------------------------------- #
 # MANUAL classes — real VRT leaves that need app context + human verification.
 # Counted as "manual" coverage, never auto-run.
@@ -854,6 +988,8 @@ ALL_MODULES: list[Module] = [
     RefererXSS(),
     SessionTokenCleartext(),
     CookieScope(),
+    TLSInspection(),
+    DNSMisconfig(),
     # manual-only
     IDORManual(),
 ]

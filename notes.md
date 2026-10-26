@@ -219,3 +219,9 @@ SessionTokenCleartext (session cookie HTTP'de Secure'suz), ExtraSecurityHeaders
 (x_frame_options / x_xss_protection / csp_report_only), InsecureCSP
 (unsafe-inline/eval/*), CookieScope (parent-domain cookie). Test sunucusunda
 doğrulandı.
+
+## Aşama 2 — TLS + DNS (38 -> 45)
+TLSInspection (stdlib ssl, bağımlılıksız): sertifika hatası, eski protokol
+(TLS<1.2 → ssl_attack/POODLE), zayıf cipher, forward-secrecy yok. badssl.com'da
+doğrulandı. DNSMisconfig (dnspython): CAA yok, DNSSEC yok (DNSKEY), AXFR zone
+transfer açık. Gerçek domain'lerde doğrulandı (google/example).
