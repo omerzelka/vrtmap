@@ -208,3 +208,14 @@ yardımcılar: set_query_param, query_params, same_origin, Scope, _similar,
 katalog yükleme), `test_modules.py` (pasif modüller Page nesnesiyle, ağsız,
 asyncio.run ile), `test_integration.py` (gömülü açıklı sunucuya karşı tam
 tarama; form XSS + SQLi bulunduğunu doğrular). Ağ gerektirmez.
+
+---
+
+## Web kapsamını tamamlama — Aşama 1 (otomatik pasif, 28 -> 38)
+UnsafeHTTPMethods'a XST (`cross_site_scripting_xss.trace_method`) eklendi.
+Yeni modüller: RefererXSS (Referer başlığı yansıması), LoginOverHTTP
+(parola formu HTTP'de → weak_login/weak_registration over_http),
+SessionTokenCleartext (session cookie HTTP'de Secure'suz), ExtraSecurityHeaders
+(x_frame_options / x_xss_protection / csp_report_only), InsecureCSP
+(unsafe-inline/eval/*), CookieScope (parent-domain cookie). Test sunucusunda
+doğrulandı.

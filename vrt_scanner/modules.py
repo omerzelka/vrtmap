@@ -433,7 +433,8 @@ class SoftwareVersionDisclosure(Module):
 
 class UnsafeHTTPMethods(Module):
     BASE = "server_security_misconfiguration.potentially_unsafe_http_method_enabled"
-    VRT_IDS = [f"{BASE}.options", f"{BASE}.trace"]
+    VRT_IDS = [f"{BASE}.options", f"{BASE}.trace",
+               "cross_site_scripting_xss.trace_method"]
 
     async def _try(self, engine, method, url):
         try:
@@ -457,7 +458,9 @@ class UnsafeHTTPMethods(Module):
         r = await self._try(engine, "TRACE", url)
         if r is not None and r.status_code == 200 and "TRACE " in r.text:
             out.append(self.f(self.VRT_IDS[1], url,
-                       evidence="TRACE method enabled and echoes the request (XST risk)"))
+                       evidence="TRACE method enabled and echoes the request"))
+            out.append(self.f(self.VRT_IDS[2], url,
+                       evidence="TRACE enabled allows Cross-Site Tracing (XST)"))
         return out
 
 
@@ -679,6 +682,129 @@ class MissingSubresourceIntegrity(Module):
         return out
 
 
+class RefererXSS(Module):
+    VRT_IDS = ["cross_site_scripting_xss.referer"]
+    MARKER = "vrtref9z7q"
+
+    async def run(self, engine, pages):
+        out = []
+        payload = f"<{self.MARKER}>"
+        for page in pages:
+            r = await _safe_get(engine, page.url, headers={"Referer": payload})
+            if r is not None and payload in r.text:
+                out.append(self.f(self.VRT_IDS[0], page.url,
+                           evidence="Referer header reflected unescaped"))
+                break
+        return out
+
+
+class LoginOverHTTP(Module):
+    VRT_IDS = [
+        "broken_authentication_and_session_management.weak_login_function.over_http",
+        "broken_authentication_and_session_management.weak_registration_implementation.over_http",
+    ]
+    PW = re.compile(r"type\s*=\s*['\"]password['\"]", re.I)
+    REG = re.compile(r"regist|sign.?up|create.?account", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.url.startswith("http://") or not page.text:
+                continue
+            if not self.PW.search(page.text):
+                continue
+            is_reg = bool(self.REG.search(page.text) or self.REG.search(page.url))
+            leaf = self.VRT_IDS[1] if is_reg else self.VRT_IDS[0]
+            out.append(self.f(leaf, page.url,
+                       evidence="password form served over cleartext HTTP"))
+        return out
+
+
+class SessionTokenCleartext(Module):
+    VRT_IDS = ["broken_authentication_and_session_management"
+               ".cleartext_transmission_of_session_token"]
+    SESSIONISH = re.compile(r"sess|sid|token|auth|jwt|login", re.I)
+
+    async def run(self, engine, pages):
+        out = []
+        for page in pages:
+            if not page.url.startswith("http://"):
+                continue
+            r = await _safe_get(engine, page.url)
+            if r is None:
+                continue
+            for raw in r.headers.get_list("set-cookie"):
+                name = raw.split("=", 1)[0].strip()
+                if self.SESSIONISH.search(name) and "secure" not in raw.lower():
+                    out.append(self.f(self.VRT_IDS[0], page.url,
+                               f"session cookie '{name}' set over HTTP without Secure",
+                               param=name))
+            if out:
+                break
+        return out
+
+
+class ExtraSecurityHeaders(Module):
+    BASE = "server_security_misconfiguration.lack_of_security_headers"
+    VRT_IDS = [f"{BASE}.x_frame_options", f"{BASE}.x_xss_protection",
+               f"{BASE}.content_security_policy_report_only"]
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        h = {k.lower(): v for k, v in pages[0].headers.items()}
+        out = []
+        if "x-frame-options" not in h:
+            out.append(self.f(self.VRT_IDS[0], pages[0].url,
+                       evidence="X-Frame-Options header absent"))
+        if "x-xss-protection" not in h:
+            out.append(self.f(self.VRT_IDS[1], pages[0].url,
+                       evidence="X-XSS-Protection header absent"))
+        if "content-security-policy" not in h and \
+                "content-security-policy-report-only" in h:
+            out.append(self.f(self.VRT_IDS[2], pages[0].url,
+                       evidence="CSP is report-only (not enforced)"))
+        return out
+
+
+class InsecureCSP(Module):
+    VRT_IDS = ["server_security_misconfiguration.misconfigured_security_headers.insecure_csp"]
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        h = {k.lower(): v for k, v in pages[0].headers.items()}
+        csp = h.get("content-security-policy", "")
+        if not csp:
+            return []
+        low = csp.lower()
+        bad = [t for t in ("unsafe-inline", "unsafe-eval") if t in low]
+        if "*" in csp or bad:
+            return [self.f(self.VRT_IDS[0], pages[0].url,
+                    evidence=f"weak CSP directives: {bad or ['wildcard *']}")]
+        return []
+
+
+class CookieScope(Module):
+    VRT_IDS = ["server_security_misconfiguration.cookie_scoped_to_parent_domain"]
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        r = await _safe_get(engine, pages[0].url)
+        if r is None:
+            return []
+        out = []
+        for raw in r.headers.get_list("set-cookie"):
+            m = re.search(r"domain=\s*(\.[^;\s]+)", raw, re.I)
+            if m:
+                name = raw.split("=", 1)[0].strip()
+                out.append(self.f(self.VRT_IDS[0], pages[0].url,
+                           f"cookie '{name}' scoped to parent domain {m.group(1)}",
+                           param=name))
+        return out
+
+
 # --------------------------------------------------------------------------- #
 # MANUAL classes — real VRT leaves that need app context + human verification.
 # Counted as "manual" coverage, never auto-run.
@@ -712,6 +838,9 @@ ALL_MODULES: list[Module] = [
     InternalIPDisclosure(),
     MissingSubresourceIntegrity(),
     MailSpoofing(),
+    ExtraSecurityHeaders(),
+    InsecureCSP(),
+    LoginOverHTTP(),
     # active probes
     ReflectedXSS(),
     SQLInjection(),
@@ -722,6 +851,9 @@ ALL_MODULES: list[Module] = [
     DirectoryListing(),
     UnsafeHTTPMethods(),
     RobotsDisclosure(),
+    RefererXSS(),
+    SessionTokenCleartext(),
+    CookieScope(),
     # manual-only
     IDORManual(),
 ]
