@@ -346,69 +346,6 @@ _PRIO_COLOR = {1: "#d7263d", 2: "#f46036", 3: "#e8b800",
                4: "#2e9e5b", 5: "#5b7fb0"}
 
 
-# per-category guidance for the manual-testing checklist
-_CHECKLIST_HINTS = {
-    "broken_authentication_and_session_management":
-        "Walk the session lifecycle: does it invalidate on logout, password/"
-        "email change and 2FA toggle? Check session fixation, concurrent logins, "
-        "JWT lifetime and auth bypass.",
-    "broken_access_control":
-        "Test vertical/horizontal privilege escalation, username enumeration on "
-        "login/reset, and missing password confirmation on sensitive actions.",
-    "cross_site_scripting_xss":
-        "Try payloads that persist (stored) or reach JS sinks (DOM); test cookie, "
-        "flash and off-domain vectors; verify contextual output encoding.",
-    "server_side_injection":
-        "Fuzz each input with context-specific payloads (XXE, OS command, template/"
-        "code eval, SSI, remote file include); confirm via differential or "
-        "out-of-band responses.",
-    "cross_site_request_forgery_csrf":
-        "For every state-changing action, confirm a valid, per-request anti-CSRF "
-        "token is required (including logout and unauthenticated actions).",
-    "unvalidated_redirects_and_forwards":
-        "Test redirect parameters via POST and other sinks; check target=_blank "
-        "links for missing rel=noopener (tabnabbing).",
-    "server_security_misconfiguration":
-        "Manually verify SSRF, OAuth flows, rate limiting, file upload, request "
-        "smuggling, cache poisoning, race conditions, DNS/subdomain takeover and "
-        "exposed/protected portals — each needs app context.",
-    "application_level_denial_of_service_dos":
-        "Only against authorized, non-production targets: probe resource-"
-        "exhaustion vectors carefully.",
-    "insecure_data_transport":
-        "Confirm executable/sensitive downloads are served over TLS with an "
-        "integrity check (signature or hash).",
-    "using_components_with_known_vulnerabilities":
-        "Fingerprint component versions and cross-reference CVE databases.",
-}
-
-
-def checklist_markdown(catalog, manual_ids, target: str) -> str:
-    """Build a grouped, actionable manual-testing checklist (Markdown) from the
-    manual VRT leaves — turning 'manual coverage' into a real to-do list."""
-    import datetime
-    from collections import defaultdict
-    groups: dict[str, list] = defaultdict(list)
-    for vid in manual_ids:
-        info = catalog.info(vid)
-        if info:
-            groups[vid.split(".")[0]].append((info["priority"], info["name"], vid))
-    total = sum(len(v) for v in groups.values())
-    out = [f"# Manual testing checklist — {target}", "",
-           f"_{total} VRT leaves a human must verify — a generic scanner cannot "
-           f"confirm these. Generated {datetime.datetime.now():%Y-%m-%d %H:%M}._", ""]
-    for cat in sorted(groups):
-        out.append(f"## {cat.replace('_', ' ')}")
-        hint = _CHECKLIST_HINTS.get(cat)
-        if hint:
-            out.append(f"> {hint}")
-        out.append("")
-        for prio, name, vid in sorted(groups[cat]):
-            out.append(f"- [ ] **P{prio}** {name} &nbsp;`{vid}`")
-        out.append("")
-    return "\n".join(out)
-
-
 def report_html(findings: list[Finding], requests_made: int, pages: int,
                 target: str, path: str) -> None:
     """Write a standalone, shareable HTML report. All target-derived text is

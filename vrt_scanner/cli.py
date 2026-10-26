@@ -11,8 +11,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .core import (
-    Scope, HttpEngine, Crawler, VRTCatalog, report, report_html,
-    checklist_markdown, OutOfScope,
+    Scope, HttpEngine, Crawler, VRTCatalog, report, report_html, OutOfScope,
 )
 from .modules import ALL_MODULES
 
@@ -34,11 +33,10 @@ async def orchestrate(engine: HttpEngine, catalog: VRTCatalog,
                       crawler, start_url: str):
     print(f"[*] Crawling {start_url} (max {crawler.max_pages} pages)...")
     pages = await crawler.crawl(start_url)
-    active = [m for m in ALL_MODULES if not m.MANUAL]
     print(f"[*] Discovered {len(pages)} page(s). Running "
-          f"{len(active)} active VRT modules...")
+          f"{len(ALL_MODULES)} VRT modules...")
     findings = []
-    for mod in active:
+    for mod in ALL_MODULES:
         name = type(mod).__name__
         # per-leaf config from the catalog: enabled + custom payloads
         cfgs = [(vid, catalog.leaf_config(vid)) for vid in mod.VRT_IDS
@@ -82,17 +80,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--timeout", type=float, default=10.0)
     p.add_argument("--insecure", action="store_true",
                    help="Do not verify TLS certificates.")
-    p.add_argument("--headless", action="store_true",
-                   help="Render pages with a headless browser (Playwright) so "
-                        "JavaScript SPAs can be crawled. Needs: pip install "
-                        "playwright && playwright install chromium.")
     p.add_argument("--json", dest="json_out", default=None,
                    help="Write findings to this JSON file.")
     p.add_argument("--html", dest="html_out", default=None,
                    help="Write a shareable HTML report to this file.")
-    p.add_argument("--checklist", default=None,
-                   help="Write a manual-testing checklist (Markdown) of the VRT "
-                        "leaves a human must verify to this file.")
     return p
 
 
@@ -105,18 +96,7 @@ async def _amain(args) -> int:
     catalog = VRTCatalog.load_dir(CATALOG_DIR)
     engine = HttpEngine(scope, rate=args.rate, concurrency=args.concurrency,
                         timeout=args.timeout, verify_tls=not args.insecure)
-    if args.headless:
-        try:
-            import playwright  # noqa: F401
-            from .headless import HeadlessCrawler
-            crawler = HeadlessCrawler(engine, max_pages=args.max_pages)
-            print("[*] Using headless (JS-rendering) crawler.")
-        except ImportError:
-            print("[!] --headless needs Playwright (pip install playwright && "
-                  "playwright install chromium); using the static crawler.")
-            crawler = Crawler(engine, max_pages=args.max_pages)
-    else:
-        crawler = Crawler(engine, max_pages=args.max_pages)
+    crawler = Crawler(engine, max_pages=args.max_pages)
     try:
         pages, findings = await orchestrate(engine, catalog, crawler, args.target)
     finally:
@@ -125,15 +105,6 @@ async def _amain(args) -> int:
     if args.html_out:
         report_html(findings, engine.requests_made, len(pages),
                     args.target, args.html_out)
-    # manual-testing checklist: the VRT leaves a human must verify
-    manual_ids = [v for m in ALL_MODULES if m.MANUAL for v in m.VRT_IDS]
-    if args.checklist:
-        Path(args.checklist).write_text(
-            checklist_markdown(catalog, manual_ids, args.target), encoding="utf-8")
-        print(f"Manual checklist ({len(manual_ids)} items) written to {args.checklist}")
-    else:
-        print(f"[*] {len(manual_ids)} manual checks also apply (not auto-detectable) "
-              f"— add --checklist FILE to save them as a to-do list.")
     return 0
 
 

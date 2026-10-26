@@ -59,8 +59,6 @@ async def _scan(base):
         pages = await Crawler(engine, max_pages=10).crawl(base)
         findings = []
         for m in ALL_MODULES:
-            if m.MANUAL:
-                continue
             findings += await m.run(engine, pages)
     finally:
         await engine.aclose()

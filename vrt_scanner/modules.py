@@ -7,9 +7,7 @@ leaves are disabled (enabled:false in the catalog file) are skipped, and any
 custom `payloads` from those files are injected in addition to the defaults
 (available as self.extra_payloads).
 
-To extend: subclass Module, set VRT_IDS, implement run(), append to
-ALL_MODULES. Set MANUAL=True for classes that can't be auto-detected (they are
-counted as manual coverage, not automated, and are not executed).
+To extend: subclass Module, set VRT_IDS, implement run(), append to ALL_MODULES.
 """
 from __future__ import annotations
 
@@ -24,7 +22,6 @@ from .core import (
 
 class Module:
     VRT_IDS: list[str] = []
-    MANUAL: bool = False
 
     def __init__(self):
         self.extra_payloads: list[str] = []   # filled from catalog by orchestrator
@@ -977,24 +974,6 @@ class DNSMisconfig(Module):
         return out
 
 
-# --------------------------------------------------------------------------- #
-# MANUAL classes — real VRT leaves that need app context + human verification.
-# Counted as "manual" coverage, never auto-run.
-# --------------------------------------------------------------------------- #
-class IDORManual(Module):
-    MANUAL = True
-    VRT_IDS = [
-        "broken_access_control.idor.view_sensitive_information_iterable_object_identifiers",
-        "broken_access_control.idor.modify_sensitive_information_iterable_object_identifiers",
-        "broken_access_control.idor.modify_view_sensitive_information_guid",
-        "broken_access_control.idor.modify_view_sensitive_information_iterable_object_identifiers",
-        "broken_access_control.idor.view_non_sensitive_information",
-    ]
-
-    async def run(self, engine, pages):
-        return []
-
-
 ALL_MODULES: list[Module] = [
     # passive config / header checks
     SecurityHeaders(),
@@ -1029,55 +1008,4 @@ ALL_MODULES: list[Module] = [
     TLSInspection(),
     DNSMisconfig(),
     ExposedAdminPortal(),
-    # manual-only
-    IDORManual(),
 ]
-
-
-# --------------------------------------------------------------------------- #
-# Web leaves a generic scanner cannot confirm (business-logic / auth & session
-# flows / stored & DOM XSS / SSRF / file upload / rate limiting / OAuth / race
-# conditions / access control) are catalogued as MANUAL — so coverage stays
-# honest: every web-category leaf is either automated by a module above or
-# listed here as needing human verification. Populated from the catalog at
-# import, excluding leaves that belong to the mobile/binary engines.
-# --------------------------------------------------------------------------- #
-class WebManual(Module):
-    MANUAL = True
-    VRT_IDS: list[str] = []
-
-    async def run(self, engine, pages):
-        return []
-
-
-_WEB_CATEGORIES = (
-    "server_security_misconfiguration",
-    "broken_authentication_and_session_management",
-    "cross_site_scripting_xss", "server_side_injection",
-    "cross_site_request_forgery_csrf", "broken_access_control",
-    "unvalidated_redirects_and_forwards", "client_side_injection",
-    "insecure_data_transport", "using_components_with_known_vulnerabilities",
-    "application_level_denial_of_service_dos",
-)
-# tokens marking a leaf as belonging to the mobile / binary engines, not web
-_NOT_WEB = ("android", "ios", "url_scheme", "intent", "binary_planting")
-
-
-def _populate_web_manual():
-    import json
-    from pathlib import Path
-    idx = Path(__file__).resolve().parent.parent / "vrt_catalog" / "index.json"
-    try:
-        ids = [e["vrt_id"] for e in json.loads(idx.read_text())]
-    except OSError:
-        return
-    automated = {v for m in ALL_MODULES for v in m.VRT_IDS}
-    WebManual.VRT_IDS = sorted(
-        v for v in ids
-        if v.split(".")[0] in _WEB_CATEGORIES
-        and v not in automated
-        and not any(t in v for t in _NOT_WEB))
-
-
-_populate_web_manual()
-ALL_MODULES.append(WebManual())

@@ -19,44 +19,37 @@ CATALOG_DIR = Path(__file__).resolve().parent.parent / "vrt_catalog"
 
 def build() -> tuple[VRTCatalog, dict[str, str], list[str]]:
     catalog = VRTCatalog.load_dir(CATALOG_DIR)
-    status: dict[str, str] = {}          # vrt_id -> auto | manual | none
+    status: dict[str, str] = {}          # vrt_id -> auto | none
     unknown: list[str] = []              # module ids not present in catalog
-    auto_ids, manual_ids = set(), set()
+    auto_ids = set()
     for mod in ALL_MODULES:
-        target = manual_ids if mod.MANUAL else auto_ids
         for vid in mod.VRT_IDS:
             if catalog.info(vid) is None:
                 unknown.append(f"{type(mod).__name__}: {vid}")
             else:
-                target.add(vid)
+                auto_ids.add(vid)
     for vid in catalog.flat:
-        if vid in auto_ids:
-            status[vid] = "auto"
-        elif vid in manual_ids:
-            status[vid] = "manual"
-        else:
-            status[vid] = "none"
+        status[vid] = "auto" if vid in auto_ids else "none"
     return catalog, status, unknown
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="vrt-coverage")
-    ap.add_argument("--list", choices=["auto", "manual", "none"])
+    ap.add_argument("--list", choices=["auto", "none"])
     ap.add_argument("--missing-ids", action="store_true")
     args = ap.parse_args(argv)
 
     catalog, status, unknown = build()
     total = len(status)
     counts = {s: sum(1 for v in status.values() if v == s)
-              for s in ("auto", "manual", "none")}
+              for s in ("auto", "none")}
 
     print("=" * 66)
     print(f" VRT COVERAGE — {total} leaf types total")
     print("=" * 66)
     print(f" automated (active module) : {counts['auto']:>3}  "
           f"({counts['auto']*100//total}%)")
-    print(f" manual (needs human)      : {counts['manual']:>3}")
-    print(f" no module yet             : {counts['none']:>3}")
+    print(f" no module                 : {counts['none']:>3}")
 
     print("\n By priority (automated / total):")
     for p in (1, 2, 3, 4, 5, None):

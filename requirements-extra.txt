@@ -1,9 +1,3 @@
-# Optional dependencies — install only the ones for features you use. The web
-# engine never needs any of these; each feature degrades gracefully if missing.
-
-dnspython>=2.4      # MailSpoofing module (SPF/DMARC over DNS)
-ldap3>=2.9,<3       # AD engine            (python -m vrt_scanner.ad)
-impacket>=0.11      # AD DACL/ACE parse    (check_dacl_abuse)
-boto3>=1.28         # Cloud (AWS) engine   (python -m vrt_scanner.cloud)
-playwright>=1.40    # --headless crawler   (then: playwright install chromium)
-androguard>=3.4    # Mobile engine manifest layer (python -m vrt_scanner mobile)
+# Optional. Enables the SPF/DMARC (MailSpoofing) and DNS-hygiene (DNSMisconfig)
+# checks. The scanner works without it — those checks just skip themselves.
+dnspython>=2.4

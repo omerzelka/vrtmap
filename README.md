@@ -6,6 +6,12 @@ Rating Taxonomy (VRT)**. The full official VRT (437 leaf types, release
 every scanner module maps to real VRT leaf ids — so each finding carries its
 exact VRT id and inherits that leaf's P1–P5 severity from the catalog.
 
+It crawls a target (following links and seeding from `robots.txt` / `sitemap.xml`),
+tests URL parameters **and form fields**, and runs 30+ checks: injection
+(SQLi, LFI, reflected/Referer XSS), redirects, CORS, security headers,
+clickjacking, cookie flags, sensitive-file and directory-listing exposure,
+TLS posture, DNS hygiene, SPF/DMARC spoofing, exposed admin portals, and more.
+
 ## ⚠️ Authorization
 
 Run this **only** against systems you own or have written permission to test —
@@ -15,69 +21,48 @@ enforces a host **scope** and refuses to start without `--authorized`.
 ## Install
 
 ```bash
-cd ~/Desktop/vrt-scanner
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt            # core (web engine)
+pip install -r requirements.txt            # core
 
-# optional, only for the extra engines/modules you want:
-pip install -r requirements-extra.txt      # or install individual ones
+# optional: enables the SPF/DMARC and DNS-hygiene checks (skipped if absent)
+pip install -r requirements-extra.txt
 ```
 
-Or install the package itself (editable), which gives a `vrt` command and lets
-you pull extras per engine:
+Or install the package, which gives a `vrt` command:
 
 ```bash
-pip install -e .                 # core + the `vrt` command
-pip install -e '.[ad,cloud]'     # plus the engines you want ([mail], [headless], [dev])
+pip install -e .            # + the `vrt` command
+pip install -e '.[dns]'     # also the DNS/mail checks ([dev] for tests)
 ```
 
-`python -m vrt_scanner <web|ad|cloud> ...` always works even without the
-`vrt` script on your PATH.
+`python -m vrt_scanner <url> ...` always works even without `vrt` on your PATH.
 
 ## Scan
-
-All engines share one entry point — `python -m vrt_scanner <web|ad|cloud> ...`
-(the per-engine forms `python -m vrt_scanner.cli` / `.ad` / `.cloud` still work):
 
 ```bash
 # Spin up a legal practice target first, e.g. OWASP Juice Shop:
 #   docker run --rm -p 3000:3000 bkimminich/juice-shop
-python -m vrt_scanner.cli http://localhost:3000 --authorized
+python -m vrt_scanner http://localhost:3000 --authorized
 
-python -m vrt_scanner.cli http://localhost:3000 --authorized \
+python -m vrt_scanner http://localhost:3000 --authorized \
     --scope localhost --max-pages 80 --rate 5 --json report.json
 
 # shareable HTML report (payloads are escaped — the report is not XSS-able):
-python -m vrt_scanner.cli http://localhost:3000 --authorized --html report.html
+python -m vrt_scanner http://localhost:3000 --authorized --html report.html
 ```
-
-## Active Directory engine
-
-A separate, credentialed engine for an AD domain (read-only LDAP; authorized
-targets only). Needs `ldap3` (`pip install ldap3`).
-
-```bash
-python -m vrt_scanner.ad --dc dc01.lab.local --domain LAB \
-    --user analyst --password '***' --authorized --html ad-report.html
-```
-
-Checks (all map to `active_directory.*` VRT leaves): Kerberoastable accounts,
-AS-REP roastable accounts, unconstrained delegation, excessive Domain Admins,
-passwords in object descriptions, weak domain password policy, dormant enabled
-accounts, anonymous LDAP bind. Deep DACL/ACE abuse is not implemented yet.
 
 ## Coverage — how much of the VRT is automated
 
 ```bash
-python -m vrt_scanner.coverage                 # summary by priority
-python -m vrt_scanner.coverage --list auto     # which leaves are automated
-python -m vrt_scanner.coverage --list none     # which still have no module
+python -m vrt_scanner.coverage              # summary by priority
+python -m vrt_scanner.coverage --list auto  # which leaves are automated
+python -m vrt_scanner.coverage --list none  # which have no module
 ```
 
-Current state: **12 of 437** leaf types automated, **5** marked manual
-(IDOR — needs app context), the rest unmodelled. That gap is expected and
-honest: most of the VRT (business logic, access control, mobile, hardware,
-crypto) can't be found by a generic scanner.
+**47 of 437** leaf types are automated. That gap is expected and honest: most
+of the VRT (business logic, auth/session flows, access control, mobile,
+hardware, crypto) cannot be found by a generic automated scanner and requires
+manual testing — so the tool does not pretend to cover them.
 
 ## The catalog — `vrt_catalog/`
 
@@ -99,30 +84,32 @@ Each file has editable hooks the scanner reads at runtime:
 {
   "vrt_id": "server_side_injection.sql_injection",
   "priority": 1,
-  "enabled": true,          // set false to skip this check
+  "enabled": true,            // set false to skip this check
   "payloads": ["' OR 1=1--"], // extra payloads injected on top of defaults
   "notes": ""
 }
 ```
 
 Set `enabled: false` to disable a leaf; add strings to `payloads` and the
-module covering that leaf will try them too (SQLi, XSS, path traversal, open
+module covering that leaf will try them too (SQLi, XSS, path traversal and open
 redirect support custom payloads).
 
-## Checks → VRT leaf ids
+## A few of the checks
 
 | Module | VRT leaf |
 |---|---|
-| SQL injection (error-based) | `server_side_injection.sql_injection` |
+| SQL injection (error-based, params + forms) | `server_side_injection.sql_injection` |
+| Reflected XSS (params + forms) | `cross_site_scripting_xss.reflected.non_self` |
 | Path traversal / LFI | `server_side_injection.file_inclusion.local` |
-| Reflected XSS | `cross_site_scripting_xss.reflected.non_self` |
 | Open redirect | `unvalidated_redirects_and_forwards.open_redirect.get_based` |
 | CORS misconfig | `server_security_misconfiguration.unsafe_cross_origin_resource_sharing` |
-| Security headers (×3) | `server_security_misconfiguration.lack_of_security_headers.*` |
-| Clickjacking | `server_security_misconfiguration.clickjacking.non_sensitive_action` |
-| Cookie flags (×2) | `server_security_misconfiguration.missing_secure_or_httponly_cookie_flag.*` |
-| Sensitive files | `sensitive_data_exposure.disclosure_of_secrets.for_publicly_accessible_asset` |
-| IDOR *(manual)* | `broken_access_control.idor.*` |
+| Security headers | `server_security_misconfiguration.lack_of_security_headers.*` |
+| TLS posture (cert / protocol / cipher) | `server_security_misconfiguration.insecure_ssl.*` |
+| DNS hygiene (CAA / DNSSEC / AXFR) | `server_security_misconfiguration.misconfigured_dns.*` |
+| Email spoofing (SPF / DMARC) | `server_security_misconfiguration.mail_server_misconfiguration.*` |
+| Sensitive files / directory listing | `sensitive_data_exposure.disclosure_of_secrets.*` |
+
+Run `python -m vrt_scanner.coverage --list auto` for the full list.
 
 ## Extend it
 
@@ -139,19 +126,11 @@ pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-Unit tests cover the core helpers and the passive detection modules; an
-integration test runs a full scan against an embedded intentionally-vulnerable
-server and asserts the form-based XSS and SQLi are found. No network needed.
+Unit tests cover the core helpers and the detection modules; an integration
+test runs a full scan against an embedded intentionally-vulnerable server and
+asserts the form-based XSS and SQLi are found. No network needed. CI runs the
+suite on Python 3.9 / 3.11 / 3.12.
 
-## Manual-testing checklist
+## License
 
-Most of the VRT cannot be found by a generic scanner. For every web scan the
-tool can emit the applicable manual VRT leaves as an actionable checklist:
-
-```bash
-python -m vrt_scanner web http://localhost:3000 --authorized --checklist checklist.md
-```
-
-The Markdown file groups the leaves by category, with priority, the official
-VRT id and a short "how to test" note per category — a ready to-do list for the
-human part of the assessment.
+MIT — see [LICENSE](LICENSE).
