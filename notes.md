@@ -130,3 +130,8 @@ sayfasındaki linklerle sınırlı değil; `/robots.txt` (Allow/Disallow yollar�
 Sitemap: adresleri) ve `/sitemap.xml` (`<loc>` URL'leri) kaynaklarından ekstra
 giriş noktası toplayıp kuyruğa ekler. Sadece scope içi + aynı-origin URL'ler,
 en çok 300 ile sınırlı. SPA/linksiz sitelerde kapsamı ciddi artırır.
+
+**HTML rapor (core.report_html + cli --html):** `--html report.html` ile
+bulguları öncelik renklerine göre gruplanmış, bağımsız (tek dosya) bir HTML
+sayfası üretir. Tüm hedef-kaynaklı metin `html.escape` ile kaçırılır — yani
+yansıyan bir XSS payload'u raporun kendisini ele geçiremez (self-XSS yok).

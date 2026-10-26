@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .core import (
-    Scope, HttpEngine, Crawler, VRTCatalog, report, OutOfScope,
+    Scope, HttpEngine, Crawler, VRTCatalog, report, report_html, OutOfScope,
 )
 from .modules import ALL_MODULES
 
@@ -83,6 +83,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Do not verify TLS certificates.")
     p.add_argument("--json", dest="json_out", default=None,
                    help="Write findings to this JSON file.")
+    p.add_argument("--html", dest="html_out", default=None,
+                   help="Write a shareable HTML report to this file.")
     return p
 
 
@@ -101,6 +103,9 @@ async def _amain(args) -> int:
     finally:
         await engine.aclose()
     report(findings, engine.requests_made, len(pages), args.json_out)
+    if args.html_out:
+        report_html(findings, engine.requests_made, len(pages),
+                    args.target, args.html_out)
     return 0
 
 
