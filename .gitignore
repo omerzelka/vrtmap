@@ -14,3 +14,4 @@ report.json
 
 # Tests
 .pytest_cache/
+*.egg-info/

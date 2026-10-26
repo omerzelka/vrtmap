@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vrt-scanner"
+version = "0.1.0"
+description = "VRT-organized vulnerability scanner — web, Active Directory and AWS engines, mapped to the Bugcrowd Vulnerability Rating Taxonomy."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.27,<0.29",
+    "beautifulsoup4>=4.12,<5",
+]
+
+# Install only the extras for the engines/modules you use, e.g.
+#   pip install -e '.[ad]'        pip install -e '.[cloud,mail]'
+[project.optional-dependencies]
+ad = ["ldap3>=2.9,<3", "impacket>=0.11"]
+cloud = ["boto3>=1.28"]
+mail = ["dnspython>=2.4"]
+headless = ["playwright>=1.40"]
+dev = ["pytest>=7"]
+
+# Unified command:  vrt web <url> --authorized   /   vrt ad ...   /   vrt cloud ...
+[project.scripts]
+vrt = "vrt_scanner.__main__:main"
+
+[tool.setuptools]
+# The VRT catalog lives at the repo root (vrt_catalog/), so use an editable
+# install — pip install -e . — which keeps that path valid.
+packages = ["vrt_scanner"]

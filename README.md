@@ -23,6 +23,17 @@ pip install -r requirements.txt            # core (web engine)
 pip install -r requirements-extra.txt      # or install individual ones
 ```
 
+Or install the package itself (editable), which gives a `vrt` command and lets
+you pull extras per engine:
+
+```bash
+pip install -e .                 # core + the `vrt` command
+pip install -e '.[ad,cloud]'     # plus the engines you want ([mail], [headless], [dev])
+```
+
+`python -m vrt_scanner <web|ad|cloud> ...` always works even without the
+`vrt` script on your PATH.
+
 ## Scan
 
 All engines share one entry point — `python -m vrt_scanner <web|ad|cloud> ...`
