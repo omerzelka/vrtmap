@@ -163,3 +163,15 @@ raporlar. Loopback 127.x hariç.
 **MissingSubresourceIntegrity** (`server_security_misconfiguration.missing_subresource_integrity`,
 pasif): harici (cross-origin) `<script src=https://...>` etiketi `integrity`
 olmadan yüklenmişse raporlar. Aynı-origin script'ler atlanır.
+
+---
+
+## MailSpoofing (pasif, DNS) — kapsam 26 -> 28
+Leaf: `...mail_server_misconfiguration.no_spoofing_protection_on_email_domain`
+ve `...email_spoofing_to_inbox_due_to_missing_or_misconfigured_dmarc...`
+
+Hedefin domain'i için SPF ve DMARC DNS kayıtlarını kontrol eder (dnspython,
+opsiyonel — yoksa atlar). SPF+DMARC yoksa "spoofable"; DMARC yok ya da p=none
+ise "inbox spoofing". IP/localhost hedeflerde atlar. DNS bloklama olmasın diye
+asyncio.to_thread ile çağrılır. Gerçek domain'lerde doğrulandı (google/github
+korumalı; neverssl.com ve iana.org bulgu verdi).

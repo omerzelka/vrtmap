@@ -560,6 +560,59 @@ class SensitivePageCaching(Module):
         return out
 
 
+class MailSpoofing(Module):
+    """Email-spoofing exposure for the target's domain, via DNS. Needs
+    dnspython (optional). Checks for SPF and DMARC records: a domain with no
+    SPF and no DMARC can be spoofed; a domain with no DMARC (or DMARC p=none)
+    lets spoofed mail reach the inbox."""
+    VRT_IDS = [
+        "server_security_misconfiguration.mail_server_misconfiguration"
+        ".no_spoofing_protection_on_email_domain",
+        "server_security_misconfiguration.mail_server_misconfiguration"
+        ".email_spoofing_to_inbox_due_to_missing_or_misconfigured_dmarc_on_email_domain",
+    ]
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        try:
+            import dns.resolver  # noqa: F401
+        except ImportError:
+            return []            # dnspython not installed -> silently skip
+        import asyncio
+        from urllib.parse import urlparse
+        host = (urlparse(pages[0].url).hostname or "").lower()
+        labels = host.split(".")
+        if len(labels) < 2 or host.replace(".", "").isdigit():
+            return []            # IP address or localhost -> no email domain
+        domain = ".".join(labels[-2:])
+        spf, dmarc = await asyncio.to_thread(self._lookup, domain)
+        if spf is None and dmarc is None:
+            return [self.f(self.VRT_IDS[0], f"dns://{domain}",
+                    evidence="no SPF and no DMARC record — domain is spoofable")]
+        if dmarc is None or "p=none" in (dmarc or "").replace(" ", "").lower():
+            reason = "no DMARC record" if dmarc is None else "DMARC policy is p=none"
+            return [self.f(self.VRT_IDS[1], f"dns://{domain}",
+                    evidence=f"{reason}; spoofed mail can reach the inbox")]
+        return []
+
+    @staticmethod
+    def _lookup(domain):
+        import dns.resolver
+
+        def txt(name):
+            try:
+                ans = dns.resolver.resolve(name, "TXT", lifetime=5)
+                return [b"".join(r.strings).decode("utf-8", "replace") for r in ans]
+            except Exception:
+                return []
+        spf = next((t for t in txt(domain)
+                    if t.lower().startswith("v=spf1")), None)
+        dmarc = next((t for t in txt("_dmarc." + domain)
+                      if t.lower().startswith("v=dmarc1")), None)
+        return spf, dmarc
+
+
 class CSRFTokenMissing(Module):
     VRT_IDS = ["cross_site_request_forgery_csrf.application_wide"]
     TOKEN = re.compile(r"csrf|xsrf|authenticity|nonce|_token|anti.?forgery", re.I)
@@ -658,6 +711,7 @@ ALL_MODULES: list[Module] = [
     CSRFTokenMissing(),
     InternalIPDisclosure(),
     MissingSubresourceIntegrity(),
+    MailSpoofing(),
     # active probes
     ReflectedXSS(),
     SQLInjection(),
