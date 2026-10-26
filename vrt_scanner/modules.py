@@ -805,6 +805,44 @@ class CookieScope(Module):
         return out
 
 
+class ExposedAdminPortal(Module):
+    """Probe common admin/management portal paths. Uses the same soft-404
+    baseline trick as SensitiveFiles so a catch-all server doesn't cause false
+    positives."""
+    BASE = "server_security_misconfiguration.exposed_portal"
+    VRT_IDS = [f"{BASE}.admin_portal", f"{BASE}.non_admin_portal"]
+    ADMIN = ["/admin", "/administrator", "/admin/login", "/wp-admin/",
+             "/wp-login.php", "/phpmyadmin/", "/manager/html", "/cpanel",
+             "/console", "/jenkins/", "/.git/"]
+    USER = ["/user/login", "/account/login", "/portal"]
+    LOGINISH = re.compile(r"login|sign.?in|password|username|dashboard|admin", re.I)
+    BASELINE_PATH = "/vrt9z7q-not-a-real-portal"
+
+    async def run(self, engine, pages):
+        if not pages:
+            return []
+        from urllib.parse import urlparse
+        p = urlparse(pages[0].url)
+        base = f"{p.scheme}://{p.netloc}"
+        b = await _safe_get(engine, base + self.BASELINE_PATH)
+        base_200 = b is not None and b.status_code == 200
+        base_body = b.text if b is not None else ""
+        out = []
+        for path, leaf in ([(x, self.VRT_IDS[0]) for x in self.ADMIN]
+                           + [(x, self.VRT_IDS[1]) for x in self.USER]):
+            r = await _safe_get(engine, base + path)
+            if r is None or r.status_code not in (200, 401, 403):
+                continue
+            if r.status_code == 200:
+                if base_200 and _similar(r.text, base_body):
+                    continue          # catch-all page, not a real portal
+                if not self.LOGINISH.search(r.text):
+                    continue
+            out.append(self.f(leaf, base + path,
+                       f"portal reachable (HTTP {r.status_code})"))
+        return out
+
+
 class TLSInspection(Module):
     """TLS/SSL posture of the target (stdlib ssl — no extra dependency).
     Flags a certificate error, an obsolete protocol, a weak cipher, and the
@@ -990,6 +1028,7 @@ ALL_MODULES: list[Module] = [
     CookieScope(),
     TLSInspection(),
     DNSMisconfig(),
+    ExposedAdminPortal(),
     # manual-only
     IDORManual(),
 ]

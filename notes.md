@@ -225,3 +225,9 @@ TLSInspection (stdlib ssl, bağımlılıksız): sertifika hatası, eski protokol
 (TLS<1.2 → ssl_attack/POODLE), zayıf cipher, forward-secrecy yok. badssl.com'da
 doğrulandı. DNSMisconfig (dnspython): CAA yok, DNSSEC yok (DNSKEY), AXFR zone
 transfer açık. Gerçek domain'lerde doğrulandı (google/example).
+
+## Aşama 3 — ExposedAdminPortal (45 -> 47)
+Yaygın admin/yönetim yollarını (/admin, /wp-admin, /phpmyadmin, /jenkins...)
+ve kullanıcı portallarını probe eder; soft-404 baseline + login imzası ile
+catch-all false positive'leri eler. admin_portal / non_admin_portal leaf'leri.
+Test sunucusunda sadece gerçek /admin bulundu.
