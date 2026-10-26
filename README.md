@@ -17,7 +17,10 @@ enforces a host **scope** and refuses to start without `--authorized`.
 ```bash
 cd ~/Desktop/vrt-scanner
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt            # core (web engine)
+
+# optional, only for the extra engines/modules you want:
+pip install -r requirements-extra.txt      # or install individual ones
 ```
 
 ## Scan

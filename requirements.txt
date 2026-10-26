@@ -1,10 +1,7 @@
+# Core — all the web engine (the default) needs.
 httpx>=0.27,<0.29
 beautifulsoup4>=4.12,<5
-# AD engine only (python -m vrt_scanner.ad); web engine does not need it:
-ldap3>=2.9,<3
-# MailSpoofing module only (SPF/DMARC via DNS); optional, skipped if absent:
-dnspython>=2.4
-# AD DACL/ACE parse (check_dacl_abuse) only; optional:
-impacket>=0.11
-# Cloud engine only (python -m vrt_scanner.cloud); optional:
-boto3>=1.28
+
+# Optional engine/module dependencies are in requirements-extra.txt. They are
+# NOT required for the web engine; each feature skips itself gracefully when its
+# dependency is absent. Install only what you use (see requirements-extra.txt).
