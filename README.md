@@ -25,6 +25,9 @@ pip install -r requirements-extra.txt      # or install individual ones
 
 ## Scan
 
+All engines share one entry point — `python -m vrt_scanner <web|ad|cloud> ...`
+(the per-engine forms `python -m vrt_scanner.cli` / `.ad` / `.cloud` still work):
+
 ```bash
 # Spin up a legal practice target first, e.g. OWASP Juice Shop:
 #   docker run --rm -p 3000:3000 bkimminich/juice-shop

@@ -194,3 +194,7 @@ test EDİLMEDİ — doğrulaması TODO-user.md'de.
 şifresiz S3, internete açık yönetim portları, CloudTrail kapalı, IAM admin),
 hepsi `cloud_security.*` leaf'ine bağlı. boto3 opsiyonel (yoksa uyarır). AWS
 hesabı olmadan test EDİLMEDİ — doğrulaması TODO-user.md'de.
+
+**Birleşik CLI (vrt_scanner/__main__.py):** `python -m vrt_scanner <web|ad|cloud>`
+tek giriş noktası; alt-komutu ilgili engine'in main()'ine dispatch eder. Eski
+`python -m vrt_scanner.cli/.ad/.cloud` formları bozulmadan çalışmaya devam eder.
