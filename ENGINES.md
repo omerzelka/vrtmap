@@ -87,10 +87,14 @@ disclosure, missing HTTPS enforcement / mixed content — all clone the existing
 
 ---
 
-## 4. Cloud — *planned*
+## 4. Cloud (AWS) — *scaffold implemented*
 
 - **Input:** cloud **API credentials** (profile / keys)
-- **Library:** `boto3` (AWS), `azure-sdk`, `google-cloud` SDKs
+- **Library:** `boto3` (AWS); Azure/GCP later
+- **Code / entry point:** `vrt_scanner/cloud.py` — `python -m vrt_scanner.cloud`
+- **Status:** 5 read-only AWS checks (public S3 buckets, unencrypted buckets,
+  mgmt ports open to the internet, CloudTrail logging disabled, IAM users with
+  AdministratorAccess). **NOT tested — needs an AWS account to validate.**
 
 | Category | Leaves |
 |---|---|

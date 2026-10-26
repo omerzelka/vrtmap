@@ -54,3 +54,12 @@ edilemedi** (bayrak yoksa statik crawler'a düşüyor — bu kısım test edildi
       dolu çok daha fazla sayfa görmeli.
 - [ ] `wait_until="networkidle"` ve 15 sn timeout ağır SPA'larda yeterli mi,
       gerekirse `headless.py`'de ayarla.
+
+## 5. Cloud (AWS) engine'ini doğrula  (öncelik: orta — kod YAZILDI, DENEYSEL)
+`vrt_scanner/cloud.py` yazıldı: boto3 ile salt-okunur 5 AWS kontrolü (public
+S3, şifresiz S3, internete açık yönetim portları, CloudTrail kapalı, IAM
+AdministratorAccess). **AWS hesabı olmadan test EDİLEMEDİ.**
+- [ ] `pip install boto3`, kimlik bilgisi/profil ayarla (`~/.aws/credentials`).
+- [ ] `python -m vrt_scanner.cloud --profile <p> --region <r> --authorized`
+- [ ] Yalnızca sahip olduğun / yazılı izinli hesapta çalıştır.
+- [ ] Her kontrolün IAM izni yetiyor mu (yetmezse "module error" basar, zararsız).

@@ -188,3 +188,9 @@ JS render eden crawler; SPA'ları gerçekten tarar. Mevcut Crawler ile aynı Pag
 nesnesini üretir, tüm modüller değişmeden çalışır. Playwright yoksa statik
 crawler'a zarifçe düşer (bu test edildi). Render kısmı Playwright kurulmadan
 test EDİLMEDİ — doğrulaması TODO-user.md'de.
+
+**Cloud (AWS) engine (cloud.py) — DENEYSEL:** Ayrı giriş noktası
+`python -m vrt_scanner.cloud`. boto3 ile salt-okunur 5 kontrol (public S3,
+şifresiz S3, internete açık yönetim portları, CloudTrail kapalı, IAM admin),
+hepsi `cloud_security.*` leaf'ine bağlı. boto3 opsiyonel (yoksa uyarır). AWS
+hesabı olmadan test EDİLMEDİ — doğrulaması TODO-user.md'de.
