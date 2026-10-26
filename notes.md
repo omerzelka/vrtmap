@@ -198,3 +198,13 @@ hesabı olmadan test EDİLMEDİ — doğrulaması TODO-user.md'de.
 **Birleşik CLI (vrt_scanner/__main__.py):** `python -m vrt_scanner <web|ad|cloud>`
 tek giriş noktası; alt-komutu ilgili engine'in main()'ine dispatch eder. Eski
 `python -m vrt_scanner.cli/.ad/.cloud` formları bozulmadan çalışmaya devam eder.
+
+---
+
+## Test paketi (tests/, pytest)
+Projenin testi yoktu; eklendi. `python -m pytest -q` (önce
+`pip install -r requirements-dev.txt`). 15 test: `test_core.py` (çekirdek
+yardımcılar: set_query_param, query_params, same_origin, Scope, _similar,
+katalog yükleme), `test_modules.py` (pasif modüller Page nesnesiyle, ağsız,
+asyncio.run ile), `test_integration.py` (gömülü açıklı sunucuya karşı tam
+tarama; form XSS + SQLi bulunduğunu doğrular). Ağ gerektirmez.

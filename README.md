@@ -120,3 +120,14 @@ the official leaf id(s) it covers (check against `vrt_catalog/index.json`),
 implement `run()` returning `Finding`s via `self.f(vrt_id, url, evidence, ...)`,
 and append to `ALL_MODULES`. Run `python -m vrt_scanner.coverage` to see the
 coverage number move.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest -q
+```
+
+Unit tests cover the core helpers and the passive detection modules; an
+integration test runs a full scan against an embedded intentionally-vulnerable
+server and asserts the form-based XSS and SQLi are found. No network needed.

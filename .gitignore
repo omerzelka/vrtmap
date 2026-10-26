@@ -11,3 +11,6 @@ report.json
 
 # OS
 .DS_Store
+
+# Tests
+.pytest_cache/
